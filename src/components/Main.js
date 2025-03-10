@@ -48,7 +48,7 @@ const Main = () => {
         <div className="top-0 sticky bg-white z-10 ">
           <Sympo />
         </div>
-        <div className="top-0  bg-white z-10 p-3">
+        <div id="events" className="top-0  bg-white z-10 p-3">
           <Events />
         </div>
         <div className="top-0 sticky bg-white z-10 p-3">

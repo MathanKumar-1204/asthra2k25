@@ -10,7 +10,16 @@ const Front = () => {
   const modalRef = useRef(null);
   const vantaRef = useRef(null);
 
-  const handleLoginClick = () => setShowLogin(true);
+  const handleLoginClick = () => {
+    navigate("/login"); // Redirect to "/"
+  };
+  const handleEventClick = () => {
+    const eventsSection = document.getElementById("events");
+    if (eventsSection) {
+      eventsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  
   const handleCloseLogin = () => setShowLogin(false);
 
   // Close modal when clicking outside
@@ -68,7 +77,7 @@ const Front = () => {
         >
           LOGIN
         </button>
-        <button className="bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105">
+        <button onClick={handleEventClick} className="bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105">
           EVENTS
         </button>
       </div>

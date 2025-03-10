@@ -87,6 +87,7 @@ function Login() {
 
   return (
     <GoogleOAuthProvider clientId="863241001544-0ut7e78osnmb9fbq6gcgthr1ha3t84q4.apps.googleusercontent.com">
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div className={`container bg-white rounded-[30px] shadow-[0_5px_15px_rgba(0,0,0,0.35)] relative overflow-hidden w-[768px] max-w-full min-h-[480px] ${isActive ? 'active' : ''}`}>
           
           {/* Sign In Form */}
@@ -212,6 +213,7 @@ function Login() {
               </div>
             </div>
           </div>
+        </div>
         </div>
     </GoogleOAuthProvider>
   );
