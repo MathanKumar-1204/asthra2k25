@@ -117,6 +117,7 @@ const CubeAnimation = ({ currentSection }) => {
 
   return (
     <div
+    className="absolute left-0"
       ref={mountRef}
       style={{
         position: "fixed",

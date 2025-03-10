@@ -35,17 +35,17 @@ const Main = () => {
 
   return (
     <>
-      <div className="relative flex flex-col mt-2">
-        <div className="top-0 z-10 p-3">
+      <div className="relative bg-black flex flex-col ">
+        <div className="top-0 sticky z-10 ">
           <Front />
         </div>
         {console.log("rendering cube, current section:", currentSection)}
         {currentSection === "sympo" ||
         currentSection === "events" ||
         currentSection === "sponsors" ? (
-          <CubeAnimation currentSection={currentSection} />
+          <CubeAnimation className="absolute left-0" currentSection={currentSection} />
         ) : null}
-        <div className="top-0 sticky bg-white z-10 p-3">
+        <div className="top-0 sticky bg-white z-10 ">
           <Sympo />
         </div>
         <div className="top-0  bg-white z-10 p-3">

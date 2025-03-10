@@ -1,19 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "./Login";
+import * as THREE from "three";
+import GLOBE from "vanta/dist/vanta.globe.min";
 
 const Front = () => {
   const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
   const modalRef = useRef(null);
+  const vantaRef = useRef(null);
 
-  const handleLoginClick = () => {
-    setShowLogin(true);
-  };
-
-  const handleCloseLogin = () => {
-    setShowLogin(false);
-  };
+  const handleLoginClick = () => setShowLogin(true);
+  const handleCloseLogin = () => setShowLogin(false);
 
   // Close modal when clicking outside
   useEffect(() => {
@@ -32,25 +30,50 @@ const Front = () => {
     };
   }, [showLogin]);
 
+  // Vanta.js Background Effect
+  useEffect(() => {
+    vantaRef.current = GLOBE({
+      el: "#vanta",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0xe8e8e8,
+      size: 1.4,
+      backgroundColor: 0x0,
+      THREE: THREE, // Required for Vanta.js in React
+    });
+
+    return () => {
+      if (vantaRef.current) vantaRef.current.destroy();
+    };
+  }, []);
+
   return (
-    <div className="h-screen bg-gradient-to-b from-purple-900 to-indigo-800 flex flex-col items-center relative p-6 overflow-y-scroll overflow-x-hidden text-gray-100 font-sans">
-      <div className="absolute top-6 left-6 bg-white shadow-xl rounded-full w-24 h-24 flex items-center justify-center text-lg font-extrabold text-purple-900 border-4 border-purple-700 transform hover:scale-110 transition duration-300">
+    <div
+      id="vanta"
+      className="h-screen bg-black flex flex-col items-center relative p-6 overflow-y-scroll overflow-x-hidden text-gray-100 font-sans"
+    >
+      <div className="absolute top-6 left-6 bg-gray-600 shadow-xl rounded-full w-24 h-24 flex items-center justify-center text-lg font-extrabold text-black border-4 border-gray-500 transform hover:scale-110 transition duration-300">
         LOGO
       </div>
 
       <div className="absolute top-6 right-6 flex space-x-4">
         <button
           onClick={handleLoginClick}
-          className="bg-gradient-to-r from-pink-500 to-red-500 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-white hover:opacity-90 transition duration-300 transform hover:scale-105"
+          className="bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105"
         >
           LOGIN
         </button>
-        <button className="bg-gradient-to-r from-green-500 to-teal-500 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-white hover:opacity-90 transition duration-300 transform hover:scale-105">
+        <button className="bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105">
           EVENTS
         </button>
       </div>
 
-      <div className="mt-24 bg-white px-16 py-10 rounded-2xl shadow-2xl text-center text-4xl font-extrabold text-purple-900 border-4 border-purple-700 animate-bounce">
+      <div className="mt-24 bg-gray-600 px-16 py-10 rounded-2xl shadow-2xl text-center text-4xl font-extrabold text-black border-4 border-gray-600 animate-spin-slow ">
         ASTHRA
       </div>
 
@@ -60,11 +83,13 @@ const Front = () => {
 
       {showLogin && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div ref={modalRef}>
             <Login />
+          </div>
         </div>
       )}
 
-      <div className="absolute bottom-0 w-full h-40 bg-white rounded-t-full shadow-2xl border-t-4 border-purple-700"></div>
+      {/* <div className="absolute bottom-0 w-full h-40 bg-white rounded-t-full shadow-2xl border-t-4 border-purple-700"></div> */}
     </div>
   );
 };
