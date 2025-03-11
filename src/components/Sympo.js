@@ -19,7 +19,7 @@ const Sympo = () => {
       {/* Second Section - Text Shifted Right with Image on Right */}
       <div className="w-full flex items-center justify-between">
         {/* Left Side - Highlighted Text Container (Shifted Right) */}
-        <div className="w-2/3 p-6 ml-8 bg-gray-800 text-white flex flex-col justify-center items-start rounded-lg shadow-lg ">
+        <div className="w-3/5 p-6 ml-12 bg-gray-800 text-white flex flex-col justify-center items-start rounded-lg shadow-lg ">
           <h3 className="text-xl font-semibold">Embracing the Future of Technology</h3>
           <p>
             The Symposium 2025 is a platform where innovation meets opportunity. 

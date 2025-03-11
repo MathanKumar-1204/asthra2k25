@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-
+import { useNavigate, useLocation } from 'react-router-dom';
+import { auth, database } from '../firebase';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { set, ref } from 'firebase/database';
 function Login() {
   const [isActive, setIsActive] = useState(false);
   const [user, setUser] = useState(null);
-  
+  const navigate = useNavigate();
+  const location = useLocation();
+
   // Form state
   const [signInEmail, setSignInEmail] = useState('');
   const [signInPassword, setSignInPassword] = useState('');
@@ -19,17 +24,35 @@ function Login() {
     signUp: {}
   });
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in, navigate to the previous page
+        navigate(location.state?.from || '/');
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate, location.state]);
+
   // Handle successful Google sign-in
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
       const decoded = jwtDecode(credentialResponse.credential);
       console.log('Decoded Google User:', decoded);
       setUser(decoded);
-      
+
+      // Store user info in Firebase Realtime Database
+      await set(ref(database, 'users/' + decoded.name), {
+        email: decoded.email,
+      });
+
       localStorage.setItem('userInfo', JSON.stringify({
         name: decoded.name,
         email: decoded.email
       }));
+
+      navigate(location.state?.from || '/');
     } catch (error) {
       console.error('Error during Google Sign-In:', error);
     }
@@ -54,42 +77,78 @@ function Login() {
     return newErrors;
   };
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
     const validationErrors = validateSignInForm();
-    
+
     if (Object.keys(validationErrors).length > 0) {
       setErrors(prev => ({ ...prev, signIn: validationErrors }));
       return;
     }
 
     setErrors(prev => ({ ...prev, signIn: {} }));
-    localStorage.setItem('userInfo', JSON.stringify({
-      email: signInEmail
-    }));
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
+      const user = userCredential.user;
+
+      // Store user info in Firebase Realtime Database
+      await set(ref(database, 'users/' + user.displayName), {
+        email: user.email,
+      });
+
+      localStorage.setItem('userInfo', JSON.stringify({
+        email: user.email
+      }));
+
+      navigate(location.state?.from || '/');
+    } catch (error) {
+      console.error('Error during sign-in:', error);
+    }
   };
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
     const validationErrors = validateSignUpForm();
-    
+  
     if (Object.keys(validationErrors).length > 0) {
       setErrors(prev => ({ ...prev, signUp: validationErrors }));
       return;
     }
-
+  
     setErrors(prev => ({ ...prev, signUp: {} }));
-    localStorage.setItem('userInfo', JSON.stringify({
-      name: signUpName,
-      email: signUpEmail
-    }));
+  
+    try {
+      console.log('Attempting to create user with email:', signUpEmail);
+      const userCredential = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword);
+      const user = userCredential.user;
+      console.log('User created successfully:', user);
+  
+      // Store user info in Firebase Realtime Database
+      await set(ref(database, 'users/' + signUpName), {
+        email: user.email,
+        password: signUpPassword, // Storing password for demonstration purposes
+      });
+      console.log('User data stored successfully in the database.');
+  
+      localStorage.setItem('userInfo', JSON.stringify({
+        name: signUpName,
+        email: user.email
+      }));
+  
+      navigate(location.state?.from || '/');
+    } catch (error) {
+      console.error('Error during sign-up:', error.message);
+      // Optionally, set an error message to display to the user
+    }
   };
+  
 
   return (
     <GoogleOAuthProvider clientId="863241001544-0ut7e78osnmb9fbq6gcgthr1ha3t84q4.apps.googleusercontent.com">
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div className={`container bg-white rounded-[30px] shadow-[0_5px_15px_rgba(0,0,0,0.35)] relative overflow-hidden w-[768px] max-w-full min-h-[480px] ${isActive ? 'active' : ''}`}>
-          
+
           {/* Sign In Form */}
           <div className="form-container sign-in absolute top-0 left-0 w-1/2 h-full flex items-center justify-center transition-all duration-700 z-20">
             <form onSubmit={handleSignIn} className="bg-white flex flex-col items-center justify-center px-10 h-full">
@@ -104,9 +163,9 @@ function Login() {
               />
               <span className="text-sm mt-4">or use your account</span>
               <div className="w-full">
-                <input 
-                  type="email" 
-                  placeholder="Email" 
+                <input
+                  type="email"
+                  placeholder="Email"
                   value={signInEmail}
                   onChange={(e) => setSignInEmail(e.target.value)}
                   className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signIn.email ? 'border-red-500' : ''}`}
@@ -114,9 +173,9 @@ function Login() {
                 {errors.signIn.email && <p className="text-red-500 text-xs mt-1">{errors.signIn.email}</p>}
               </div>
               <div className="w-full">
-                <input 
-                  type="password" 
-                  placeholder="Password" 
+                <input
+                  type="password"
+                  placeholder="Password"
                   value={signInPassword}
                   onChange={(e) => setSignInPassword(e.target.value)}
                   className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signIn.password ? 'border-red-500' : ''}`}
@@ -124,8 +183,8 @@ function Login() {
                 {errors.signIn.password && <p className="text-red-500 text-xs mt-1">{errors.signIn.password}</p>}
               </div>
               <a href="#" className="text-[13px] text-gray-800 no-underline mt-4 mb-2.5 hover:text-[#512da8] transition-colors duration-300">Forgot your password?</a>
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="bg-[#512da8] text-white text-xs py-2.5 px-11 border border-transparent rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-[#4527a0] active:scale-95 active:bg-[#311b92] focus:outline-none focus:ring-2 focus:ring-[#512da8] focus:ring-offset-2"
               >
                 Sign In
@@ -147,9 +206,9 @@ function Login() {
               />
               <span className="text-sm mt-4">or use your email for registration</span>
               <div className="w-full">
-                <input 
-                  type="text" 
-                  placeholder="Name" 
+                <input
+                  type="text"
+                  placeholder="Name"
                   value={signUpName}
                   onChange={(e) => setSignUpName(e.target.value)}
                   className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signUp.name ? 'border-red-500' : ''}`}
@@ -157,9 +216,9 @@ function Login() {
                 {errors.signUp.name && <p className="text-red-500 text-xs mt-1">{errors.signUp.name}</p>}
               </div>
               <div className="w-full">
-                <input 
-                  type="email" 
-                  placeholder="Email" 
+                <input
+                  type="email"
+                  placeholder="Email"
                   value={signUpEmail}
                   onChange={(e) => setSignUpEmail(e.target.value)}
                   className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signUp.email ? 'border-red-500' : ''}`}
@@ -167,17 +226,17 @@ function Login() {
                 {errors.signUp.email && <p className="text-red-500 text-xs mt-1">{errors.signUp.email}</p>}
               </div>
               <div className="w-full">
-                <input 
-                  type="password" 
-                  placeholder="Password" 
+                <input
+                  type="password"
+                  placeholder="Password"
                   value={signUpPassword}
                   onChange={(e) => setSignUpPassword(e.target.value)}
                   className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signUp.password ? 'border-red-500' : ''}`}
                 />
                 {errors.signUp.password && <p className="text-red-500 text-xs mt-1">{errors.signUp.password}</p>}
               </div>
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="bg-[#512da8] text-white text-xs py-2.5 px-11 border border-transparent rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-[#4527a0] active:scale-95 active:bg-[#311b92] focus:outline-none focus:ring-2 focus:ring-[#512da8] focus:ring-offset-2"
               >
                 Sign Up
@@ -192,9 +251,9 @@ function Login() {
               <div className={`toggle-panel toggle-left absolute top-0 w-1/2 h-full flex flex-col items-center justify-center px-8 text-center transition-all duration-700 ${isActive ? 'translate-x-0' : '-translate-x-[200%]'}`}>
                 <h1 className="text-2xl font-bold mb-2">Welcome Back!</h1>
                 <p className="text-sm leading-5 tracking-wide my-5">Enter your personal details to use all site features</p>
-                <button 
-                  type="button" 
-                  className="bg-transparent border-2 border-white text-white text-xs py-2.5 px-11 rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-white hover:text-[#512da8] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#512da8]" 
+                <button
+                  type="button"
+                  className="bg-transparent border-2 border-white text-white text-xs py-2.5 px-11 rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-white hover:text-[#512da8] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#512da8]"
                   onClick={() => setIsActive(false)}
                 >
                   Sign In
@@ -203,9 +262,9 @@ function Login() {
               <div className={`toggle-panel toggle-right absolute top-0 right-0 w-1/2 h-full flex flex-col items-center justify-center px-8 text-center transition-all duration-700 ${isActive ? 'translate-x-[200%]' : 'translate-x-0'}`}>
                 <h1 className="text-2xl font-bold mb-2">Hello, Friend!</h1>
                 <p className="text-sm leading-5 tracking-wide my-5">Register with your personal details to use all site features</p>
-                <button 
-                  type="button" 
-                  className="bg-transparent border-2 border-white text-white text-xs py-2.5 px-11 rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-white hover:text-[#512da8] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#512da8]" 
+                <button
+                  type="button"
+                  className="bg-transparent border-2 border-white text-white text-xs py-2.5 px-11 rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-white hover:text-[#512da8] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#512da8]"
                   onClick={() => setIsActive(true)}
                 >
                   Sign Up
