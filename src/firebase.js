@@ -3,15 +3,15 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDoo9bsbh94HwmYWljuNkvpQOxw8u70ejo",
-    authDomain: "asthra2k25-c08d4.firebaseapp.com",
-    databaseURL: "https://asthra2k25-c08d4-default-rtdb.firebaseio.com",
-    projectId: "asthra2k25-c08d4",
-    storageBucket: "asthra2k25-c08d4.firebasestorage.app",
-    messagingSenderId: "512470466855",
-    appId: "1:512470466855:web:ba3ee8ee8bbf4146e62902",
-    measurementId: "G-Z3BJBD11DB"
-  };
+  apiKey: "AIzaSyBdlRlUlJOIeQmdXrSg1WCaQDELows1aI8",
+  authDomain: "easemind-7eadb.firebaseapp.com",
+  databaseURL: "https://easemind-7eadb-default-rtdb.firebaseio.com",
+  projectId: "easemind-7eadb",
+  storageBucket: "easemind-7eadb.appspot.com",
+  messagingSenderId: "952327177059",
+  appId: "1:952327177059:web:f57c7089b6ffde073fc956",
+  measurementId: "G-KWMRGSHF5B"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

@@ -54,9 +54,9 @@ const Main = () => {
         <div className="top-0 sticky bg-white z-10 p-3">
           <Sponsors />
         </div>
-        <div className="top-0 sticky z-10 bg-white p-3">
+        {/* <div className="top-0 sticky z-10 bg-white p-3">
           <Registered />
-        </div>
+        </div> */}
         <div className="top-0 sticky z-10 bg-white p-3">
           <Members />
         </div>

@@ -1,0 +1,231 @@
+{
+  "TechEvents": {
+    "TechInnovators2025": {
+      "name": "Tech Innovators 2025",
+      "type": "Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Teams must consist of 2-4 members.",
+        "Participants must bring their own laptops.",
+        "Use of internet is allowed only for reference.",
+        "Plagiarism will lead to disqualification.",
+        "Judges' decisions are final.",
+        "Submissions must be completed before the deadline.",
+        "Respect other teams and maintain decorum.",
+        "Follow all event guidelines strictly."
+      ],
+      "logo": "./assets/logo128.png",
+      "teamMembers": "Each team can have 2-4 members.",
+      "slot": "March 20, 2025 - 10:00 AM to 5:00 PM",
+      "members": {
+        "Alice": "./assets/logo128.png",
+        "Bob": "./assets/logo128.png",
+        "Charlie": "./assets/logo128.png",
+        "David": "./assets/logo128.png"
+      }
+    },
+    "CodeQuest2025": {
+      "name": "Code Quest 2025",
+      "type": "Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Individual or team participation (Max 3 members).",
+        "Coding must be done in allowed languages (Python, C++, Java, JavaScript).",
+        "Use of AI tools is strictly prohibited.",
+        "Internet access is allowed only for documentation.",
+        "Any form of cheating will lead to disqualification.",
+        "Judges' decisions are final.",
+        "Code must be submitted within the given time.",
+        "Respect fellow participants and follow event guidelines."
+      ],
+      "logo": "./assets/logo128.png",
+
+      "teamMembers": "Solo or team (Max 3 members).",
+      "slot": "March 21, 2025 - 9:00 AM to 6:00 PM",
+      "members": {
+        "Eve": "./assets/logo128.png",
+        "Frank": "./assets/logo128.png",
+        "Grace": "./assets/logo128.png"
+      }
+    },
+    "Tech2025": {
+      "name": "Tech Innovators 2025",
+      "type": "Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Teams must consist of 2-4 members.",
+        "Participants must bring their own laptops.",
+        "Use of internet is allowed only for reference.",
+        "Plagiarism will lead to disqualification.",
+        "Judges' decisions are final.",
+        "Submissions must be completed before the deadline.",
+        "Respect other teams and maintain decorum.",
+        "Follow all event guidelines strictly."
+      ],
+      "logo": "./assets/logo128.png",
+
+      "teamMembers": "Each team can have 2-4 members.",
+      "slot": "March 20, 2025 - 10:00 AM to 5:00 PM",
+      "members": {
+        "Heidi": "./assets/logo128.png",
+        "Ivan": "./assets/logo128.png",
+        "Judy": "./assets/logo128.png",
+        "Karl": "./assets/logo128.png"
+      }
+    },
+    "HackTheFuture2025": {
+      "name": "Hack The Future 2025",
+      "type": "Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Teams must consist of 3-5 members.",
+        "Each team must present an innovative solution using tech.",
+        "Use of open-source tools is encouraged.",
+        "No plagiarism is allowed.",
+        "Judging criteria: Innovation, feasibility, and presentation.",
+        "Final submissions must be made within the deadline."
+      ],
+      "logo": "./assets/logo128.png",
+
+      "teamMembers": "Each team can have 3-5 members.",
+      "slot": "March 22, 2025 - 10:00 AM to 10:00 PM",
+      "members": {
+        "Lana": "./assets/logo128.png",
+        "Mike": "./assets/logo128.png",
+        "Nina": "./assets/logo128.png",
+        "Oliver": "./assets/logo128.png",
+        "Peter": "./assets/logo128.png"
+      }
+    },
+    "Hack2025": {
+      "name": "Hack The Future 2025",
+      "type": "Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Teams must consist of 3-5 members.",
+        "Each team must present an innovative solution using tech.",
+        "Use of open-source tools is encouraged.",
+        "No plagiarism is allowed.",
+        "Judging criteria: Innovation, feasibility, and presentation.",
+        "Final submissions must be made within the deadline."
+      ],
+      "logo": "./assets/logo128.png",
+
+      "teamMembers": "Each team can have 3-5 members.",
+      "slot": "March 22, 2025 - 10:00 AM to 10:00 PM",
+      "members": {
+        "Quinn": "./assets/logo128.png",
+        "Rachel": "./assets/logo128.png",
+        "Sam": "./assets/logo128.png",
+        "Tina": "./assets/logo128.png",
+        "Uma": "./assets/logo128.png"
+      }
+    }
+  },
+  "NonTechEvents": {
+    "ArtFusion2025": {
+      "name": "Art Fusion 2025",
+      "type": "Non-Tech",
+      "poster": "https://marketplace.canva.com/EAFQ4JHnB7I/1/0/1131w/canva-art-exhibition-event-flyer-7llgQ8B1J3M.jpg",
+      "rules": [
+        "Participants must bring their own art supplies.",
+        "Theme will be announced on the spot.",
+        "Time limit: 2 hours.",
+        "Use of AI-generated art is not allowed.",
+        "Judges' decisions are final."
+      ],
+      "logo": "./assets/logo128.png",
+
+      "teamMembers": "Individual participation only.",
+      "slot": "March 20, 2025 - 2:00 PM to 4:00 PM",
+      "members": {
+        "Victor": "./assets/logo128.png",
+        "Wendy": "./assets/logo128.png"
+      }
+    },
+    "DebateBattle2025": {
+      "name": "Debate Battle 2025",
+      "type": "Non-Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Teams of 2 members each.",
+        "Topics will be given 30 minutes before the debate.",
+        "Time limit per round: 5 minutes.",
+        "Use of offensive language will lead to disqualification.",
+        "Judges' decision is final."
+      ],
+      "logo": "./assets/logo128.png",
+
+      "teamMembers": "Teams of 2 members.",
+      "slot": "March 21, 2025 - 11:00 AM to 3:00 PM",
+      "members": {
+        "Xander": "./assets/logo128.png",
+        "Yara": "./assets/logo128.png"
+      }
+    },
+    "TreasureHunt2025": {
+      "name": "Treasure Hunt 2025",
+      "type": "Non-Tech",
+      "poster": "https://marketplace.canva.com/EAFvdeUeF4M/1/0/1131w/canva-mystery-treasure-hunt-poster-3J_WsmYaej4.jpg",
+      "rules": [
+        "Teams of 4 members.",
+        "Each clue leads to the next location.",
+        "No use of mobile phones or internet for help.",
+        "Time limit: 2 hours.",
+        "Winning team must find all clues and reach the final destination first."
+      ],
+      "logo": "./assets/logo128.png",
+
+      "teamMembers": "Teams of 4 members.",
+      "slot": "March 22, 2025 - 10:00 AM to 12:00 PM",
+      "members": {
+        "Zane": "./assets/logo128.png",
+        "Aria": "./assets/logo128.png",
+        "Ben": "./assets/logo128.png",
+        "Cara": "./assets/logo128.png"
+      }
+    },
+    "Debate025": {
+      "name": "Debate Battle 2025",
+      "type": "Non-Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Teams of 2 members each.",
+        "Topics will be given 30 minutes before the debate.",
+        "Time limit per round: 5 minutes.",
+        "Use of offensive language will lead to disqualification.",
+        "Judges' decision is final."
+      ],
+      "logo": "./assets/logo128.png",
+
+      "teamMembers": "Teams of 2 members.",
+      "slot": "March 21, 2025 - 11:00 AM to 3:00 PM",
+      "members": {
+        "Dana": "./assets/logo128.png",
+        "Eli": "./assets/logo128.png"
+      }
+    },
+    "Treasure2025": {
+      "name": "Treasure Hunt 2025",
+      "type": "Non-Tech",
+      "poster": "https://marketplace.canva.com/EAFvdeUeF4M/1/0/1131w/canva-mystery-treasure-hunt-poster-3J_WsmYaej4.jpg",
+      "rules": [
+        "Teams of 4 members.",
+        "Each clue leads to the next location.",
+        "No use of mobile phones or internet for help.",
+        "Time limit: 2 hours.",
+        "Winning team must find all clues and reach the final destination first."
+      ],
+      "logo": "./assets/logo128.png",
+
+      "teamMembers": "Teams of 4 members.",
+      "slot": "March 22, 2025 - 10:00 AM to 12:00 PM",
+      "members": {
+        "Finn": "./assets/logo128.png",
+        "Gina": "./assets/logo128.png",
+        "Hank": "./assets/logo128.png",
+        "Ivy": "./assets/1279247.png"
+      }
+    }
+  }
+}

@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { auth, database } from '../firebase';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { set, ref } from 'firebase/database';
+import { useNavigate } from 'react-router-dom';
+
 function Login() {
   const [isActive, setIsActive] = useState(false);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const location = useLocation();
 
   // Form state
   const [signInEmail, setSignInEmail] = useState('');
@@ -24,17 +21,6 @@ function Login() {
     signUp: {}
   });
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        // User is signed in, navigate to the previous page
-        navigate(location.state?.from || '/');
-      }
-    });
-
-    return () => unsubscribe();
-  }, [navigate, location.state]);
-
   // Handle successful Google sign-in
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
@@ -42,17 +28,19 @@ function Login() {
       console.log('Decoded Google User:', decoded);
       setUser(decoded);
 
-      // Store user info in Firebase Realtime Database
-      await set(ref(database, 'users/' + decoded.name), {
-        email: decoded.email,
-      });
-
-      localStorage.setItem('userInfo', JSON.stringify({
-        name: decoded.name,
-        email: decoded.email
-      }));
-
-      navigate(location.state?.from || '/');
+      const userExists = await checkUserExists(decoded.email);
+      if (userExists) {
+        const userRole = await getUserRole(decoded.email);
+        localStorage.setItem('userInfo', JSON.stringify({
+          name: decoded.name,
+          email: decoded.email,
+          role: userRole // Save the role in local storage
+        }));
+        navigate('/');
+      } else {
+        await saveToSheetBest({ name: decoded.name, email: decoded.email, password: '', role: 'user' });
+        alert('Sign-up successful!');
+      }
     } catch (error) {
       console.error('Error during Google Sign-In:', error);
     }
@@ -88,65 +76,118 @@ function Login() {
 
     setErrors(prev => ({ ...prev, signIn: {} }));
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
-      const user = userCredential.user;
-
-      // Store user info in Firebase Realtime Database
-      await set(ref(database, 'users/' + user.displayName), {
-        email: user.email,
-      });
-
+    const userExists = await checkUserExists(signInEmail);
+    if (userExists) {
+      const userRole = await getUserRole(signInEmail);
+      const userName = await getUserName(signInEmail); // Fetch the user's name
       localStorage.setItem('userInfo', JSON.stringify({
-        email: user.email
+        name: userName,
+        email: signInEmail,
+        role: userRole // Save the role in local storage
       }));
-
-      navigate(location.state?.from || '/');
-    } catch (error) {
-      console.error('Error during sign-in:', error);
+      navigate('/');
+    } else {
+      alert('Wrong credentials!');
     }
   };
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     const validationErrors = validateSignUpForm();
-  
+
     if (Object.keys(validationErrors).length > 0) {
       setErrors(prev => ({ ...prev, signUp: validationErrors }));
       return;
     }
-  
+
     setErrors(prev => ({ ...prev, signUp: {} }));
-  
-    try {
-      console.log('Attempting to create user with email:', signUpEmail);
-      const userCredential = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword);
-      const user = userCredential.user;
-      console.log('User created successfully:', user);
-  
-      // Store user info in Firebase Realtime Database
-      await set(ref(database, 'users/' + signUpName), {
-        email: user.email,
-        password: signUpPassword, // Storing password for demonstration purposes
-      });
-      console.log('User data stored successfully in the database.');
-  
-      localStorage.setItem('userInfo', JSON.stringify({
-        name: signUpName,
-        email: user.email
-      }));
-  
-      navigate(location.state?.from || '/');
-    } catch (error) {
-      console.error('Error during sign-up:', error.message);
-      // Optionally, set an error message to display to the user
+
+    const userExists = await checkUserExists(signUpEmail);
+    if (userExists) {
+      alert('User already exists! Please sign in.');
+    } else {
+      await saveToSheetBest({ name: signUpName, email: signUpEmail, password: signUpPassword, role: 'user' });
+      alert('Sign-up successful!');
     }
   };
-  
+
+  const checkUserExists = async (email) => {
+    const sheetBestUrl = 'https://api.sheetbest.com/sheets/9da660eb-f87b-4f55-b372-3866f12aa437';
+
+    const response = await fetch(sheetBestUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch data from SheetBest');
+    }
+
+    const data = await response.json();
+    return data.some(user => user.email === email);
+  };
+
+  const getUserRole = async (email) => {
+    const sheetBestUrl = 'https://api.sheetbest.com/sheets/9da660eb-f87b-4f55-b372-3866f12aa437';
+
+    const response = await fetch(sheetBestUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch data from SheetBest');
+    }
+
+    const data = await response.json();
+    const user = data.find(user => user.email === email);
+    return user ? user.role : 'user';
+  };
+
+  const getUserName = async (email) => {
+    const sheetBestUrl = 'https://api.sheetbest.com/sheets/9da660eb-f87b-4f55-b372-3866f12aa437';
+
+    const response = await fetch(sheetBestUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch data from SheetBest');
+    }
+
+    const data = await response.json();
+    const user = data.find(user => user.email === email);
+    return user ? user.name : '';
+  };
+
+  const saveToSheetBest = async (data) => {
+    const sheetBestUrl = 'https://api.sheetbest.com/sheets/9da660eb-f87b-4f55-b372-3866f12aa437';
+
+    const response = await fetch(sheetBestUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to save data to SheetBest');
+    }
+
+    console.log('Data saved successfully');
+  };
 
   return (
-    <GoogleOAuthProvider clientId="863241001544-0ut7e78osnmb9fbq6gcgthr1ha3t84q4.apps.googleusercontent.com">
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+      <div className="min-h-screen bg-gradient-to-r from-[#e2e2e2] to-[#c9d6ff] flex items-center justify-center">
         <div className={`container bg-white rounded-[30px] shadow-[0_5px_15px_rgba(0,0,0,0.35)] relative overflow-hidden w-[768px] max-w-full min-h-[480px] ${isActive ? 'active' : ''}`}>
 
           {/* Sign In Form */}
@@ -273,7 +314,7 @@ function Login() {
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </GoogleOAuthProvider>
   );
 }
