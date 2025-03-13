@@ -12,7 +12,7 @@ const Front = () => {
   const vantaRef = useRef(null);
 
   const handleLoginClick = () => {
-    setShowLogin(true); // Show login modal
+    navigate("/login"); // Redirect to login page
   };
 
   const handleLogoutClick = () => {
