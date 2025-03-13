@@ -4,7 +4,7 @@ import Front from "./Front";
 import Sympo from "./Sympo";
 import Events from "./Events";
 import Sponsors from "./Sponsors";
-import Registered from "./Registered";
+// import Registered from "./Registered";
 import Members from "./Members";
 import Footer from "./Footer";
 

@@ -93,7 +93,7 @@ const CubeAnimation = ({ currentSection }) => {
         targetRotation = { x: Math.PI / 2, y: 0, z: 0 }; // Rotate 90° on X-axis
         break;
       case "sponsors":
-        targetPosition = { x: 3, y: 0, z: 0 };
+        targetPosition = { x: 3, y: -1, z: 0 };
         targetRotation = { x: 0, y: 0, z: Math.PI / 2 }; // Rotate 90° on Z-axis
         break;
       default:

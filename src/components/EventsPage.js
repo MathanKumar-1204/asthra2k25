@@ -93,7 +93,7 @@ const EventsPage = () => {
           {/* Register Button */}
           <button
             onClick={handleRegisterClick}
-            className="mt-4 px-3 py-1 bg-[#FF5733] text-white text-md font-bold rounded-full shadow-lg hover:bg-[#C70039] transition-all duration-300 transform hover:scale-110 hover:animate-pulse w-auto self-center"
+            className="mt-4 px-3 py-1 bg-[#FF5733] text-white text-md font-bold  shadow-lg hover:bg-[#C70039] transition-all duration-300 transform hover:scale-110 hover:animate-pulse w-auto self-center"
           >
             🚀 REGISTER NOW
           </button>
@@ -125,7 +125,8 @@ const EventsPage = () => {
       {/* Registration Popup */}
       {showRegPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <Reg eventName={eventDetails.name} onClose={handleCloseRegPopup} />
+         <Reg eventName={eventDetails.name} onClose={handleCloseRegPopup} />
+
         </div>
       )}
     </div>

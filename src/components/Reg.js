@@ -3,6 +3,8 @@ import ShinyText from "./ShinyText";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoCloseCircle } from "react-icons/io5";
 
+const API_URL = "https://api.sheetbest.com/sheets/b0b06cc5-a1ef-41ee-b7c0-a123d92d771e";
+
 const Reg = ({ eventName, onClose }) => {
   const [formData, setFormData] = useState({
     teamName: "",
@@ -11,97 +13,83 @@ const Reg = ({ eventName, onClose }) => {
     contact: "",
     college: "",
   });
-
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [sheetData, setSheetData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchSheetData = async () => {
-      try {
-        const response = await fetch('https://api.sheetbest.com/sheets/9da660eb-f87b-4f55-b372-3866f12aa437', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+    const fetchUserRegistration = async () => {
+      const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      if (!userInfo || !userInfo.email) {
+        console.error("User not logged in");
+        setIsLoading(false);
+        return;
+      }
 
-        if (!response.ok) {
-          throw new Error('Failed to fetch data from SheetBest');
-        }
+      try {
+        const response = await fetch(`${API_URL}?email=${userInfo.email}`);
+        if (!response.ok) throw new Error("Failed to fetch user data");
 
         const data = await response.json();
-        setSheetData(data);
+        const userRegistration = data.find((entry) => entry.email === userInfo.email);
+
+        if (userRegistration) {
+          console.log("User already registered:", userRegistration);
+          setFormData({
+            teamName: userRegistration.teamName || "",
+            teamLead: userRegistration.teamLead || "",
+            teamMembers: userRegistration.teamMembers || "",
+            contact: userRegistration.contact || "",
+            college: userRegistration.college || "",
+          });
+        }
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching registration:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
-    fetchSheetData();
+    fetchUserRegistration();
   }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if (!userInfo) {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    if (!userInfo || !userInfo.email) {
       console.error("User not logged in");
       return;
     }
-  
-    const userEmail = userInfo.email;
-    const userRow = sheetData.find(row => row.email === userEmail);
-  
-    if (!userRow) {
-      console.error("User not found in sheet");
-      return;
-    }
-  
-    const updatedRow = {
-      ...userRow,
-      ...formData,
-      eventName: eventName, // Ensure eventName is included
+
+    const newEntry = {
+      email: userInfo.email,
+      teamName: formData.teamName,
+      teamLead: formData.teamLead,
+      teamMembers: formData.teamMembers,
+      contact: formData.contact,
+      college: formData.college,
+      eventName: eventName,
     };
-  
-    console.log("Updating row with data:", updatedRow); // Log the data being sent
-  
+
+    console.log("Sending data:", newEntry);
+
     try {
-      const response = await fetch('https://api.sheetbest.com/sheets/9da660eb-f87b-4f55-b372-3866f12aa437', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          // Add any required authentication headers here
-        },
-        body: JSON.stringify(updatedRow),
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify([newEntry]),
       });
-  
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Failed to update data in SheetBest:', errorText);
-        throw new Error('Failed to update data in SheetBest');
-      }
-  
-      console.log('Data updated successfully');
+
+      if (!response.ok) throw new Error("Failed to store data");
+
+      console.log("Registration successful!");
       setIsSubmitted(true);
     } catch (error) {
-      console.error('Error updating data:', error);
+      console.error("Error storing data:", error);
     }
-  };
-  
-  
-  
-
-  const handleClose = () => {
-    setIsSubmitted(false);
-    setFormData({
-      teamName: "",
-      teamLead: "",
-      teamMembers: "",
-      contact: "",
-      college: "",
-    });
-    onClose(); // Call the onClose function passed as a prop
   };
 
   return (
@@ -114,9 +102,8 @@ const Reg = ({ eventName, onClose }) => {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="relative bg-white/10 backdrop-blur-lg shadow-xl p-8 rounded-2xl w-full max-w-md border-2 border-purple-500 animate-borderGlow transition-opacity duration-500"
         >
-          {/* Close Button */}
           <button
-            onClick={handleClose}
+            onClick={onClose}
             className="absolute top-3 right-3 text-white text-xl font-bold hover:text-red-500 transition-all duration-300 border border-transparent hover:border-red-500 p-2 rounded-full shadow-md hover:shadow-red-500 animate-xGlow"
           >
             ✖
@@ -126,7 +113,14 @@ const Reg = ({ eventName, onClose }) => {
             Team Registration for {eventName} 🏆
           </h2>
 
-          {!isSubmitted ? (
+          {isLoading ? (
+            <p className="text-center text-white">Loading...</p>
+          ) : isSubmitted ? (
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-white mb-4 animate-textGlow">🎉 Registration Successful! 🎉</h2>
+              <p className="text-white">Thank you for registering. We will contact you soon!</p>
+            </div>
+          ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
@@ -180,49 +174,9 @@ const Reg = ({ eventName, onClose }) => {
                 <ShinyText>Register Now</ShinyText>
               </button>
             </form>
-          ) : (
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-white mb-4 animate-textGlow">🎉 Registration Successful! 🎉</h2>
-              <p className="text-white">Thank you for registering. We will contact you soon!</p>
-            </div>
           )}
         </motion.div>
       </AnimatePresence>
-
-      {/* Tailwind Animations */}
-      <style>
-        {`
-          @keyframes textGlow {
-            0% { text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2; }
-            50% { text-shadow: 0 0 20px #8a2be2, 0 0 30px #8a2be2; }
-            100% { text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2; }
-          }
-
-          .animate-textGlow {
-            animation: textGlow 1.5s infinite alternate;
-          }
-
-          @keyframes borderGlow {
-            0% { box-shadow: 0 0 10px #8a2be2; }
-            50% { box-shadow: 0 0 20px #8a2be2; }
-            100% { box-shadow: 0 0 10px #8a2be2; }
-          }
-
-          .animate-borderGlow {
-            animation: borderGlow 2s infinite alternate;
-          }
-
-          @keyframes xGlow {
-            0% { text-shadow: 0 0 5px red, 0 0 10px red; }
-            50% { text-shadow: 0 0 10px red, 0 0 15px red; }
-            100% { text-shadow: 0 0 5px red, 0 0 10px red; }
-          }
-
-          .animate-xGlow {
-            animation: xGlow 1s infinite alternate;
-          }
-        `}
-      </style>
     </div>
   );
 };

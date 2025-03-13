@@ -16,7 +16,7 @@ const Events = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 p-10">
+    <div className="flex justify-center items-center min-h-screen bg-black p-10">
       <div className="relative w-3/4 flex gap-32 mt-80">
         {/* Left Column - Technical Events */}
         <div className="w-1/2 flex flex-col space-y-10">

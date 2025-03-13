@@ -29,7 +29,7 @@ const Sponsors = () => {
   return (
     <motion.div
       id="logo-section"
-      className="mt-[10vh] w-full h-screen flex flex-col justify-center items-center bg-gray-900 text-white"
+      className="mt-[10vh] w-full h-screen flex flex-col justify-center items-center bg-black text-white"
       variants={fadeIn}
       initial="hidden"
       animate="visible"
