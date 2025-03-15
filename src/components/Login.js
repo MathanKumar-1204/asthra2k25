@@ -187,13 +187,18 @@ function Login() {
 
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
-      <div className="min-h-screen bg-gradient-to-r from-[#e2e2e2] to-[#c9d6ff] flex items-center justify-center">
-        <div className={`container bg-white rounded-[30px] shadow-[0_5px_15px_rgba(0,0,0,0.35)] relative overflow-hidden w-[768px] max-w-full min-h-[480px] ${isActive ? 'active' : ''}`}>
+      <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden">
+        {/* Cyberpunk Grid Overlay */}
+        <div className="absolute inset-0 bg-[url('https://i.imgur.com/1i6wD5t.jpg')] bg-cover bg-center opacity-50"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
+
+        {/* Main Container */}
+        <div className={`container bg-[#0a0a0a] border border-[#00f2ff] shadow-[0px_0px_20px_rgba(0,242,255,0.8)] rounded-lg w-[780px] min-h-[500px] flex items-center justify-center overflow-hidden transition-all duration-700 ${isActive ? 'active' : ''}`}>
 
           {/* Sign In Form */}
           <div className="form-container sign-in absolute top-0 left-0 w-1/2 h-full flex items-center justify-center transition-all duration-700 z-20">
-            <form onSubmit={handleSignIn} className="bg-white flex flex-col items-center justify-center px-10 h-full">
-              <h1 className="text-2xl font-bold mb-2">Sign In</h1>
+            <form onSubmit={handleSignIn} className="flex flex-col items-center justify-center px-10 h-full">
+              <h1 className="text-2xl font-bold mb-2 neon-text">Sign In</h1>
               <GoogleLogin
                 onSuccess={handleGoogleSuccess}
                 onError={handleGoogleError}
@@ -209,7 +214,7 @@ function Login() {
                   placeholder="Email"
                   value={signInEmail}
                   onChange={(e) => setSignInEmail(e.target.value)}
-                  className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signIn.email ? 'border-red-500' : ''}`}
+                  className={`neon-input ${errors.signIn.email ? 'border-red-500' : ''}`}
                 />
                 {errors.signIn.email && <p className="text-red-500 text-xs mt-1">{errors.signIn.email}</p>}
               </div>
@@ -219,14 +224,14 @@ function Login() {
                   placeholder="Password"
                   value={signInPassword}
                   onChange={(e) => setSignInPassword(e.target.value)}
-                  className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signIn.password ? 'border-red-500' : ''}`}
+                  className={`neon-input ${errors.signIn.password ? 'border-red-500' : ''}`}
                 />
                 {errors.signIn.password && <p className="text-red-500 text-xs mt-1">{errors.signIn.password}</p>}
               </div>
               <a href="#" className="text-[13px] text-gray-800 no-underline mt-4 mb-2.5 hover:text-[#512da8] transition-colors duration-300">Forgot your password?</a>
               <button
                 type="submit"
-                className="bg-[#512da8] text-white text-xs py-2.5 px-11 border border-transparent rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-[#4527a0] active:scale-95 active:bg-[#311b92] focus:outline-none focus:ring-2 focus:ring-[#512da8] focus:ring-offset-2"
+                className="neon-button"
               >
                 Sign In
               </button>
@@ -235,8 +240,8 @@ function Login() {
 
           {/* Sign Up Form */}
           <div className="form-container sign-up absolute top-0 left-0 w-1/2 h-full flex items-center justify-center transition-all duration-700 opacity-0 z-10">
-            <form onSubmit={handleSignUp} className="bg-white flex flex-col items-center justify-center px-10 h-full">
-              <h1 className="text-2xl font-bold mb-2">Create Account</h1>
+            <form onSubmit={handleSignUp} className="flex flex-col items-center justify-center px-10 h-full">
+              <h1 className="text-2xl font-bold mb-2 neon-text">Create Account</h1>
               <GoogleLogin
                 onSuccess={handleGoogleSuccess}
                 onError={handleGoogleError}
@@ -252,7 +257,7 @@ function Login() {
                   placeholder="Name"
                   value={signUpName}
                   onChange={(e) => setSignUpName(e.target.value)}
-                  className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signUp.name ? 'border-red-500' : ''}`}
+                  className={`neon-input ${errors.signUp.name ? 'border-red-500' : ''}`}
                 />
                 {errors.signUp.name && <p className="text-red-500 text-xs mt-1">{errors.signUp.name}</p>}
               </div>
@@ -262,7 +267,7 @@ function Login() {
                   placeholder="Email"
                   value={signUpEmail}
                   onChange={(e) => setSignUpEmail(e.target.value)}
-                  className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signUp.email ? 'border-red-500' : ''}`}
+                  className={`neon-input ${errors.signUp.email ? 'border-red-500' : ''}`}
                 />
                 {errors.signUp.email && <p className="text-red-500 text-xs mt-1">{errors.signUp.email}</p>}
               </div>
@@ -272,13 +277,13 @@ function Login() {
                   placeholder="Password"
                   value={signUpPassword}
                   onChange={(e) => setSignUpPassword(e.target.value)}
-                  className={`bg-[#eee] border-2 border-transparent my-2 px-4 py-2.5 text-sm rounded-lg w-full outline-none transition-all duration-300 focus:border-[#512da8] ${errors.signUp.password ? 'border-red-500' : ''}`}
+                  className={`neon-input ${errors.signUp.password ? 'border-red-500' : ''}`}
                 />
                 {errors.signUp.password && <p className="text-red-500 text-xs mt-1">{errors.signUp.password}</p>}
               </div>
               <button
                 type="submit"
-                className="bg-[#512da8] text-white text-xs py-2.5 px-11 border border-transparent rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-[#4527a0] active:scale-95 active:bg-[#311b92] focus:outline-none focus:ring-2 focus:ring-[#512da8] focus:ring-offset-2"
+                className="neon-button"
               >
                 Sign Up
               </button>
@@ -288,24 +293,24 @@ function Login() {
           {/* Toggle Container */}
           <div className="toggle-container absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-all duration-700 z-30"
                style={isActive ? { borderRadius: "0 150px 100px 0", transform: "translateX(-100%)" } : { borderRadius: "150px 0 0 100px" }}>
-            <div className={`toggle absolute top-0 left-[-100%] w-[200%] h-full bg-gradient-to-r from-[#5c6bc0] to-[#512da8] text-white transition-all duration-700 ${isActive ? 'translate-x-1/2' : 'translate-x-0'}`}>
+            <div className={`toggle absolute top-0 left-[-100%] w-[200%] h-full bg-gradient-to-r from-[#ff00ff] to-[#00f2ff] text-white transition-all duration-700 ${isActive ? 'translate-x-1/2' : 'translate-x-0'}`}>
               <div className={`toggle-panel toggle-left absolute top-0 w-1/2 h-full flex flex-col items-center justify-center px-8 text-center transition-all duration-700 ${isActive ? 'translate-x-0' : '-translate-x-[200%]'}`}>
-                <h1 className="text-2xl font-bold mb-2">Welcome Back!</h1>
-                <p className="text-sm leading-5 tracking-wide my-5">Enter your personal details to use all site features</p>
+                <h1 className="text-2xl font-bold mb-2 neon-text">Welcome Back!</h1>
+                <p className="text-sm leading-5 tracking-wide my-5">Enter your personal details to access all features</p>
                 <button
                   type="button"
-                  className="bg-transparent border-2 border-white text-white text-xs py-2.5 px-11 rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-white hover:text-[#512da8] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#512da8]"
+                  className="neon-button-outline"
                   onClick={() => setIsActive(false)}
                 >
                   Sign In
                 </button>
               </div>
               <div className={`toggle-panel toggle-right absolute top-0 right-0 w-1/2 h-full flex flex-col items-center justify-center px-8 text-center transition-all duration-700 ${isActive ? 'translate-x-[200%]' : 'translate-x-0'}`}>
-                <h1 className="text-2xl font-bold mb-2">Hello, Friend!</h1>
-                <p className="text-sm leading-5 tracking-wide my-5">Register with your personal details to use all site features</p>
+                <h1 className="text-2xl font-bold mb-2 neon-text">Hello, Friend!</h1>
+                <p className="text-sm leading-5 tracking-wide my-5">Register with your personal details to access all features</p>
                 <button
                   type="button"
-                  className="bg-transparent border-2 border-white text-white text-xs py-2.5 px-11 rounded-lg font-semibold tracking-wider uppercase mt-2.5 cursor-pointer transition-all duration-300 hover:bg-white hover:text-[#512da8] active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#512da8]"
+                  className="neon-button-outline"
                   onClick={() => setIsActive(true)}
                 >
                   Sign Up
@@ -315,8 +320,196 @@ function Login() {
           </div>
         </div>
       </div>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: #080808;
+  overflow: hidden;
+  color: #00f2ff;
+}
+
+.container {
+  background: linear-gradient(135deg, #0a0a0a, #111, #1a1a1a);
+  border: 2px solid #00f2ff;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+  width: 780px;
+  max-width: 100%;
+  min-height: 500px;
+  transition: 0.5s ease-in-out;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+  background: linear-gradient(to right, #ff00ff, #00f2ff);
+  height: 100%;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+  box-shadow: 0px 0px 25px rgba(255, 0, 255, 0.6);
+}
+
+.container.active .toggle {
+  transform: translateX(50%);
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+  transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+  transform: translateX(0);
+}
+
+.toggle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.active .toggle-right {
+  transform: translateX(200%);
+}
+
+.neon-text {
+  color: #00f2ff;
+  text-shadow: 0px 0px 10px #00f2ff, 0px 0px 20px #00f2ff, 0px 0px 30px #00f2ff;
+}
+
+.neon-input {
+  background: #111;
+  border: 2px solid transparent;
+  padding: 12px;
+  color: #00f2ff;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.neon-input:focus {
+  border-color: #ff00ff;
+  box-shadow: 0px 0px 10px #ff00ff, 0px 0px 20px #ff00ff;
+}
+
+.neon-button {
+  background: linear-gradient(90deg, #ff00ff, #00f2ff);
+  padding: 12px 30px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.neon-button:hover {
+  box-shadow: 0px 0px 15px #ff00ff, 0px 0px 30px #ff00ff;
+  transform: scale(1.05);
+}
+
+.neon-button-outline {
+  background: transparent;
+  border: 2px solid #00f2ff;
+  color: #00f2ff;
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.neon-button-outline:hover {
+  background: #00f2ff;
+  color: black;
+  box-shadow: 0px 0px 15px #00f2ff, 0px 0px 30px #00f2ff;
+}
+`}</style>
     </GoogleOAuthProvider>
   );
 }
 
 export default Login;
+  
