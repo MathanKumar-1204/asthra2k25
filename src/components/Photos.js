@@ -9,7 +9,7 @@ const Photos = ({ logoImage, members }) => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-900 text-white">
+    <div className="flex justify-center items-center  text-white">
       <div className="relative w-[800px] h-[800px] flex justify-center pt-12">
         <div
           className="absolute w-[200px] h-[200px] rounded-full bg-gray-800 shadow-lg cursor-pointer flex justify-center items-center overflow-hidden z-10 top-20 left-1/2 transform -translate-x-1/2 border-2 border-gray-700 hover:shadow-xl"

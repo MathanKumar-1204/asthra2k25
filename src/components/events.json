@@ -204,28 +204,8 @@
         "Dana": "./assets/logo128.png",
         "Eli": "./assets/logo128.png"
       }
-    },
-    "Treasure2025": {
-      "name": "Treasure Hunt 2025",
-      "type": "Non-Tech",
-      "poster": "https://marketplace.canva.com/EAFvdeUeF4M/1/0/1131w/canva-mystery-treasure-hunt-poster-3J_WsmYaej4.jpg",
-      "rules": [
-        "Teams of 4 members.",
-        "Each clue leads to the next location.",
-        "No use of mobile phones or internet for help.",
-        "Time limit: 2 hours.",
-        "Winning team must find all clues and reach the final destination first."
-      ],
-      "logo": "./assets/logo128.png",
-
-      "teamMembers": "Teams of 4 members.",
-      "slot": "March 22, 2025 - 10:00 AM to 12:00 PM",
-      "members": {
-        "Finn": "./assets/logo128.png",
-        "Gina": "./assets/logo128.png",
-        "Hank": "./assets/logo128.png",
-        "Ivy": "./assets/1279247.png"
-      }
     }
+    
+    
   }
 }

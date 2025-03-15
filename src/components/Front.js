@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Login from "./Login";
 import * as THREE from "three";
 import GLOBE from "vanta/dist/vanta.globe.min";
-
+import GlitchText from './Glitch';
 const Front = () => {
   const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
@@ -84,8 +84,7 @@ const Front = () => {
       className="h-screen bg-black flex flex-col items-center relative p-6 overflow-y-scroll overflow-x-hidden text-gray-100 font-sans"
     >
       <div className="absolute top-6 left-6 bg-gray-600 shadow-xl rounded-full w-24 h-24 flex items-center justify-center text-lg font-extrabold text-black border-4 border-gray-500 transform hover:scale-110 transition duration-300">
-        LOGO
-        {userInfo && ` - ${userInfo.name}`}
+        {userInfo && `${userInfo.name}`}
       </div>
 
       <div className="absolute top-6 right-6 flex space-x-4">
@@ -122,12 +121,17 @@ const Front = () => {
         </button>
       </div>
 
-      <div className="mt-24 bg-gray-600 px-16 py-10 rounded-2xl shadow-2xl text-center text-4xl font-extrabold text-black border-4 border-gray-600 animate-spin-slow ">
-        ASTHRA
-      </div>
+      <GlitchText
+  speed={1}
+  enableShadows={true}
+  enableOnHover={false}
+  className='custom-class'
+>
+ASTHRA
+</GlitchText>
 
       <div className="mt-12 text-yellow-400 text-2xl font-extrabold tracking-widest drop-shadow-lg animate-pulse">
-        CAPTION
+        19TH NATIONAL LEVEL TECHNICAL SYMPOSIUM
       </div>
 
       {showLogin && (

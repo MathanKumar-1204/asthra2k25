@@ -1,0 +1,78 @@
+body {
+  background-color: #121212;
+  color: #00FFFF;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.neon-text {
+  text-shadow:
+  0 0 5px #00FFFF,
+  0 0 10px #00FFFF,
+  0 0 20px #00FFFF,
+  0 0 40px #0FF,
+  0 0 80px #0FF,
+  0 0 100px #0FF;
+  color: #1a3636; /* Ensure the text color matches the neon effect */
+  font-weight: bold; /* Make the text bold for better visibility */
+  font-size: 1.5rem; /* Adjust the font size as needed */
+}
+
+.event-card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.event-card {
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #00FFFF;
+  box-shadow: 0 0 20px #00FFFF;
+}
+
+.event-card.reversed {
+  flex-direction: row-reverse;
+}
+
+.event-box, .team-box {
+  width: 160px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.event-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.event-name, .team-name {
+  color: #00FFFF;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+
+.member-tag {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}

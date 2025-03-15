@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IoCloseCircle } from "react-icons/io5";
 
 const API_URL = "https://api.sheetbest.com/sheets/b0b06cc5-a1ef-41ee-b7c0-a123d92d771e";
+const EMAIL_API_URL = "http://localhost:5000/send-confirmation"; // Update with your Flask backend URL
 
 const Reg = ({ eventName, onClose }) => {
   const [formData, setFormData] = useState({
@@ -87,8 +88,25 @@ const Reg = ({ eventName, onClose }) => {
 
       console.log("Registration successful!");
       setIsSubmitted(true);
+
+      // Send email confirmation
+      await fetch(EMAIL_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: userInfo.email,
+          teamName: formData.teamName,
+          teamLead: formData.teamLead,
+          teamMembers: formData.teamMembers,
+          contact: formData.contact,
+          college: formData.college,
+          eventName: eventName,
+        }),
+      });
+
+      console.log("Email confirmation sent!");
     } catch (error) {
-      console.error("Error storing data:", error);
+      console.error("Error storing data or sending email:", error);
     }
   };
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
-
+import Location from "./Location";
 const faqs = [
   { question: "What is the date of the symposium?", answer: "The symposium will be held on April 12th, 2025." },
   { question: "Where is the venue for the symposium?", answer: "The symposium will take place at the Meenakshi Sundararajan Engineering College, Autonomous Institute." },
@@ -110,6 +110,9 @@ const Footer = () => {
           }
         `}
       </style>
+      <div className="w-full flex justify-center mt-16">
+      <Location  />
+      </div>
       <p className="text-xl font-semibold tracking-wide">&copy; 2025 ASTHRA. All rights reserved.</p>
       <div className="flex items-center mt-6 space-x-3">
         <FaInstagram className="text-pink-500 text-4xl hover:scale-110 transition-transform duration-300" />

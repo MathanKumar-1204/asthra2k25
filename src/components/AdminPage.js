@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import jsPDF from 'jspdf';
 
 const AdminPage = () => {
-  const [searchId, setSearchId] = useState("");
-  const [searchEvent, setSearchEvent] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [eventData, setEventData] = useState({});
+  const [filteredData, setFilteredData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +20,7 @@ const AdminPage = () => {
             return acc;
           }, {});
           setEventData(organizedData);
+          setFilteredData(organizedData); // Initialize filtered data with all data
         } else {
           console.error('Failed to fetch data');
         }
@@ -30,6 +31,25 @@ const AdminPage = () => {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    // Filter data based on search query
+    const filtered = Object.keys(eventData).reduce((acc, eventName) => {
+      const filteredEntries = eventData[eventName].filter(entry =>
+        entry.teamName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        entry.teamLead.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        entry.contact.includes(searchQuery) ||
+        entry.college.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        eventName.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      if (filteredEntries.length > 0) {
+        acc[eventName] = filteredEntries;
+      }
+      return acc;
+    }, {});
+
+    setFilteredData(filtered);
+  }, [searchQuery, eventData]);
 
   const downloadCSV = (data, eventName) => {
     const csvContent = [
@@ -72,7 +92,7 @@ const AdminPage = () => {
   };
 
   const downloadAllData = (format) => {
-    const allEventsData = Object.entries(eventData);
+    const allEventsData = Object.entries(filteredData);
 
     if (format === 'csv') {
       let csvContent = "EVENT NAME,TEAM NAME,TEAM LEAD,TEAM MEMBERS,CONTACT,COLLEGE,EMAIL\n";
@@ -132,27 +152,14 @@ const AdminPage = () => {
         <div className="flex flex-col items-center gap-4 mb-4 mt-5">
           <input
             type="text"
-            placeholder="Phone Number"
+            placeholder="Search by Phone Number, Team Name, or Event Name"
             className="w-96 p-3 rounded-lg text-black bg-white bg-opacity-90 outline-none shadow-lg placeholder-gray-600 focus:ring-2 focus:ring-blue-400"
-            value={searchId}
-            onChange={(e) => setSearchId(e.target.value)}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
-
-          <input
-            type="text"
-            placeholder="Event Name"
-            className="w-72 p-3 rounded-lg text-black bg-white bg-opacity-90 outline-none shadow-lg placeholder-gray-600 focus:ring-2 focus:ring-blue-400"
-            value={searchEvent}
-            onChange={(e) => setSearchEvent(e.target.value)}
-          />
-
-          <button
-            className="w-40 bg-gradient-to-r from-green-500 to-yellow-600 text-white font-bold px-4 py-3 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:from-green-700 hover:to-yellow-800">
-            Search
-          </button>
         </div>
 
-        {Object.keys(eventData).map((eventName, idx) => (
+        {Object.keys(filteredData).map((eventName, idx) => (
           <div key={idx} className="bg-white bg-opacity-30 p-5 rounded-lg mt-6 shadow-lg overflow-x-auto w-full">
             <h2 className="text-xl font-bold text-white mb-4">{eventName}</h2>
             <table className="w-full text-black text-sm md:text-base font-semibold border-collapse border border-white">
@@ -167,7 +174,7 @@ const AdminPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {eventData[eventName].map((entry, index) => (
+                {filteredData[eventName].map((entry, index) => (
                   <tr key={index} className="border-b border-gray-400 hover:bg-white hover:bg-opacity-40 transition">
                     <td className="py-3 px-4 border border-white">{entry.teamName}</td>
                     <td className="py-3 px-4 border border-white">{entry.teamLead}</td>
@@ -182,13 +189,13 @@ const AdminPage = () => {
             <div className="flex justify-center gap-4 mt-4">
               <button
                 className="bg-blue-500 text-white px-4 py-2 rounded"
-                onClick={() => downloadCSV(eventData[eventName], eventName)}
+                onClick={() => downloadCSV(filteredData[eventName], eventName)}
               >
                 Download CSV
               </button>
               <button
                 className="bg-red-500 text-white px-4 py-2 rounded"
-                onClick={() => downloadPDF(eventData[eventName], eventName)}
+                onClick={() => downloadPDF(filteredData[eventName], eventName)}
               >
                 Download PDF
               </button>

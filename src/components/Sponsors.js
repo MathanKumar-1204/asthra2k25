@@ -29,13 +29,19 @@ const Sponsors = () => {
   return (
     <motion.div
       id="logo-section"
-      className="mt-[10vh] w-full h-screen flex flex-col justify-center items-center bg-black text-white"
+      className="w-full h-screen flex flex-col justify-center items-start bg-black text-white pl-20" // Adjusted alignment
       variants={fadeIn}
       initial="hidden"
       animate="visible"
     >
+      {/* Title */}
+      <h2 className="text-4xl font-bold flex flex-col justify-center text-[#00FFFF] mb-10 neon-text tracking-wider">
+        Our Sponsors
+      </h2>
+
+      {/* Sponsor Grid */}
       <motion.div
-        className="grid grid-cols-3 gap-8 mt-4"
+        className="grid grid-cols-3 gap-12 p-6 justify-start" // Align items to the left
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
@@ -43,12 +49,17 @@ const Sponsors = () => {
         {sponsors.map((sponsor) => (
           <motion.div
             key={sponsor.id}
-            className="bg-white p-4 rounded-lg shadow-lg flex items-center justify-center w-48 h-48"
-            whileHover={{ scale: 1.1 }}
+            className="p-6 rounded-xl border-2 border-[#00FFFF] bg-[#111] shadow-lg shadow-[#00FFFF] flex items-center justify-start w-48 h-48 
+                      transition-all duration-300 ease-in-out hover:shadow-cyan-500 hover:scale-105"
+            whileHover={{ scale: 1.1, boxShadow: "0px 0px 20px #00FFFF" }}
             whileTap={{ scale: 0.95 }}
             variants={fadeIn}
           >
-            <img src={sponsor.image} alt={sponsor.name} className="w-full h-full object-contain" />
+            <img
+              src={sponsor.image}
+              alt={sponsor.name}
+              className="w-full h-full object-contain"
+            />
           </motion.div>
         ))}
       </motion.div>
