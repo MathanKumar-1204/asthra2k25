@@ -111,7 +111,7 @@ const Reg = ({ eventName, onClose }) => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-black via-purple-900 to-blue-900">
+    <div className="flex items-center justify-center  bg-gradient-to-r from-black via-purple-900 to-blue-900">
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0, scale: 0.5, y: -100 }}

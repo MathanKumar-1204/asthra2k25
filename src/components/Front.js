@@ -125,9 +125,9 @@ const Front = () => {
   speed={1}
   enableShadows={true}
   enableOnHover={false}
-  className='custom-class'
+  className='custom-class '
 >
-ASTHRA
+ASTHRA2K25
 </GlitchText>
 
       <div className="mt-12 text-yellow-400 text-2xl font-extrabold tracking-widest drop-shadow-lg animate-pulse">

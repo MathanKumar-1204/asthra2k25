@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import RegisteredEvents from "./components/RegisteredEvents";
 import EventsPage from "./components/EventsPage";
 import Reg from "./components/Reg";
+
 function App() {
   return (
     <Router>
