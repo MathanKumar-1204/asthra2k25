@@ -124,8 +124,8 @@ const Front = () => {
       <GlitchText
   speed={1}
   enableShadows={true}
-  enableOnHover={false}
-  className='custom-class '
+  enableOnHover={true}
+  className='custom-class text-green-300 '
 >
 ASTHRA2K25
 </GlitchText>

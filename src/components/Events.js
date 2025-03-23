@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import CountdownClock from "./Clock";
 import events from "./events.json";
 import "./event.css";
 
@@ -20,9 +21,14 @@ const Events = () => {
   const nonTechEvents = Object.entries(events.NonTechEvents);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-black p-10">
-      <div className="relative w-full flex gap-28 mt-20"> {/* Increased space between columns */}
+    <div className="flex flex-col items-center min-h-screen bg-black p-10">
+      {/* Countdown Clock Section */}
+      <div className="w-full pt-10">
+        <CountdownClock />
+      </div>
 
+      {/* Events Section */}
+      <div className="relative w-full flex gap-28"> 
         {/* Left Column - Technical Events */}
         <div className="w-1/2 flex flex-col space-y-10">
           <h2 className="text-3xl font-bold text-[#00FFFF] text-center mb-8 neon-text">
@@ -45,15 +51,15 @@ const Events = () => {
           ))}
         </div>
 
-        {/* Right Column - Non-Technical Events (Inserted Between Tech Events) */}
-        <div className="w-1/2  flex flex-col space-y-10 mt-16" > {/* Adjusted spacing */}
+        {/* Right Column - Non-Technical Events */}
+        <div className="w-1/2 flex flex-col space-y-10 mt-16">
           <h2 className="text-3xl font-bold text-[#FFD700] text-center mb-8 neon-text">
             Non-Technical Events
           </h2>
           {nonTechEvents.map(([eventId, event], index) => (
             <motion.div
               key={eventId}
-              className="bg-gray-700 border border-yellow-500  text-white p-6 rounded-lg shadow-lg shadow-yellow-500 w-3/4 h-36 cursor-pointer flex items-center justify-center text-xl font-semibold hover:bg-gray-600 transition-colors"
+              className="bg-gray-700 border border-yellow-500 text-white p-6 rounded-lg shadow-lg shadow-yellow-500 w-3/4 h-36 cursor-pointer flex items-center justify-center text-xl font-semibold hover:bg-gray-600 transition-colors"
               variants={fadeInVariant("right")}
               initial="hidden"
               animate="visible"
@@ -61,13 +67,12 @@ const Events = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleEventClick(eventId)}
-              style={{ marginLeft: "10rem",marginTop: "3rem" }}
+              style={{ marginLeft: "10rem", marginTop: "3rem" }}
             >
               {event.name}
             </motion.div>
           ))}
         </div>
-
       </div>
     </div>
   );

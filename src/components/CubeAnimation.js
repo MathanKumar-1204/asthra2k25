@@ -44,8 +44,8 @@ const CubeAnimation = ({ currentSection }) => {
     const textureLoader = new THREE.TextureLoader();
     const materials = [
       new THREE.MeshBasicMaterial({ map: textureLoader.load("/texture1.jpg") }),
-      new THREE.MeshBasicMaterial({ map: textureLoader.load("/ASTHRA.png") }),
-      new THREE.MeshBasicMaterial({ map: textureLoader.load("/ASTHRA (1).png") }),
+      new THREE.MeshBasicMaterial({ map: textureLoader.load("/assets/logo.jpeg") }),
+      new THREE.MeshBasicMaterial({ map: textureLoader.load("/assets/events.jpeg") }),
       new THREE.MeshBasicMaterial({ map: textureLoader.load("/texture4.jpg") }),
       new THREE.MeshBasicMaterial({ map: textureLoader.load("/ASTHRA (2).png") }),
       new THREE.MeshBasicMaterial({ map: textureLoader.load("/texture6.jpg") }),
