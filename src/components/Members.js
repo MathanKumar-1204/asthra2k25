@@ -36,7 +36,7 @@ return (
       <div className="absolute top-0 left-0 w-full flex justify-center z-10">
         <TrueFocus
           sentence="SYMPO ORGANISERS"
-          manualMode={true}
+          manualMode={false}
           blurAmount={5}
           borderColor="red"
           animationDuration={2}

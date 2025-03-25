@@ -29,19 +29,19 @@ const Sponsors = () => {
   return (
     <motion.div
       id="logo-section"
-      className="w-full h-screen flex flex-col justify-center items-start bg-black text-white pl-20" // Adjusted alignment
+      className="w-full min-h-screen flex flex-col justify-center items-start bg-black text-white pl-8 md:pl-20"
       variants={fadeIn}
       initial="hidden"
       animate="visible"
     >
       {/* Title */}
-      <h2 className="text-4xl font-bold flex flex-col justify-center text-[#00FFFF] mb-10 neon-text tracking-wider">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#00FFFF] mb-10 tracking-wider">
         Our Sponsors
       </h2>
 
       {/* Sponsor Grid */}
       <motion.div
-        className="grid grid-cols-3 gap-12 p-6 justify-start" // Align items to the left
+        className="grid grid-cols-2 md:grid-cols-3 gap-8 p-4 md:p-6"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
@@ -49,8 +49,7 @@ const Sponsors = () => {
         {sponsors.map((sponsor) => (
           <motion.div
             key={sponsor.id}
-            className="p-6 rounded-xl border-2 border-[#00FFFF] bg-[#111] shadow-lg shadow-[#00FFFF] flex items-center justify-start w-48 h-48 
-                      transition-all duration-300 ease-in-out hover:shadow-cyan-500 hover:scale-105"
+            className="p-4 md:p-6 rounded-xl border-2 border-[#00FFFF] bg-[#111] shadow-lg shadow-[#00FFFF] flex items-center justify-center w-40 h-40 md:w-48 md:h-48 transition-transform duration-300 ease-in-out hover:scale-105"
             whileHover={{ scale: 1.1, boxShadow: "0px 0px 20px #00FFFF" }}
             whileTap={{ scale: 0.95 }}
             variants={fadeIn}
