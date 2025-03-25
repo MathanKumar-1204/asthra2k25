@@ -1,14 +1,22 @@
 import React from "react";
 import SplitText from "./SplitText";
+import ClickSpark from './ClickSpark';
 
 const Sympo = () => {
-  return (
+  return (<ClickSpark
+    sparkColor='#fff'
+    sparkSize={10}
+    sparkRadius={15}
+    sparkCount={8}
+    duration={400}
+  >
     <div className="w-full min-h-screen bg-black text-white flex flex-col items-center py-10 font-mono px-4">
+      <div className="text-2xl font-bold text-cyan-400 neon-text md:text-3xl"> <h2>ABOUT US</h2></div>
       {/* Main Section */}
       <div className="w-full flex flex-col items-center md:items-start md:w-4/5 md:mr-10">
         {/* Symposium Details */}
         <div className="w-full p-6 neon-border-glow text-white rounded-lg shadow-lg backdrop-blur-md mb-8">
-          <h2 className="text-2xl font-bold text-cyan-400 neon-text md:text-3xl">Symposium 2025</h2>
+          <h2 className="text-2xl font-bold text-cyan-400 neon-text md:text-3xl">Asthra2K25</h2>
           <SplitText
             text="Asthra is a national level technical symposium held annually in our college. It is wholly organised and co-ordinated by our students and supported by the management and staff of Information Technology. Asthra is a stepping stone for students to showcase their technical expertise and talent on a grand stage."
             className="text-lg text-gray-300 text-left"
@@ -50,7 +58,15 @@ const Sympo = () => {
           />
         </div>
       </div>
-    </div>
+    </div><style>{`@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;}
+`}
+  </style></ClickSpark>
   );
 };
 

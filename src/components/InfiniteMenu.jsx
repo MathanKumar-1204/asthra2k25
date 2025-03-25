@@ -926,50 +926,37 @@ export default function InfiniteMenu({ items = [] }) {
 
       {activeItem && (
         <>
-          {/* Title */}
-          <h2
-            className={`
-          select-none
-          absolute
-          font-white
-          text-white
-          [font-size:4rem]
-          left-[1.6em]
-          top-1/2
-          transform
-          translate-x-[20%]
-          -translate-y-1/2
-          transition-all
-          ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
-          ${isMoving
-                ? 'opacity-0 pointer-events-none duration-[100ms]'
-                : 'opacity-100 pointer-events-auto duration-[500ms]'
-              }
-        `}
-          >
-            {activeItem.title}
-          </h2>
-
-          {/* Description */}
-          <p
-            className={`
-          select-none
-          absolute
-          max-w-[10ch]
-          text-[1.5rem]
-          text-white
-          top-1/2
-          right-[1%]
-          transition-all
-          ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
-          ${isMoving
-                ? 'opacity-0 pointer-events-none duration-[100ms] translate-x-[-60%] -translate-y-1/2'
-                : 'opacity-100 pointer-events-auto duration-[500ms] translate-x-[-90%] -translate-y-1/2'
-              }
-        `}
-          >
-            {activeItem.description}
-          </p>
+          {/* Content Container - Shared for both Mobile and Desktop */}
+          <div className="absolute inset-x-0 bottom-0 flex flex-col items-center pb-20 pt-8 bg-gradient-to-t from-black via-black/80 to-transparent">
+            <h2 className={`
+              text-3xl
+              md:text-5xl
+              lg:text-7xl
+              font-bold
+              text-white
+              text-center
+              mb-2
+              px-4
+              transition-all
+              duration-500
+              ${isMoving ? 'opacity-0' : 'opacity-100'}
+            `}>
+              {activeItem.title}
+            </h2>
+            <p className={`
+              text-lg
+              md:text-2xl
+              lg:text-3xl
+              text-white
+              text-center
+              mb-8
+              transition-all
+              duration-500
+              ${isMoving ? 'opacity-0' : 'opacity-100'}
+            `}>
+              {activeItem.description}
+            </p>
+          </div>
 
           {/* Action Button */}
           <div
@@ -978,24 +965,29 @@ export default function InfiniteMenu({ items = [] }) {
           absolute
           left-1/2
           z-10
-          w-[60px]
-          h-[60px]
+          w-[50px]
+          h-[50px]
+          md:w-[60px]
+          md:h-[60px]
           grid
           place-items-center
           bg-[#00ffff]
-          border-[5px]
+          border-[4px]
+          md:border-[5px]
           border-black
           rounded-full
           cursor-pointer
+          hover:scale-110
           transition-all
+          duration-300
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
           ${isMoving
-                ? 'bottom-[-80px] opacity-0 pointer-events-none duration-[100ms] scale-0 -translate-x-1/2'
-                : 'bottom-[3.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2'
+                ? 'bottom-[-80px] opacity-0 pointer-events-none scale-0 -translate-x-1/2'
+                : 'bottom-6 md:bottom-8 opacity-100 pointer-events-auto scale-100 -translate-x-1/2'
               }
         `}
           >
-            <p className="select-none relative text-[#e3dbdb] top-[2px] text-[26px]">
+            <p className="select-none relative text-[#e3dbdb] top-[2px] text-[20px] md:text-[26px]">
               &#x2197;
             </p>
           </div>

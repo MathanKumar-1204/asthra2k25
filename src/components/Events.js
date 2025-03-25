@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CountdownClock from "./Clock";
 import events from "./events.json";
 import "./event.css";
+import TiltedCard from './TiltedCard';
 
 const fadeInVariant = (direction) => ({
   hidden: { opacity: 0, x: direction === "left" ? -100 : 100 },
@@ -37,7 +38,6 @@ const Events = () => {
           {techEvents.map(([eventId, event], index) => (
             <motion.div
               key={eventId}
-              className="bg-gray-800 border border-[#00FFFF] text-white p-6 rounded-lg shadow-lg shadow-[#00FFFF] w-full md:w-3/4 h-36 cursor-pointer flex items-center justify-center text-xl font-semibold hover:bg-gray-700 transition-colors mx-auto"
               variants={fadeInVariant("left")}
               initial="hidden"
               animate="visible"
@@ -45,8 +45,27 @@ const Events = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleEventClick(eventId)}
+              className="cursor-pointer"
             >
-              {event.name}
+              <TiltedCard
+                imageSrc={event.logo}
+                altText={event.name}
+                captionText={event.name}
+                containerHeight="300px"
+                containerWidth="300px"
+                imageHeight="300px"
+                imageWidth="300px"
+                rotateAmplitude={12}
+                scaleOnHover={1.2}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+                overlayContent={
+                  <p className="tilted-card-demo-text">
+                    {event.description || event.name}
+                  </p>
+                }
+              />
             </motion.div>
           ))}
         </div>
@@ -59,7 +78,6 @@ const Events = () => {
           {nonTechEvents.map(([eventId, event], index) => (
             <motion.div
               key={eventId}
-              className="bg-gray-700 border border-yellow-500 text-white p-6 rounded-lg shadow-lg shadow-yellow-500 w-full md:w-3/4 h-36 cursor-pointer flex items-center justify-center text-xl font-semibold hover:bg-gray-600 transition-colors mx-auto"
               variants={fadeInVariant("right")}
               initial="hidden"
               animate="visible"
@@ -67,8 +85,27 @@ const Events = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleEventClick(eventId)}
+              className="cursor-pointer"
             >
-              {event.name}
+              <TiltedCard
+                imageSrc={event.logo}
+                altText={event.name}
+                captionText={event.name}
+                containerHeight="300px"
+                containerWidth="300px"
+                imageHeight="300px"
+                imageWidth="300px"
+                rotateAmplitude={12}
+                scaleOnHover={1.2}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+                overlayContent={
+                  <p className="tilted-card-demo-text h-4">
+                    {event.description || event.name}
+                  </p>
+                }
+              />
             </motion.div>
           ))}
         </div>

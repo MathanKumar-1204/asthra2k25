@@ -6,6 +6,8 @@ import Events from "./Events";
 import Sponsors from "./Sponsors";
 import Members from "./Members";
 import Footer from "./Footer";
+import ClickSpark from './ClickSpark';
+
 
 const Main = () => {
   console.log("Rendering Main component");
@@ -54,6 +56,7 @@ const Main = () => {
 
   if (isLoading) {
     return (
+      
       <div className="flex items-center justify-center min-h-screen bg-black ">
         <div className="terminal-loader relative overflow-hidden bg-black text-green-500 font-mono text-base p-4 w-32 shadow-lg rounded-md border border-gray-700 box-border">
           <div className="terminal-header absolute top-0 left-0 right-0 h-6 bg-gray-800 rounded-t-md p-1 box-border">
@@ -99,6 +102,7 @@ const Main = () => {
   }
 
   return (
+    
     <div className="relative bg-black flex flex-col">
       <div className="top-0 sticky z-10">
         <Front />

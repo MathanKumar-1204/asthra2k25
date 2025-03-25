@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 import Location from "./Location";
 
 const faqs = [
-  { question: "What is the date of the symposium?", answer: "The symposium will be held on April 12th, 2025." },
+  { question: "What is the date of the symposium?", answer: "The symposium will be held on April 17th, 2025." },
   { question: "Where is the venue for the symposium?", answer: "The symposium will take place at the Meenakshi Sundararajan Engineering College, Autonomous Institute." },
   { question: "How can I register for the symposium?", answer: "You can register online through our official symposium website." }
 ];
@@ -44,7 +44,7 @@ const Footer = () => {
 
       {/* 🔹 Flip Cards Section */}
       <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {["Event Details", "Keynote Speakers", "Workshops"].map((title, index) => (
+        {["Event Date", "100 % free!", "Lunch on us"].map((title, index) => (
           <div key={index} className="flip-container">
             <div className="flip-card">
               {/* Front Side */}
@@ -55,10 +55,10 @@ const Footer = () => {
               <div className="flip-card-back">
                 <p className="text-[#FF00FF] text-lg">
                   {index === 0
-                    ? "The symposium is scheduled for April 12th, 2025."
+                    ? "The symposium is scheduled for April 17th, 2025."
                     : index === 1
-                    ? "Eminent speakers from industry and academia will be present."
-                    : "Hands-on workshops covering AI, Blockchain, and more."}
+                    ? "Free registration for all events."
+                    : "No need to bring your wallet—just your appetite!."}
                 </p>
               </div>
             </div>
@@ -125,8 +125,8 @@ const Footer = () => {
       {/* 🔹 Instagram Link */}
       <div className="flex items-center mt-6 space-x-3">
         <FaInstagram className="text-[#FF00FF] text-4xl hover:scale-110 transition-transform duration-300 hover:text-[#00FFFF]" />
-        <a href="https://instagram.com/asthra2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300 neon-text">
-          @asthra2k25
+        <a href="https://instagram.com/_incognito_2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300 neon-text">
+          @_incognito_2k25
         </a>
       </div>
     </div>

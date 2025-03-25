@@ -111,32 +111,32 @@ const Reg = ({ eventName, onClose }) => {
   };
 
   return (
-    <div className="flex items-center justify-center  bg-gradient-to-r from-black via-purple-900 to-blue-900">
+    <div className="flex items-center justify-center bg-gradient-to-r from-black via-purple-950 to-blue-950">
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0, scale: 0.5, y: -100 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.5, y: -50 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative bg-white/10 backdrop-blur-lg shadow-xl p-8 rounded-2xl w-full max-w-md border-2 border-purple-500 animate-borderGlow transition-opacity duration-500"
+          className="relative bg-black/80 backdrop-blur-lg shadow-xl p-8 rounded-2xl w-full max-w-md border-2 border-cyan-400 animate-borderGlow transition-opacity duration-500"
         >
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 text-white text-xl font-bold hover:text-red-500 transition-all duration-300 border border-transparent hover:border-red-500 p-2 rounded-full shadow-md hover:shadow-red-500 animate-xGlow"
+            className="absolute top-3 right-3 text-cyan-400 text-3xl font-bold hover:text-red-500 transition-all duration-300 border border-transparent hover:border-red-500 p-3 rounded-full shadow-md hover:shadow-red-500 animate-xGlow"
           >
-            ✖
+            <IoCloseCircle />
           </button>
 
-          <h2 className="text-3xl font-bold text-white text-center mb-6 animate-textGlow">
+          <h2 className="text-3xl font-bold text-cyan-400 text-center mb-6 animate-textGlow">
             Team Registration for {eventName} 🏆
           </h2>
 
           {isLoading ? (
-            <p className="text-center text-white">Loading...</p>
+            <p className="text-center text-cyan-400">Loading...</p>
           ) : isSubmitted ? (
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-white mb-4 animate-textGlow">🎉 Registration Successful! 🎉</h2>
-              <p className="text-white">Thank you for registering. We will contact you soon!</p>
+              <h2 className="text-2xl font-bold text-cyan-400 mb-4 animate-textGlow">🎉 Registration Successful! 🎉</h2>
+              <p className="text-cyan-400">Thank you for registering. We will contact you soon!</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -147,7 +147,7 @@ const Reg = ({ eventName, onClose }) => {
                 value={formData.teamName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-black/40 text-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
               />
               <input
                 type="text"
@@ -156,7 +156,7 @@ const Reg = ({ eventName, onClose }) => {
                 value={formData.teamLead}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-black/40 text-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
               />
               <input
                 type="text"
@@ -165,7 +165,7 @@ const Reg = ({ eventName, onClose }) => {
                 value={formData.teamMembers}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-black/40 text-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
               />
               <input
                 type="number"
@@ -174,7 +174,7 @@ const Reg = ({ eventName, onClose }) => {
                 value={formData.contact}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-black/40 text-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
               />
               <input
                 type="text"
@@ -183,11 +183,11 @@ const Reg = ({ eventName, onClose }) => {
                 value={formData.college}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-black/40 text-white border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-300 outline-none"
+                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
               />
               <button
                 type="submit"
-                className="w-full bg-purple-1000 text-white font-semibold py-2 rounded-lg mt-4 hover:bg-purple-900 transition-all duration-300 relative overflow-hidden shadow-lg hover:shadow-purple-500"
+                className="w-full bg-cyan-400 text-black font-semibold py-2 rounded-lg mt-4 hover:bg-red-500 transition-all duration-300 relative overflow-hidden shadow-lg hover:shadow-red-500"
               >
                 <ShinyText>Register Now</ShinyText>
               </button>
