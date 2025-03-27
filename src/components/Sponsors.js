@@ -41,7 +41,7 @@ const Sponsors = () => {
 
       {/* Sponsor Grid */}
       <motion.div
-        className="grid grid-cols-2 md:grid-cols-3 gap-8 p-4 md:p-6"
+        className="grid grid-cols-2 md:grid-cols-3 gap-6 p-4 md:p-6"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
@@ -49,7 +49,7 @@ const Sponsors = () => {
         {sponsors.map((sponsor) => (
           <motion.div
             key={sponsor.id}
-            className="p-4 md:p-6 rounded-xl border-2 border-[#00FFFF] bg-[#111] shadow-lg shadow-[#00FFFF] flex items-center justify-center w-40 h-40 md:w-48 md:h-48 transition-transform duration-300 ease-in-out hover:scale-105"
+            className="p-4 md:p-6 rounded-xl border-2 border-[#00FFFF] bg-[#111] shadow-lg shadow-[#00FFFF] flex items-center justify-center w-full h-40 md:w-48 md:h-48 transition-transform duration-300 ease-in-out hover:scale-105"
             whileHover={{ scale: 1.1, boxShadow: "0px 0px 20px #00FFFF" }}
             whileTap={{ scale: 0.95 }}
             variants={fadeIn}
