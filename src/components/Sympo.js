@@ -23,7 +23,7 @@ const Sympo = () => {
             <h2 className="text-lg md:text-2xl font-bold text-cyan-400 neon-text">Asthra2K25</h2>
             <SplitText
               text="Asthra is a national level technical symposium held annually in our college. It is wholly organised and co-ordinated by our students and supported by the management and staff of Information Technology. Asthra is a stepping stone for students to showcase their technical expertise and talent on a grand stage."
-              className="text-base md:text-lg text-gray-300 text-left"
+              className="text-sm md:text-lg text-gray-300 text-left"
               delay={10}
               animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
               animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
@@ -52,7 +52,7 @@ const Sympo = () => {
             <h3 className="text-lg md:text-xl font-semibold text-pink-400 neon-text">Meenakshi Sundararajan Engineering College</h3>
             <SplitText
               text="Meenakshi Sundararajan Engineering College (MSEC), founded by the IIET Society in 2001, is part of the KRS Group of Institutions. Known for quality education and discipline, the KRS Campus also includes IIET (est. 1947), Meenakshi College for Women, and Meenakshi Sundararajan School of Management."
-              className="text-base md:text-lg text-gray-300 text-left"
+              className="text-sm md:text-lg text-gray-300 text-left"
               delay={10}
               animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
               animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
