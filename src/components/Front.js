@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "./Login";
 import * as THREE from "three";
-import GLOBE from "vanta/dist/vanta.globe.min";
+import RINGS from "vanta/dist/vanta.rings.min";
 import GlitchText from './Glitch';
 
 const Front = () => {
@@ -68,18 +68,15 @@ const Front = () => {
 
   // Vanta.js Background Effect
   useEffect(() => {
-    vantaRef.current = GLOBE({
+    vantaRef.current = RINGS({
       el: "#vanta",
       mouseControls: true,
       touchControls: true,
-      gyroControls: false,
+      gyroControls: true,
       minHeight: 200.0,
       minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 0.5,
-      color: 0x5fb32f,
-      size: 1.4,
-      backgroundColor: 0x0,
+      scale: 1.5,
+      scaleMobile: 1.0,
       THREE: THREE, // Required for Vanta.js in React
     });
 

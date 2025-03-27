@@ -17,12 +17,12 @@ const Footer = () => {
   };
 
   return (
-    <div className="w-full bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 border-t-2 border-[#00FFFF] shadow-[0_0_30px_#00FFFF]">
+    <div className="w-full h-screen bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 border-t-2 border-[#00FFFF] shadow-[0_0_30px_#00FFFF]">
       
       {/* 🔹 FAQ Section */}
       <div className="max-w-3xl w-full mt-10">
         <h2 className="text-5xl font-extrabold text-center mb-10 text-[#00FFFF] tracking-wide neon-text">
-          Frequently Asked Questions
+          FAQs
         </h2>
         <div className="space-y-6">
           {faqs.map((faq, index) => (

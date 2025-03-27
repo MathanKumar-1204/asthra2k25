@@ -92,49 +92,51 @@ const AdminPage = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900 to-blue-900 opacity-90"></div>
       <div className="absolute inset-0 bg-noise opacity-10"></div>
 
-      <div className="bg-black bg-opacity-40 backdrop-blur-lg shadow-2xl p-8 rounded-3xl text-white w-full max-w-7xl flex flex-col items-center border border-neon-pink">
-        <h1 className="text-4xl font-extrabold text-neon-blue tracking-wide mb-6 glitch">
+      <div className="bg-black bg-opacity-40 backdrop-blur-lg shadow-2xl p-4 md:p-8 rounded-3xl text-white w-full max-w-7xl flex flex-col items-center border border-neon-pink">
+        <h1 className="text-2xl md:text-4xl font-extrabold text-neon-blue tracking-wide mb-4 md:mb-6 glitch text-center">
           ADMIN DASHBOARD
         </h1>
 
         <input
           type="text"
           placeholder="Search for a Team, Event, or Contact"
-          className="w-96 p-3 rounded-lg text-black bg-white bg-opacity-90 outline-none shadow-xl placeholder-gray-400 focus:ring-2 focus:ring-neon-blue transition-all"
+          className="w-full md:w-96 p-3 rounded-lg text-black bg-white bg-opacity-90 outline-none shadow-xl placeholder-gray-400 focus:ring-2 focus:ring-neon-blue transition-all mb-4 md:mb-6"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
 
         {Object.keys(filteredData).map((eventName, idx) => (
-          <div key={idx} className="bg-opacity-30 p-5 rounded-lg mt-6 neon-card border border-neon-pink w-full">
-            <h2 className="text-2xl font-bold text-neon-green mb-4 tracking-wider">{eventName}</h2>
+          <div key={idx} className="bg-opacity-30 p-4 md:p-5 rounded-lg mt-4 md:mt-6 neon-card border border-neon-pink w-full">
+            <h2 className="text-xl md:text-2xl font-bold text-neon-green mb-2 md:mb-4 tracking-wider text-center">{eventName}</h2>
 
-            <table className="w-full text-white text-sm md:text-base font-semibold border-collapse border border-neon-pink">
-              <thead>
-                <tr className="border-b border-neon-green text-left bg-opacity-40">
-                  <th className="py-3 px-4 border border-neon-blue">TEAM NAME</th>
-                  <th className="py-3 px-4 border border-neon-blue">TEAM LEAD</th>
-                  <th className="py-3 px-4 border border-neon-blue">TEAM MEMBERS</th>
-                  <th className="py-3 px-4 border border-neon-blue">CONTACT</th>
-                  <th className="py-3 px-4 border border-neon-blue">COLLEGE</th>
-                  <th className="py-3 px-4 border border-neon-blue">EMAIL</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredData[eventName].map((entry, index) => (
-                  <tr key={index} className="border-b border-gray-500 hover:bg-opacity-20 transition">
-                    <td className="py-3 px-4 border border-neon-blue">{entry.teamName}</td>
-                    <td className="py-3 px-4 border border-neon-blue">{entry.teamLead}</td>
-                    <td className="py-3 px-4 border border-neon-blue">{entry.teamMembers}</td>
-                    <td className="py-3 px-4 border border-neon-blue">{entry.contact}</td>
-                    <td className="py-3 px-4 border border-neon-blue">{entry.college}</td>
-                    <td className="py-3 px-4 border border-neon-blue">{entry.email}</td>
+            <div className="overflow-x-auto">
+              <table className="w-full text-white text-sm md:text-base font-semibold border-collapse border border-neon-pink">
+                <thead>
+                  <tr className="border-b border-neon-green text-left bg-opacity-40">
+                    <th className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">TEAM NAME</th>
+                    <th className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">TEAM LEAD</th>
+                    <th className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">TEAM MEMBERS</th>
+                    <th className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">CONTACT</th>
+                    <th className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">COLLEGE</th>
+                    <th className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">EMAIL</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {filteredData[eventName].map((entry, index) => (
+                    <tr key={index} className="border-b border-gray-500 hover:bg-opacity-20 transition">
+                      <td className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">{entry.teamName}</td>
+                      <td className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">{entry.teamLead}</td>
+                      <td className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">{entry.teamMembers}</td>
+                      <td className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">{entry.contact}</td>
+                      <td className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">{entry.college}</td>
+                      <td className="py-2 px-2 md:py-3 md:px-4 border border-neon-blue">{entry.email}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-            <div className="flex justify-center gap-4 mt-4">
+            <div className="flex justify-center gap-2 md:gap-4 mt-2 md:mt-4">
               <button className="neon-button bg-neon-green" onClick={() => downloadCSV(filteredData[eventName], eventName)}>Download CSV</button>
               <button className="neon-button bg-neon-blue" onClick={() => downloadPDF(filteredData[eventName], eventName)}>Download PDF</button>
             </div>
@@ -146,8 +148,8 @@ const AdminPage = () => {
       <style>
         {`
           .neon-button {
-            padding: 12px 20px;
-            font-size: 16px;
+            padding: 10px 16px;
+            font-size: 14px;
             border-radius: 8px;
             font-weight: bold;
             transition: 0.3s;

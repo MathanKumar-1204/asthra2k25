@@ -93,15 +93,7 @@ const Reg = ({ eventName, onClose }) => {
       await fetch(EMAIL_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: userInfo.email,
-          teamName: formData.teamName,
-          teamLead: formData.teamLead,
-          teamMembers: formData.teamMembers,
-          contact: formData.contact,
-          college: formData.college,
-          eventName: eventName,
-        }),
+        body: JSON.stringify(newEntry),
       });
 
       console.log("Email confirmation sent!");
@@ -111,83 +103,51 @@ const Reg = ({ eventName, onClose }) => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gradient-to-r from-black via-purple-950 to-blue-950">
+    <div className="flex items-center justify-center h-[25vh] bg-black animate-gradient bg-[radial-gradient(circle_at_top_left,_#000,_#0ff,_#000)]">
+
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0, scale: 0.5, y: -100 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.5, y: -50 }}
+          exit={{ opacity: 0, scale: 0.3, y: -50 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative bg-black/80 backdrop-blur-lg shadow-xl p-8 rounded-2xl w-full max-w-md border-2 border-cyan-400 animate-borderGlow transition-opacity duration-500"
+          className="relative bg-black/80 backdrop-blur-lg shadow-xl p-8 rounded-2xl w-full max-w-md border-2 border-cyan-400 animate-borderGlow"
         >
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 text-cyan-400 text-3xl font-bold hover:text-red-500 transition-all duration-300 border border-transparent hover:border-red-500 p-3 rounded-full shadow-md hover:shadow-red-500 animate-xGlow"
+            className="absolute top-3 right-3 text-cyan-400 text-2xl font-bold hover:text-cyan-300 transition-all duration-300 border border-transparent hover:border-cyan-300 p-2 rounded-full shadow-md hover:shadow-cyan-500 animate-xGlow"
           >
-            <IoCloseCircle />
+            ✖
           </button>
 
-          <h2 className="text-3xl font-bold text-cyan-400 text-center mb-6 animate-textGlow">
+          <h2 className="text-3xl font-bold text-cyan-300 text-center mb-6 animate-textGlow">
             Team Registration for {eventName} 🏆
           </h2>
 
           {isLoading ? (
-            <p className="text-center text-cyan-400">Loading...</p>
+            <p className="text-center text-cyan-300">Loading...</p>
           ) : isSubmitted ? (
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-cyan-400 mb-4 animate-textGlow">🎉 Registration Successful! 🎉</h2>
-              <p className="text-cyan-400">Thank you for registering. We will contact you soon!</p>
+              <h2 className="text-2xl font-bold text-cyan-300 mb-4 animate-textGlow">🎉Registration Successful!🎉</h2>
+              <p className="text-cyan-300">Thank you for registering. We will contact you soon!</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                name="teamName"
-                placeholder="Team Name"
-                value={formData.teamName}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
-              />
-              <input
-                type="text"
-                name="teamLead"
-                placeholder="Team Lead Name"
-                value={formData.teamLead}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
-              />
-              <input
-                type="text"
-                name="teamMembers"
-                placeholder="Team Members"
-                value={formData.teamMembers}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
-              />
-              <input
-                type="number"
-                name="contact"
-                placeholder="Contact Number"
-                value={formData.contact}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
-              />
-              <input
-                type="text"
-                name="college"
-                placeholder="College Name"
-                value={formData.college}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-black/40 text-cyan-400 border border-cyan-400 rounded-lg focus:ring-2 focus:ring-cyan-400 outline-none"
-              />
+              {Object.keys(formData).map((field) => (
+                <input
+                  key={field}
+                  type={field === "contact" ? "number" : "text"}
+                  name={field}
+                  placeholder={field.replace(/([A-Z])/g, ' $1').trim()}
+                  value={formData[field]}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 bg-black/60 text-cyan-300 border border-cyan-500 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition-all duration-300"
+                />
+              ))}
               <button
                 type="submit"
-                className="w-full bg-cyan-400 text-black font-semibold py-2 rounded-lg mt-4 hover:bg-red-500 transition-all duration-300 relative overflow-hidden shadow-lg hover:shadow-red-500"
+                className="w-full bg-cyan-500 text-black font-semibold py-2 rounded-lg mt-4 hover:bg-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500 animate-pulse"
               >
                 <ShinyText>Register Now</ShinyText>
               </button>
