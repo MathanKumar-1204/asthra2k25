@@ -11,7 +11,7 @@ const Sympo = () => {
       sparkCount={8}
       duration={400}
     >
-      <div className="w-full min-h-screen bg-black text-white flex flex-col items-center py-10 font-mono px-4">
+      <div className="w-full h-screen bg-black text-white flex flex-col items-center py-10 font-mono px-4">
         <div className="text-2xl font-bold text-cyan-400 neon-text md:text-3xl">
           <h2>ABOUT US</h2>
         </div>
