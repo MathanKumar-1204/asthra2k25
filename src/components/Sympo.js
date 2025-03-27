@@ -20,7 +20,7 @@ const Sympo = () => {
         <div className="w-full md:w-[70%] md:ml-auto flex flex-col items-center md:items-start md:pr-10">
           {/* Symposium Details */}
           <div className="w-full p-6 neon-border-glow text-white rounded-lg shadow-lg backdrop-blur-md mb-8">
-            <h2 className="text-lg md:text-2xl font-bold text-cyan-400 neon-text">Asthra2K25</h2>
+            <h2 className="text-sm md:text-2xl font-bold text-cyan-400 neon-text">Asthra2K25</h2>
             <SplitText
               text="Asthra is a national level technical symposium held annually in our college. It is wholly organised and co-ordinated by our students and supported by the management and staff of Information Technology. Asthra is a stepping stone for students to showcase their technical expertise and talent on a grand stage."
               className="text-sm md:text-lg text-gray-300 text-left"
@@ -49,7 +49,7 @@ const Sympo = () => {
 
           {/* College Description */}
           <div className="w-full p-6 neon-border-glow rounded-lg shadow-lg backdrop-blur-md">
-            <h3 className="text-lg md:text-xl font-semibold text-pink-400 neon-text">Meenakshi Sundararajan Engineering College</h3>
+            <h3 className="text-sm md:text-xl font-semibold text-pink-400 neon-text">Meenakshi Sundararajan Engineering College</h3>
             <SplitText
               text="Meenakshi Sundararajan Engineering College (MSEC), founded by the IIET Society in 2001, is part of the KRS Group of Institutions. Known for quality education and discipline, the KRS Campus also includes IIET (est. 1947), Meenakshi College for Women, and Meenakshi Sundararajan School of Management."
               className="text-sm md:text-lg text-gray-300 text-left"
