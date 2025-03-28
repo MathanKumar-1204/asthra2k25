@@ -65,12 +65,12 @@ const Front = () => {
   }, [showLogin, menuOpen]);
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center relative p-6 text-gray-100 font-sans">
+    <div className="w-full h-screen flex flex-col items-center relative p-6 text-gray-100 font-sans overflow-x-hidden">
       <video
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1] overflow-hidden"
         onEnded={(e) => e.target.play()}
       >
         <source src="/assets/bg.mp4" type="video/mp4" />

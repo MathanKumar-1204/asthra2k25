@@ -57,7 +57,7 @@ const Main = () => {
   if (isLoading) {
     return (
       
-      <div className="flex items-center justify-center w-screen min-h-screen bg-black ">
+      <div className="flex items-center justify-center w-full min-h-screen bg-black  ">
         <div className="terminal-loader relative overflow-hidden bg-black text-green-500 font-mono text-base p-4 w-32 shadow-lg rounded-md border border-gray-700 box-border">
           <div className="terminal-header absolute top-0 left-0 right-0 h-6 bg-gray-800 rounded-t-md p-1 box-border">
             <div className="terminal-title float-left text-gray-300 leading-6">Status</div>
@@ -103,7 +103,7 @@ const Main = () => {
 
   return (
     
-    <div className="relative bg-black flex flex-col">
+    <div className="relative w-full bg-black flex flex-col overflow-x-hidden">
       <div className="top-0 sticky z-10">
         <Front />
       </div>
@@ -114,19 +114,19 @@ const Main = () => {
         windowWidth >= 768 && ( // Adjust the threshold as needed
           <CubeAnimation className="absolute left-0" currentSection={currentSection} />
         )}
-      <div className="top-0 sticky bg-black z-10">
+      <div className="top-0 w-full sticky bg-black z-10">
         <Sympo />
       </div>
       <div id="events" className="top-0 bg-black z-10 p-3">
         <Events />
       </div>
-      <div className="top-0 sticky bg-black z-10 p-3">
+      <div className="top-0 w-full sticky bg-black z-10 p-3">
         <Sponsors />
       </div>
-      <div className="top-0 sticky z-10 bg-black p-3">
+      <div className="top-0  w-full sticky z-10 bg-black p-3">
         <Members />
       </div>
-      <div className="top-0 sticky bg-black z-10 p-3">
+      <div className="top-0 w-full sticky bg-black z-10 p-3">
         <Footer />
       </div>
     </div>

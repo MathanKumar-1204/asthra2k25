@@ -31,7 +31,7 @@ const Members = () => {
   ];
 
   return (
-    <div className="relative h-screen bg-black overflow-hidden">
+    <div className="relative h-screen w-full bg-black overflow-hidden">
       {/* TrueFocus text on top */}
       <div className="absolute top-0 left-0 w-full z-10 py-4">
         <TrueFocus

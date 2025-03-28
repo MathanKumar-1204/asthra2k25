@@ -29,7 +29,7 @@ const Sponsors = () => {
   return (
     <motion.div
       id="logo-section"
-      className="w-screen h-screen flex flex-col justify-center items-start bg-black text-white pl-8 md:pl-20"
+      className="w-full h-screen flex flex-col justify-center items-start bg-black text-white pl-8 md:pl-20"
       variants={fadeIn}
       initial="hidden"
       animate="visible"
