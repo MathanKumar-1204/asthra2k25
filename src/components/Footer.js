@@ -17,8 +17,8 @@ const Footer = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 border-t-2 border-[#00FFFF] shadow-[0_0_30px_#00FFFF]">
-      
+    <div className="w-full  bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 border-t-2 border-[#00FFFF] shadow-[0_0_30px_#00FFFF]">
+
       {/* 🔹 FAQ Section */}
       <div className="max-w-3xl w-full mt-10">
         <h2 className="text-5xl font-extrabold text-center mb-10 text-[#00FFFF] tracking-wide neon-text">
@@ -114,20 +114,22 @@ const Footer = () => {
         `}
       </style>
 
-      {/* 🔹 Location Component */}
-      <div className="w-full flex justify-center mt-16">
+      {/* 🔹 Inner Div for Location and Instagram */}
+      <div className="w-full flex flex-col items-center mt-16">
         <Location />
-      </div>
 
-      {/* 🔹 Footer Text */}
-      <p className="text-xl font-semibold tracking-wide text-[#00FFFF]">&copy; 2025 ASTHRA. All rights reserved.</p>
+        {/* 🔹 Footer Text */}
+        <p className="text-xl font-semibold tracking-wide text-[#00FFFF] mt-8">
+          &copy; 2025 ASTHRA. All rights reserved.
+        </p>
 
-      {/* 🔹 Instagram Link */}
-      <div className="flex items-center mt-6 space-x-3">
-        <FaInstagram className="text-[#FF00FF] text-4xl hover:scale-110 transition-transform duration-300 hover:text-[#00FFFF]" />
-        <a href="https://instagram.com/_incognito_2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300 neon-text">
-          @_incognito_2k25
-        </a>
+        {/* 🔹 Instagram Link */}
+        <div className="flex items-center mt-6 space-x-3">
+          <FaInstagram className="text-[#FF00FF] text-4xl hover:scale-110 transition-transform duration-300 hover:text-[#00FFFF]" />
+          <a href="https://instagram.com/_incognito_2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300 neon-text">
+            @_incognito_2k25
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -22,17 +22,17 @@ const Events = () => {
   const nonTechEvents = Object.entries(events.NonTechEvents);
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-black p-4 md:p-10">
+    <div className="flex flex-col items-center min-h-screen bg-black p-4 md:p-10 md:pl-32">
       {/* Countdown Clock Section */}
       <div className="w-full pt-10">
         <CountdownClock />
       </div>
 
       {/* Events Section */}
-      <div className="relative w-full flex flex-col md:flex-row gap-8 md:gap-28 mt-8">
+      <div className="relative w-full flex flex-col md:flex-row gap-8 md:gap-28 mt-8 md:ml-36">
         {/* Left Column - Technical Events */}
         <div className="w-full md:w-1/2 flex flex-col space-y-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#00FFFF] text-center mb-8 neon-text">
+          <h2 className="text-2xl md:text-3xl md:mr-48 font-bold text-[#00FFFF] text-center mb-8 neon-text">
             Technical Events
           </h2>
           {techEvents.map(([eventId, event], index) => (
@@ -72,7 +72,7 @@ const Events = () => {
 
         {/* Right Column - Non-Technical Events */}
         <div className="w-full md:w-1/2 flex flex-col space-y-10 mt-8 md:mt-0">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#FFD700] text-center mb-8 neon-text">
+          <h2 className="text-2xl md:text-3xl md:mr-56 font-bold text-[#FFD700] text-center mb-8 neon-text">
             Non-Technical Events
           </h2>
           {nonTechEvents.map(([eventId, event], index) => (

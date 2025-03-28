@@ -14,13 +14,13 @@ const EventsPage = () => {
   const params = new URLSearchParams(location.search);
   const eventId = params.get("eventId");
   const navigate = useNavigate();
-  const members = eventDetails?.members 
-  ? Object.entries(eventDetails.members).map(([name, image]) => ({
-      position: name,
-      name,
-      image,
-    }))
-  : [];
+  const members = eventDetails?.members
+    ? Object.entries(eventDetails.members).map(([name, image]) => ({
+        position: name,
+        name,
+        image,
+      }))
+    : [];
 
   useEffect(() => {
     if (eventId) {
@@ -164,7 +164,7 @@ const EventsPage = () => {
       )}
 
       {/* Photos Component */}
-      <Photos logoImage={eventDetails.logo} members={members} />
+      {/* <Photos logoImage={eventDetails.logo} members={members} /> */}
 
       {/* Registration Popup */}
       {showRegPopup && (

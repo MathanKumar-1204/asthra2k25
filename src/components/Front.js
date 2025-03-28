@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "./Login";
-import * as THREE from "three";
-import RINGS from "vanta/dist/vanta.rings.min";
 import GlitchText from './Glitch';
 
 const Front = () => {
@@ -12,7 +10,6 @@ const Front = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const modalRef = useRef(null);
   const sidebarRef = useRef(null);
-  const vantaRef = useRef(null);
 
   const handleLoginClick = () => {
     navigate("/login"); // Redirect to login page
@@ -66,30 +63,19 @@ const Front = () => {
     };
   }, [showLogin, menuOpen]);
 
-  // Vanta.js Background Effect
-  useEffect(() => {
-    vantaRef.current = RINGS({
-      el: "#vanta",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: true,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.5,
-      scaleMobile: 1.0,
-      THREE: THREE, // Required for Vanta.js in React
-    });
-
-    return () => {
-      if (vantaRef.current) vantaRef.current.destroy();
-    };
-  }, []);
-
   return (
-    <div
-      id="vanta"
-      className="h-screen bg-black flex flex-col items-center relative p-6 text-gray-100 font-sans"
-    >
+    <div className="h-screen flex flex-col items-center relative p-6 text-gray-100 font-sans">
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+        onEnded={(e) => e.target.play()}
+      >
+        <source src="/assets/bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <div className="absolute top-6 left-6 bg-gray-600 shadow-xl rounded-full w-24 h-24 flex items-center justify-center text-lg font-extrabold text-black border-4 border-gray-500 transform hover:scale-110 transition duration-300 md:w-20 md:h-20 md:text-sm">
         {userInfo && `${userInfo.name}`}
       </div>
