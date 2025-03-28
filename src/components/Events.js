@@ -22,7 +22,7 @@ const Events = () => {
   const nonTechEvents = Object.entries(events.NonTechEvents);
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-black p-4 md:p-10 md:pl-32">
+    <div className="flex flex-col items-center w-screen min-h-screen bg-black p-4 md:p-10 md:pl-32">
       {/* Countdown Clock Section */}
       <div className="w-full pt-10">
         <CountdownClock />

@@ -44,3 +44,47 @@
   box-sizing: border-box;
   font-family: 'Orbitron', sans-serif;
 }
+.neon-button {
+  background: #10131a; /* Dark background for a cyber effect */
+  color: #0ff;
+  font-weight: bold;
+  padding: 14px 28px;
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 
+              0 0 20px rgba(0, 255, 255, 0.5),
+              0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+.neon-button:hover {
+  background: rgba(0, 255, 255, 0.2);
+  color: black;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 1),
+              0 0 30px rgba(0, 255, 255, 0.8),
+              0 0 50px rgba(0, 255, 255, 0.6),
+              0 0 70px rgba(0, 255, 255, 0.4);
+  transform: scale(1.08);
+}
+
+/* Adding the glowing border animation */
+.neon-button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, cyan, rgba(0, 255, 255, 0.2));
+  z-index: -1;
+  opacity: 0.8;
+  filter: blur(8px);
+}

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "./Login";
 import GlitchText from './Glitch';
+import "./front.css";
 
 const Front = () => {
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const Front = () => {
   }, [showLogin, menuOpen]);
 
   return (
-    <div className="h-screen flex flex-col items-center relative p-6 text-gray-100 font-sans">
+    <div className="w-screen h-screen flex flex-col items-center relative p-6 text-gray-100 font-sans">
       <video
         autoPlay
         loop
@@ -107,14 +108,14 @@ const Front = () => {
           <>
             <button
               onClick={handleLogoutClick}
-              className="bg-gray-600 shadow-lg px-4 py-2 text-sm font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105"
+              className="neon-button bg-gray-600 shadow-lg px-4 py-2 text-sm font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105"
             >
               LOGOUT
             </button>
             {userInfo.role === "admin" && (
               <button
                 onClick={handleAdminClick}
-                className="bg-gray-600 shadow-lg px-4 py-2 text-sm font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105"
+                className="neon-button bg-gray-600 shadow-lg px-4 py-2 text-sm font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105"
               >
                 ADMIN
               </button>
@@ -123,14 +124,14 @@ const Front = () => {
         ) : (
           <button
             onClick={handleLoginClick}
-            className="bg-gray-600 shadow-lg px-4 py-2 text-sm font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105"
+            className="neon-button bg-gray-600 shadow-lg px-4 py-2 text-sm font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105"
           >
             LOGIN
           </button>
         )}
         <button
           onClick={handleEventClick}
-          className="bg-gray-600 shadow-lg px-4 py-2 text-sm font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105"
+          className="neon-button bg-gray-600 shadow-lg px-4 py-2 text-sm font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105"
         >
           EVENTS
         </button>
@@ -141,14 +142,14 @@ const Front = () => {
           <>
             <button
               onClick={handleLogoutClick}
-              className="bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto"
+              className="neon-button bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto"
             >
               LOGOUT
             </button>
             {userInfo.role === "admin" && (
               <button
                 onClick={handleAdminClick}
-                className="bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto"
+                className="neon-button bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto"
               >
                 ADMIN
               </button>
@@ -157,14 +158,14 @@ const Front = () => {
         ) : (
           <button
             onClick={handleLoginClick}
-            className="bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto"
+            className="neon-button bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto"
           >
             LOGIN
           </button>
         )}
         <button
           onClick={handleEventClick}
-          className="bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto"
+          className="neon-button bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto"
         >
           EVENTS
         </button>

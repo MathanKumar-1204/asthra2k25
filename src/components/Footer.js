@@ -17,7 +17,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="w-full  bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 border-t-2 border-[#00FFFF] shadow-[0_0_30px_#00FFFF]">
+    <div className="w-screen  bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 border-t-2 border-[#00FFFF] shadow-[0_0_30px_#00FFFF]">
 
       {/* 🔹 FAQ Section */}
       <div className="max-w-3xl w-full mt-10">

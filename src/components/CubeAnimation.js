@@ -57,7 +57,7 @@ const CubeAnimation = ({ currentSection }) => {
 
     // Initial Position (More to the Left) & Rotation (Facing Camera)
     cubeInstance.position.set(-3, 0, 0);
-    cubeInstance.rotation.set(Math.PI / 6, 0, 0); // Ensuring the front face is visible
+    cubeInstance.rotation.set(Math.PI /4, 0, 0); // Ensuring the front face is visible
 
     // Rendering Function
     const animate = () => {
@@ -86,7 +86,7 @@ const CubeAnimation = ({ currentSection }) => {
     switch (currentSection) {
       case "sympo":
         targetPosition = { x: -5,  y: -1, z: 0 };
-        targetRotation = { x: 0, y: Math.PI / 2, z: 0 }; // Rotate 90° on Y-axis
+        targetRotation = { x: 0, y: Math.PI/1.8 , z: 0 }; // Rotate 90° on Y-axis
         break;
       case "events":
         targetPosition = { x: 0, y: 2, z: 0 };

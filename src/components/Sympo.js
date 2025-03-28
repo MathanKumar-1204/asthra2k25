@@ -11,14 +11,12 @@ const Sympo = () => {
       sparkCount={8}
       duration={400}
     >
-      <div className="w-full h-screen bg-black text-white flex flex-col items-center py-10 font-mono px-4">
+      <div className="w-screen h-screen bg-black text-white flex flex-col items-center py-10 font-mono px-4 overflow-hidden md:overflow-auto">
         <div className="text-xl md:text-2xl font-bold text-cyan-400 neon-text">
           <h2>ABOUT US</h2>
         </div>
 
-        {/* Main Section */}
-        <div className="w-full md:w-[70%] md:ml-auto flex flex-col items-center md:items-start md:pr-10">
-          {/* Symposium Details */}
+        <div className="w-full md:w-[70%] md:ml-auto flex flex-col items-center md:items-start md:pr-10 overflow-y-auto max-h-full md:max-h-none">
           <div className="w-full p-6 neon-border-glow text-white rounded-lg shadow-lg backdrop-blur-md mb-8">
             <h2 className="text-sm md:text-2xl font-bold text-cyan-400 neon-text">Asthra2K25</h2>
             <SplitText
@@ -33,7 +31,6 @@ const Sympo = () => {
             />
           </div>
 
-          {/* Logo Section (Symposium Logo & College Logo) */}
           <div className="w-full flex flex-row justify-center md:justify-start items-center space-x-4 mb-8">
             <img
               src="./assets/logo.jpeg"
@@ -47,7 +44,6 @@ const Sympo = () => {
             />
           </div>
 
-          {/* College Description */}
           <div className="w-full p-6 neon-border-glow rounded-lg shadow-lg backdrop-blur-md">
             <h3 className="text-sm md:text-xl font-semibold text-pink-400 neon-text">Meenakshi Sundararajan Engineering College</h3>
             <SplitText
@@ -71,6 +67,12 @@ const Sympo = () => {
           padding: 0;
           box-sizing: border-box;
           font-family: 'Orbitron', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+          .overflow-y-auto {
+            max-height: 100vh;
+          }
         }
       `}</style>
     </ClickSpark>
