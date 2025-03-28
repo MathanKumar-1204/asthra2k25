@@ -71,7 +71,7 @@ const Events = () => {
         </div>
 
         {/* Right Column - Non-Technical Events */}
-        <div className="w-full md:w-1/2 flex flex-col space-y-10 mt-8 md:mt-0">
+        <div className="w-full md:w-1/2 flex flex-col space-y-10 mt-16 md:mt-24">
           <h2 className="text-2xl md:text-3xl md:mr-56 font-bold text-[#FFD700] text-center mb-8 neon-text">
             Non-Technical Events
           </h2>

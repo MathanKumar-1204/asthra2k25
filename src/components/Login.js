@@ -3,6 +3,7 @@ import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 
+// Add interface for decoded JWT payload
 function Login() {
   const [isActive, setIsActive] = useState(false);
   const [user, setUser] = useState(null);
@@ -193,20 +194,22 @@ function Login() {
         <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
 
         {/* Main Container */}
-        <div className={`container bg-[#0a0a0a] border border-[#00f2ff] shadow-[0px_0px_20px_rgba(0,242,255,0.8)] rounded-lg w-[780px] min-h-[500px] flex items-center justify-center overflow-hidden transition-all duration-700 ${isActive ? 'active' : ''}`}>
+        <div className={`container bg-[#0a0a0a] border border-[#00f2ff] shadow-[0px_0px_20px_rgba(0,242,255,0.8)] rounded-lg md:w-[780px] w-[95%] min-h-[500px] flex items-center justify-center overflow-hidden transition-all duration-700 ${isActive ? 'active' : ''}`}>
 
-          {/* Sign In Form */}
-          <div className="form-container sign-in absolute top-0 left-0 w-1/2 h-full flex items-center justify-center transition-all duration-700 z-20">
-            <form onSubmit={handleSignIn} className="flex flex-col items-center justify-center px-10 h-full">
-              <h1 className="text-2xl font-bold mb-2 neon-text">Sign In</h1>
-              <GoogleLogin
-                onSuccess={handleGoogleSuccess}
-                onError={handleGoogleError}
-                type="standard"
-                text="continue_with"
-                shape="pill"
-                width="250"
-              />
+          {/* Sign In Form - Mobile & Desktop Views */}
+          <div className={`form-container sign-in absolute top-0 left-0 md:w-1/2 w-full h-full flex items-center justify-center transition-all duration-700 z-20 ${isActive ? 'md:translate-x-full translate-y-[-100%]' : ''}`}>
+            <form onSubmit={handleSignIn} className="flex flex-col items-center justify-center px-5 md:px-10 h-full w-full max-w-[100%]">
+              <h1 className="text-xl md:text-2xl font-bold mb-2 neon-text">Sign In</h1>
+              <div className="w-full flex justify-center">
+                <GoogleLogin
+                  onSuccess={handleGoogleSuccess}
+                  onError={handleGoogleError}
+                  type="standard"
+                  text="continue_with"
+                  shape="pill"
+                  width="250"
+                />
+              </div>
               <span className="text-sm mt-4">or use your account</span>
               <div className="w-full">
                 <input
@@ -228,28 +231,39 @@ function Login() {
                 />
                 {errors.signIn.password && <p className="text-red-500 text-xs mt-1">{errors.signIn.password}</p>}
               </div>
-              <a href="#" className="text-[13px] text-gray-800 no-underline mt-4 mb-2.5 hover:text-[#512da8] transition-colors duration-300">Forgot your password?</a>
+              {/* <a href="#" className="text-[13px] text-gray-400 no-underline mt-4 mb-2.5 hover:text-[#00f2ff] transition-colors duration-300">Forgot your password?</a> */}
               <button
                 type="submit"
                 className="neon-button"
               >
                 Sign In
               </button>
+
+              {/* Mobile-only button to toggle to Sign Up */}
+              <button 
+                type="button" 
+                onClick={() => setIsActive(true)}
+                className="md:hidden neon-button-outline mt-4"
+              >
+                Create Account
+              </button>
             </form>
           </div>
 
-          {/* Sign Up Form */}
-          <div className="form-container sign-up absolute top-0 left-0 w-1/2 h-full flex items-center justify-center transition-all duration-700 opacity-0 z-10">
-            <form onSubmit={handleSignUp} className="flex flex-col items-center justify-center px-10 h-full">
-              <h1 className="text-2xl font-bold mb-2 neon-text">Create Account</h1>
-              <GoogleLogin
-                onSuccess={handleGoogleSuccess}
-                onError={handleGoogleError}
-                type="standard"
-                text="continue_with"
-                shape="pill"
-                width="250"
-              />
+          {/* Sign Up Form - Mobile & Desktop Views */}
+          <div className={`form-container sign-up absolute top-0 left-0 md:w-1/2 w-full h-full flex items-center justify-center transition-all duration-700 md:opacity-0 z-10 ${isActive ? 'md:translate-x-full translate-y-0 opacity-100 z-30' : 'translate-y-[100%]'}`}>
+            <form onSubmit={handleSignUp} className="flex flex-col items-center justify-center px-5 md:px-10 h-full w-full max-w-[100%]">
+              <h1 className="text-xl md:text-2xl font-bold mb-2 neon-text">Create Account</h1>
+              <div className="w-full flex justify-center">
+                <GoogleLogin
+                  onSuccess={handleGoogleSuccess}
+                  onError={handleGoogleError}
+                  type="standard"
+                  text="continue_with"
+                  shape="pill"
+                  width="250"
+                />
+              </div>
               <span className="text-sm mt-4">or use your email for registration</span>
               <div className="w-full">
                 <input
@@ -287,11 +301,20 @@ function Login() {
               >
                 Sign Up
               </button>
+
+              {/* Mobile-only button to toggle back to Sign In */}
+              <button 
+                type="button" 
+                onClick={() => setIsActive(false)}
+                className="md:hidden neon-button-outline mt-4"
+              >
+                Back to Sign In
+              </button>
             </form>
           </div>
 
-          {/* Toggle Container */}
-          <div className="toggle-container absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-all duration-700 z-30"
+          {/* Toggle Container - Desktop only, hidden on mobile */}
+          <div className="toggle-container absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-all duration-700 z-30 hidden md:block"
                style={isActive ? { borderRadius: "0 150px 100px 0", transform: "translateX(-100%)" } : { borderRadius: "150px 0 0 100px" }}>
             <div className={`toggle absolute top-0 left-[-100%] w-[200%] h-full bg-gradient-to-r from-[#ff00ff] to-[#00f2ff] text-white transition-all duration-700 ${isActive ? 'translate-x-1/2' : 'translate-x-0'}`}>
               <div className={`toggle-panel toggle-left absolute top-0 w-1/2 h-full flex flex-col items-center justify-center px-8 text-center transition-all duration-700 ${isActive ? 'translate-x-0' : '-translate-x-[200%]'}`}>
@@ -331,7 +354,6 @@ function Login() {
 
 body {
   background-color: #080808;
-  overflow: hidden;
   color: #00f2ff;
 }
 
@@ -341,9 +363,6 @@ body {
   box-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
   position: relative;
   overflow: hidden;
-  width: 780px;
-  max-width: 100%;
-  min-height: 500px;
   transition: 0.5s ease-in-out;
 }
 
@@ -355,28 +374,55 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.sign-in {
-  left: 0;
-  width: 50%;
-  z-index: 2;
+@media (min-width: 768px) {
+  /* Desktop styles */
+  .container.active .sign-in {
+    transform: translateX(100%);
+  }
+
+  .sign-up {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+  }
 }
 
-.container.active .sign-in {
-  transform: translateX(100%);
-}
-
-.sign-up {
-  left: 0;
-  width: 50%;
-  opacity: 0;
-  z-index: 1;
-}
-
-.container.active .sign-up {
-  transform: translateX(100%);
-  opacity: 1;
-  z-index: 5;
-  animation: move 0.6s;
+@media (max-width: 767px) {
+  /* Mobile styles */
+  .container {
+    min-height: 550px; /* Slightly taller on mobile */
+  }
+  
+  .form-container {
+    padding: 20px 0;
+    width: 100%;
+  }
+  
+  .sign-in, .sign-up {
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .container.active .sign-in {
+    transform: translateY(-100%);
+  }
+  
+  .sign-up {
+    transform: translateY(100%);
+  }
+  
+  .container.active .sign-up {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 5;
+  }
 }
 
 @keyframes move {
@@ -463,6 +509,7 @@ body {
   background: #111;
   border: 2px solid transparent;
   padding: 12px;
+  margin: 8px 0;
   color: #00f2ff;
   outline: none;
   transition: all 0.3s ease-in-out;
@@ -478,6 +525,7 @@ body {
 .neon-button {
   background: linear-gradient(90deg, #ff00ff, #00f2ff);
   padding: 12px 30px;
+  margin-top: 15px;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -506,10 +554,21 @@ body {
   color: black;
   box-shadow: 0px 0px 15px #00f2ff, 0px 0px 30px #00f2ff;
 }
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .neon-input {
+    padding: 10px;
+  }
+  
+  .neon-button, .neon-button-outline {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
 `}</style>
     </GoogleOAuthProvider>
   );
 }
 
 export default Login;
-  
