@@ -66,7 +66,7 @@ const Front = () => {
   const handleEventClick = () => {
     document.getElementById("events")?.scrollIntoView({ behavior: "smooth" });
   };
-  const handleAdminClick = () => navigate("/admin");
+  const handleAdminClick = () => navigate("/ad");
   const handleRegisteredClick = () => navigate("/registered");
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
@@ -153,13 +153,14 @@ const Front = () => {
       </div>
 
       {userInfo && (
-        <button
-          onClick={handleRegisteredClick}
-          className="neon-button bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto md:block hidden"
-          style={{ position: "absolute", bottom: "20px", right: "20px" }}
-        >
-          REGISTERED
-        </button>
+       <button
+       onClick={handleRegisteredClick}
+       className="neon-button bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto md:block hidden"
+       style={{ position: "absolute", bottom: "20px", right: "20px", fontFamily: "'Orbitron', sans-serif" }}
+     >
+       REGISTERED
+     </button>
+     
       )}
 
       {showLogin && (

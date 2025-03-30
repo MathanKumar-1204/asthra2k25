@@ -13,6 +13,7 @@ const Reg = ({ eventName, onClose }) => {
     teamMembers: "",
     contact: "",
     college: "",
+    teamMembersEmail: "", // New field for team members' email IDs
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -41,6 +42,7 @@ const Reg = ({ eventName, onClose }) => {
             teamMembers: userRegistration.teamMembers || "",
             contact: userRegistration.contact || "",
             college: userRegistration.college || "",
+            teamMembersEmail: userRegistration.teamMembersEmail || "", // Update the new field
           });
         }
       } catch (error) {
@@ -73,6 +75,7 @@ const Reg = ({ eventName, onClose }) => {
       contact: formData.contact,
       college: formData.college,
       eventName: eventName,
+      teamMembersEmail: formData.teamMembersEmail, // Include the new field
     };
 
     console.log("Sending data:", newEntry);
@@ -104,7 +107,6 @@ const Reg = ({ eventName, onClose }) => {
 
   return (
     <div className="flex items-center justify-center h-[25vh] bg-black animate-gradient bg-[radial-gradient(circle_at_top_left,_#000,_#0ff,_#000)]">
-
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0, scale: 0.5, y: -100 }}
@@ -128,7 +130,7 @@ const Reg = ({ eventName, onClose }) => {
             <p className="text-center text-cyan-300">Loading...</p>
           ) : isSubmitted ? (
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-cyan-300 mb-4 animate-textGlow">🎉Registration Successful!🎉</h2>
+              <h2 className="text-2xl font-bold text-cyan-300 mb-4 animate-textGlow">🎉 Registration Successful! 🎉</h2>
               <p className="text-cyan-300">Thank you for registering. We will contact you soon!</p>
             </div>
           ) : (
@@ -136,7 +138,7 @@ const Reg = ({ eventName, onClose }) => {
               {Object.keys(formData).map((field) => (
                 <input
                   key={field}
-                  type={field === "contact" ? "number" : "text"}
+                  type= "mail"
                   name={field}
                   placeholder={field.replace(/([A-Z])/g, ' $1').trim()}
                   value={formData[field]}

@@ -19,7 +19,7 @@ const Footer = () => {
   };
 
   const handleCreditsClick = () => {
-    navigate('/pics');
+    navigate('/credits');
   };
 
   return (
@@ -145,7 +145,7 @@ const Footer = () => {
         <div className="flex items-center mt-6 space-x-3">
           <FaInstagram className="text-[#FF00FF] text-4xl hover:scale-110 transition-transform duration-300 hover:text-[#00FFFF]" />
           <a href="https://instagram.com/_incognito_2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300">
-            @_incognito_2k25
+            @_asthra_2k25
           </a>
         </div>
       </div>

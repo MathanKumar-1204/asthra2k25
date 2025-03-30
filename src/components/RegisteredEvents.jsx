@@ -89,12 +89,10 @@ const RegisteredEvents = () => {
                     />
                     <h3 className="text-xl font-semibold mt-4">{event.eventName}</h3>
                     <p className="text-gray-300 mt-2">Team: {event.teamName || "Not specified"}</p>
-                    <p className="text-gray-300">Phone: {event.phoneNumber || event.phone || "Not provided"}</p>
+                    <p className="text-gray-300">Phone: {event.contact|| "Not provided"}</p>
                     <p className="text-gray-300">Email: {event.email}</p>
                     <p className="text-gray-300">College: {event.college}</p>
-                    <p className="text-gray-300">Slot: {eventInfo.slot || "Not specified"}</p>
                     <p className="text-gray-300">Members: {event.teamMembers ? event.teamMembers.split(',').map(member => member.trim()).join(', ') : "None"}</p>
-                    <p className="text-gray-300">Member Names: {event.memberNames ? event.memberNames.split(',').map(name => name.trim()).join(', ') : "None"}</p>
                   </div>
                 </div>
               );

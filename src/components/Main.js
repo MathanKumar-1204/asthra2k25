@@ -31,9 +31,9 @@ const Main = () => {
 
       if (scrollPosition < 1000) {
         setCurrentSection("sympo");
-      } else if (scrollPosition >= 1000 && scrollPosition < 2000) {
+      } else if (scrollPosition >= 1000 && scrollPosition < 4000) {
         setCurrentSection("events");
-      } else if (scrollPosition >= 2000 && scrollPosition < 3000) {
+      } else if (scrollPosition >= 4000 && scrollPosition < 4700) {
         setCurrentSection("sponsors");
       } else {
         setCurrentSection(null); // Hide the cube for other sections
