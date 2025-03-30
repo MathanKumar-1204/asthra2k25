@@ -251,7 +251,7 @@ function Login() {
           </div>
 
           {/* Sign Up Form - Mobile & Desktop Views */}
-          <div className={`form-container sign-up absolute top-0 left-0 md:w-1/2 w-full h-full flex items-center justify-center transition-all duration-700 md:opacity-0 z-10 ${isActive ? 'md:translate-x-full translate-y-0 opacity-100 z-30' : 'translate-y-[100%]'}`}>
+          <div className={`form-container sign-up absolute top-0 left-0 md:w-1/2 w-full h-full flex items-center justify-center transition-all duration-700 md:opacity-0 z-10 bg-black ${isActive ? 'md:translate-x-full translate-y-0 opacity-100 z-30' : 'translate-y-[100%]'}`}>
             <form onSubmit={handleSignUp} className="flex flex-col items-center justify-center px-5 md:px-10 h-full w-full max-w-[100%]">
               <h1 className="text-xl md:text-2xl font-bold mb-2 neon-text">Create Account</h1>
               <div className="w-full flex justify-center">
@@ -454,7 +454,7 @@ body {
 }
 
 .toggle {
-  background: linear-gradient(to right, #ff00ff, #00f2ff);
+  background: linear-gradient(to right, #ff00ff, purple);
   height: 100%;
   color: #fff;
   position: relative;
@@ -502,7 +502,6 @@ body {
 
 .neon-text {
   color: #00f2ff;
-  text-shadow: 0px 0px 10px #00f2ff, 0px 0px 20px #00f2ff, 0px 0px 30px #00f2ff;
 }
 
 .neon-input {

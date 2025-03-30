@@ -1,4 +1,4 @@
-import "./event.css";
+// import "./event.css";
 import React, { useState } from 'react';
 
 const EventCard = ({ event, isReversed }) => {

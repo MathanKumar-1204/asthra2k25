@@ -5,26 +5,26 @@ import TrueFocus from './TrueFocus';
 const Members = () => {
   const items = [
     {
-      image: 'https://picsum.photos/300/300?grayscale',
+      image: './assets/avatars/organisers/Nandha.jpeg',
       link: 'https://google.com/',
       title: 'Nandha Kumar',
-      description: 'President'
+      description: 'President (SWIPE ->)'
     },
     {
-      image: './assets/venkat.jpeg',
-      link: 'https://google.com/',
+      image: './assets/avatars/organisers/Venkat.png',
+      link: 'https://www.linkedin.com/in/venkatesh-c6296/',
       title: 'Venkatesh',
       description: 'Vice President'
     },
     {
-      image: 'https://picsum.photos/500/500?grayscale',
-      link: 'https://google.com/',
+      image: './assets/avatars/organisers/Meenakshi.jpg',
+      link: 'https://www.linkedin.com/in/meenakshi-ar-77223a2a2/',
       title: 'Meenakshi',
       description: 'Treasurer'
     },
     {
-      image: 'https://picsum.photos/600/600?grayscale',
-      link: 'https://google.com/',
+      image: './assets/avatars/organisers/Harini.png',
+      link: 'https://www.linkedin.com/in/harini-murugan-59490a2a1/',
       title: 'Harini',
       description: 'Treasurer'
     }

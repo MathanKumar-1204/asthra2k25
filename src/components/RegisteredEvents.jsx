@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import EventCard from './EventCard';
 import eventsData from './events.json';
-import "./event.css";
 
 const RegisteredEvents = () => {
   const [registeredEvents, setRegisteredEvents] = useState([]);
@@ -30,13 +29,13 @@ const RegisteredEvents = () => {
         const response = await fetch(`https://api.sheetbest.com/sheets/b0b06cc5-a1ef-41ee-b7c0-a123d92d771e`);
         if (response.ok) {
           const data = await response.json();
-          
+
           // Filter events for the current user
-          const userEvents = data.filter(event => 
-            event.email === userInfo.email || 
+          const userEvents = data.filter(event =>
+            event.email === userInfo.email ||
             (event.teamMembers && event.teamMembers.includes(userInfo.email))
           );
-          
+
           setRegisteredEvents(userEvents);
         } else {
           console.error('Failed to fetch registered events');
@@ -69,32 +68,35 @@ const RegisteredEvents = () => {
             <p className="text-center text-xl">You haven't registered for any events yet.</p>
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {registeredEvents.map((event, index) => {
               // Find the matching event in the events.json data
               const eventInfo = allEventsMap[event.eventName] || {};
-              
+
               // Use a placeholder URL if the logo is not found
               const placeholderLogo = "https://via.placeholder.com/150x150/121212/00FFFF?text=Event";
-              
+
               return (
-                <EventCard
+                <div
                   key={index}
-                  event={{
-                    id: index,
-                    name: event.eventName,
-                    logo: eventInfo.logo || placeholderLogo,
-                    teamName: event.teamName || "Not specified",
-                    phoneNumber: event.phoneNumber || event.phone,
-                    email: event.email,
-                    college: event.college,
-                    additionalInfo: event.additionalInfo,
-                    slot: eventInfo.slot,
-                    members: event.teamMembers ? event.teamMembers.split(',').map(member => member.trim()) : [],
-                    memberNames: event.memberNames ? event.memberNames.split(',').map(name => name.trim()) : [],
-                  }}
-                  isReversed={index % 2 !== 0}
-                />
+                  className="bg-[#0D0122] rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+                >
+                  <div className="p-6">
+                    <img
+                      src={eventInfo.logo || placeholderLogo}
+                      alt={event.eventName}
+                      className="w-full h-40 object-cover rounded-t-lg"
+                    />
+                    <h3 className="text-xl font-semibold mt-4">{event.eventName}</h3>
+                    <p className="text-gray-300 mt-2">Team: {event.teamName || "Not specified"}</p>
+                    <p className="text-gray-300">Phone: {event.phoneNumber || event.phone || "Not provided"}</p>
+                    <p className="text-gray-300">Email: {event.email}</p>
+                    <p className="text-gray-300">College: {event.college}</p>
+                    <p className="text-gray-300">Slot: {eventInfo.slot || "Not specified"}</p>
+                    <p className="text-gray-300">Members: {event.teamMembers ? event.teamMembers.split(',').map(member => member.trim()).join(', ') : "None"}</p>
+                    <p className="text-gray-300">Member Names: {event.memberNames ? event.memberNames.split(',').map(name => name.trim()).join(', ') : "None"}</p>
+                  </div>
+                </div>
               );
             })}
           </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Location from "./Location";
 
 const faqs = [
@@ -11,22 +12,40 @@ const faqs = [
 
 const Footer = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const navigate = useNavigate();
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleCreditsClick = () => {
+    navigate('/pics');
+  };
+
   return (
-    <div className="w-full bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 border-t-2 border-[#00FFFF] shadow-[0_0_30px_#00FFFF]">
+    <div className="w-full bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 border-t-2 border-[#00FFFF]">
+
+      {/* 🔹 CREDITS Section */}
+      <div className="max-w-3xl w-full mt-10">
+        <h2 className="text-5xl font-extrabold text-center mb-10 text-[#00FFFF] tracking-wide">
+          CREDITS
+        </h2>
+        <button
+          className="bg-[#00FFFF] text-black font-semibold py-3 px-6 rounded-full hover:bg-[#0B0B13] hover:text-[#00FFFF] transition-all duration-300"
+          onClick={handleCreditsClick}
+        >
+          View Team Pictures
+        </button>
+      </div>
 
       {/* 🔹 FAQ Section */}
       <div className="max-w-3xl w-full mt-10">
-        <h2 className="text-5xl font-extrabold text-center mb-10 text-[#00FFFF] tracking-wide neon-text">
+        <h2 className="text-5xl font-extrabold text-center mb-10 text-[#00FFFF] tracking-wide">
           FAQs
         </h2>
         <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-2 border-[#00FFFF] rounded-2xl bg-[#10101A] hover:shadow-[0_0_20px_#00FFFF] transition-all duration-300">
+            <div key={index} className="border-2 border-[#00FFFF] rounded-2xl bg-[#10101A] hover:bg-[#00FFFF] transition-all duration-300">
               <button
                 className="w-full p-6 text-left font-semibold bg-[#0B0B13] hover:bg-[#00FFFF] text-white flex justify-between items-center transition-all duration-300"
                 onClick={() => toggleFAQ(index)}
@@ -96,7 +115,6 @@ const Footer = () => {
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,255,255,0.5);
           }
 
           .flip-card-front {
@@ -126,7 +144,7 @@ const Footer = () => {
         {/* 🔹 Instagram Link */}
         <div className="flex items-center mt-6 space-x-3">
           <FaInstagram className="text-[#FF00FF] text-4xl hover:scale-110 transition-transform duration-300 hover:text-[#00FFFF]" />
-          <a href="https://instagram.com/_incognito_2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300 neon-text">
+          <a href="https://instagram.com/_incognito_2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300">
             @_incognito_2k25
           </a>
         </div>

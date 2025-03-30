@@ -1,7 +1,7 @@
 {
   "TechEvents": {
-    "TechInnovators2025": {
-      "name": "Tech Innovators 2025",
+    "Quizz Buzz": {
+      "name": "Quizz Buzz",
       "type": "Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
       "rules": [
@@ -14,176 +14,215 @@
         "Respect other teams and maintain decorum.",
         "Follow all event guidelines strictly."
       ],
+      "slot": ["March 20, 2025", "10:00 AM to 5:00 PM"],
       "logo": "./assets/logo.jpeg",
       "teamMembers": "Each team can have 2-4 members.",
-      "slot": "March 20, 2025 - 10:00 AM to 5:00 PM",
       "members": {
         "Alice": "./assets/logo.jpeg",
         "Bob": "./assets/logo.jpeg",
         "Charlie": "./assets/logo.jpeg",
         "David": "./assets/logo.jpeg"
-      }
+      },
+      "phone": "123-456-7890",
+      "coordinators": ["John Doe", "Jane Smith"],
+      "prizePool": "$5000"
     },
-    "CodeQuest2025": {
-      "name": "Code Quest 2025",
+    "Cipher Hunt": {
+      "name": "Cipher Hunt",
       "type": "Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
       "rules": [
-        "Individual or team participation (Max 3 members).",
-        "Coding must be done in allowed languages (Python, C++, Java, JavaScript).",
-        "Use of AI tools is strictly prohibited.",
-        "Internet access is allowed only for documentation.",
-        "Any form of cheating will lead to disqualification.",
-        "Judges' decisions are final.",
-        "Code must be submitted within the given time.",
-        "Respect fellow participants and follow event guidelines."
+        "Each team consists of one or a maximum of two players.",
+        "No communication between different teams.",
+        "No use of phones, smartwatches, or any gadgets.",
+        "No internet access, this is an offline event.",
+        "Violating the above rules will result in warnings.",
+        "Repeated violations will lead to disqualification.",
+        "No in-game hints will be provided.",
+        "Physical hints may be given by event organizers at their discretion.",
+        "Time limit is 2 hours.",
+        "Riddles will be progressively harder, various twists and tricks will be included, leading to the final treasure map. The next clue unlocks only when the correct answer is provided.",
+        "The first team to unlock the treasure map, locate the final puzzle, and solve it wins."
       ],
-      "logo": "./assets/logo.jpeg",
-
-      "teamMembers": "Solo or team (Max 3 members).",
-      "slot": "March 21, 2025 - 9:00 AM to 6:00 PM",
+      "slot": ["9:00 AM to 11:00 AM"],
+      "logo": "./assets/Events/CipherHunt.png",
+      "teamMembers": "Solo or team (Max 2 members).",
       "members": {
         "Eve": "./assets/logo.jpeg",
         "Frank": "./assets/logo.jpeg",
         "Grace": "./assets/logo.jpeg"
-      }
+      },
+      "phone": "9566194110",
+      "coordinators": ["S.Bhavin", "D.Rithika"],
+      "prizePool": "Rs.1500"
     },
-    "Tech2025": {
-      "name": "Tech Innovators 2025",
+    "Code & Fix": {
+      "name": "Code & Fix",
       "type": "Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
       "rules": [
-        "Teams must consist of 2-4 members.",
-        "Participants must bring their own laptops.",
-        "Use of internet is allowed only for reference.",
-        "Plagiarism will lead to disqualification.",
-        "Judges' decisions are final.",
-        "Submissions must be completed before the deadline.",
-        "Respect other teams and maintain decorum.",
-        "Follow all event guidelines strictly."
+        "Participants should not talk with other teams.",
+        "Participants should upload their prompt and their work."
       ],
-      "logo": "./assets/logo.jpeg",
-
-      "teamMembers": "Each team can have 2-4 members.",
-      "slot": "March 20, 2025 - 10:00 AM to 5:00 PM",
+      "slot": ["10:00 AM to 10:45 AM"],
+      "logo": "./assets/Events/Codenfix.jpeg",
+      "teamMembers": "Solo or team (Max 2 members).",
       "members": {
         "Heidi": "./assets/logo.jpeg",
         "Ivan": "./assets/logo.jpeg",
         "Judy": "./assets/logo.jpeg",
         "Karl": "./assets/logo.jpeg"
-      }
+      },
+      "phone": "7305143530 , 99406 97827 ",
+      "coordinators": ["Vijayaraghavan", "Anirudh"],
+      "prizePool": "Rs.2000"
     },
-    "HackTheFuture2025": {
-      "name": "Hack The Future 2025",
+    "UX Rescue Showdown": {
+      "name": "UX Rescue Showdown",
       "type": "Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
       "rules": [
-        "Teams must consist of 3-5 members.",
-        "Each team must present an innovative solution using tech.",
-        "Use of open-source tools is encouraged.",
-        "No plagiarism is allowed.",
-        "Judging criteria: Innovation, feasibility, and presentation.",
-        "Final submissions must be made within the deadline."
+        " Each team should spin the wheel only once.",
+        "Each team should only use the template that we assign.",
+        "Time limits should be strictly followed for each round.",
+        "In case of a tie, the team with the most innovative design will win"
       ],
-      "logo": "./assets/logo.jpeg",
-
-      "teamMembers": "Each team can have 3-5 members.",
-      "slot": "March 22, 2025 - 10:00 AM to 10:00 PM",
+      "slot": ["March 22, 2025", "10:00 AM to 10:00 PM"],
+      "logo": "./assets/Events/SoundClash.jpg",
+      "teamMembers": "Each team can have 2-3 members.",
       "members": {
         "Lana": "./assets/logo.jpeg",
         "Mike": "./assets/logo.jpeg",
         "Nina": "./assets/logo.jpeg",
         "Oliver": "./assets/logo.jpeg",
         "Peter": "./assets/logo.jpeg"
-      }
+      },
+      "phone": "8248736918",
+      "coordinators": ["Monika S, Vinisha M, Dharun kumar P"],
+      "prizePool": "Rs.2000"
     },
-    "Hack2025": {
-      "name": "Hack The Future 2025",
+    "Thinkovation": {
+      "name": "Thinkovation",
       "type": "Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
       "rules": [
-        "Teams must consist of 3-5 members.",
-        "Each team must present an innovative solution using tech.",
-        "Use of open-source tools is encouraged.",
-        "No plagiarism is allowed.",
-        "Judging criteria: Innovation, feasibility, and presentation.",
-        "Final submissions must be made within the deadline."
+        "Content: Include Problem, Solution, and Prototype in one of 10 given domains",
+        "Slides: Max 10 slides, any format.",
+        "Time : Upto 10-minute limit. ",
+        "Submission: Email ppt a day before to thinkovation2k25@gmail.com.",
+        "Q&A: Each team faces a Q&A session."
       ],
-      "logo": "./assets/logo.jpeg",
-
-      "teamMembers": "Each team can have 3-5 members.",
-      "slot": "March 22, 2025 - 10:00 AM to 10:00 PM",
+      "slot": ["10.00 PM - 12.00 PM", "1.30 PM - 2.30 PM"],
+      "logo": "./assets/Events/StackItUp.jpg",
+      "teamMembers": "Solo or team (Max 2 members).",
       "members": {
         "Quinn": "./assets/logo.jpeg",
         "Rachel": "./assets/logo.jpeg",
         "Sam": "./assets/logo.jpeg",
         "Tina": "./assets/logo.jpeg",
         "Uma": "./assets/logo.jpeg"
-      }
+      },
+      "phone": " 63830 68515, 82482 95220",
+      "coordinators": ["Prathana S", "Hemasri R", "Ramalakshmi M"],
+      "prizePool": "Rs.1000"
+    },
+    "Ctrl Alt Defeat": {
+      "name": "Ctrl Alt Defeat",
+      "type": "Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "One member solves a puzzle while other types a given code simultaneously",
+        "Both tasks must be accurate and completed together ",
+        "Both members work together to fix a buggy code snippet  ",
+        "The code must run successfully without errors"
+      ],
+      "slot": ["10.00 PM - 12.00 PM", "1.30 PM - 2.30 PM"],
+      "logo": "./assets/Events/StackItUp.jpg",
+      "teamMembers": "Solo or team (Max 2 members).",
+      "members": {
+        "Quinn": "./assets/logo.jpeg",
+        "Rachel": "./assets/logo.jpeg",
+        "Sam": "./assets/logo.jpeg",
+        "Tina": "./assets/logo.jpeg",
+        "Uma": "./assets/logo.jpeg"
+      },
+      "phone": "9342191054",
+      "coordinators": ["S.Sivapriya", "V.Nithya", "Srihari"],
+      "prizePool": "Rs.1000"
     }
   },
   "NonTechEvents": {
-    "ArtFusion2025": {
-      "name": "Art Fusion 2025",
-      "type": "Non-Tech",
-      "poster": "https://marketplace.canva.com/EAFQ4JHnB7I/1/0/1131w/canva-art-exhibition-event-flyer-7llgQ8B1J3M.jpg",
-      "rules": [
-        "Participants must bring their own art supplies.",
-        "Theme will be announced on the spot.",
-        "Time limit: 2 hours.",
-        "Use of AI-generated art is not allowed.",
-        "Judges' decisions are final."
-      ],
-      "logo": "./assets/logo.jpeg",
-
-      "teamMembers": "Individual participation only.",
-      "slot": "March 20, 2025 - 2:00 PM to 4:00 PM",
-      "members": {
-        "Victor": "./assets/logo.jpeg",
-        "Wendy": "./assets/logo.jpeg"
-      }
-    },
-    "DebateBattle2025": {
-      "name": "Debate Battle 2025",
+    "Sound Clash": {
+      "name": "Sound Clash",
       "type": "Non-Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
       "rules": [
-        "Teams of 2 members each.",
-        "Topics will be given 30 minutes before the debate.",
-        "Time limit per round: 5 minutes.",
-        "Use of offensive language will lead to disqualification.",
-        "Judges' decision is final."
-      ],
-      "logo": "./assets/logo.jpeg",
+        "Team can have maximum of  participants. ",
 
-      "teamMembers": "Teams of 2 members.",
-      "slot": "March 21, 2025 - 11:00 AM to 3:00 PM",
+"No participants can be part of more than one team. ",
+ 
+" It is not necessary that the participants forming a team should be from same college. ",
+ 
+"There is no restriction on the number of teams from the same college."
+
+
+      ],
+      "slot": ["10:00 AM to 12:00 PM", " 2:00 PM to 4:00 PM"],
+      "logo": "./assets/Events/SoundClash.jpg",
+      "teamMembers": "Each team can have 2-4 members.",
       "members": {
-        "Xander": "./assets/logo.jpeg",
-        "Yara": "./assets/logo.jpeg"
-      }
+        "Lana": "./assets/logo.jpeg",
+        "Mike": "./assets/logo.jpeg",
+        "Nina": "./assets/logo.jpeg",
+        "Oliver": "./assets/logo.jpeg",
+        "Peter": "./assets/logo.jpeg"
+      },
+      "phone": "63744 57383",
+      "coordinators": ["U.PriyaDharshini", "S.Darshinii", "D.Vishwa"]
     },
-    "TreasureHunt2025": {
-      "name": "Treasure Hunt 2025",
+    "Stack It Up": {
+      "name": "Stack It Up",
+      "type": "Non-Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Teams must follow all instructions given for each round.",
+        "Players must rotate as per the rules of each round.",
+        "No interference or disturbance to other teams is allowed.",
+        "Fair play is expected, and cheating will lead to disqualification.",
+        "Judges' decisions are final and cannot be challenged."
+      ],
+      "slot": ["", "10:00 AM to 10:00 PM"],
+      "logo": "./assets/Events/StackItUp.jpg",
+      "teamMembers": "Each team can have 3-4 members.",
+      "members": {
+        "Quinn": "./assets/logo.jpeg",
+        "Rachel": "./assets/logo.jpeg",
+        "Sam": "./assets/logo.jpeg",
+        "Tina": "./assets/logo.jpeg",
+        "Uma": "./assets/logo.jpeg"
+      },
+      "phone": "7550258967",
+      "coordinators": ["Kavitha S", "Santhiya L", "Sanjai Babu "],
+      "prizePool": "Rs.1000"
+    },
+    "Silver Screen ": {
+      "name": "Silver Screen ",
       "type": "Non-Tech",
       "poster": "https://marketplace.canva.com/EAFvdeUeF4M/1/0/1131w/canva-mystery-treasure-hunt-poster-3J_WsmYaej4.jpg",
       "rules": [
-        "Teams of 4 members.",
-        "Each clue leads to the next location.",
-        "No use of mobile phones or internet for help.",
-        "Time limit: 2 hours.",
-        "Winning team must find all clues and reach the final destination first."
+        "Partipicants must select the correct answer within a specific time limit."
       ],
+      "slot": ["March 22, 2025", "10:00 AM to 12:00 PM"],
       "logo": "./assets/logo.jpeg",
-
       "teamMembers": "Teams of 4 members.",
-      "slot": "March 22, 2025 - 10:00 AM to 12:00 PM",
       "members": {
         "Zane": "./assets/logo.jpeg",
         "Aria": "./assets/logo.jpeg",
         "Ben": "./assets/logo.jpeg",
         "Cara": "./assets/logo.jpeg"
-      }
+      },
+      "phone": "123-456-7890",
+      "coordinators": ["Mike", "Nina"]
     },
     "Debate025": {
       "name": "Debate Battle 2025",
@@ -196,16 +235,36 @@
         "Use of offensive language will lead to disqualification.",
         "Judges' decision is final."
       ],
+      "slot": ["March 21, 2025", "11:00 AM to 3:00 PM"],
       "logo": "./assets/logo.jpeg",
-
       "teamMembers": "Teams of 2 members.",
-      "slot": "March 21, 2025 - 11:00 AM to 3:00 PM",
       "members": {
         "Dana": "./assets/logo.jpeg",
         "Eli": "./assets/1279247.png"
-      }
+      },
+      "phone": "123-456-7890",
+      "coordinators": ["Oliver", "Peter"]
+    },
+    "Pixels": {
+      "name": "Pixels",
+      "type": "Non-Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Teams of 2 members each.",
+        "Topics will be given 30 minutes before the debate.",
+        "Time limit per round: 5 minutes.",
+        "Use of offensive language will lead to disqualification.",
+        "Judges' decision is final."
+      ],
+      "slot": ["March 21, 2025", "11:00 AM to 3:00 PM"],
+      "logo": "./assets/logo.jpeg",
+      "teamMembers": "Teams of 2 members.",
+      "members": {
+        "Dana": "./assets/logo.jpeg",
+        "Eli": "./assets/1279247.png"
+      },
+      "phone": "123-456-7890",
+      "coordinators": ["P.Dharun Kumar", "Peter"]
     }
-    
-    
   }
 }
