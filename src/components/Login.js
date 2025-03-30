@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
+import { IoArrowBack } from "react-icons/io5";
 
 // Add interface for decoded JWT payload
 function Login() {
@@ -186,9 +187,21 @@ function Login() {
     console.log('Data saved successfully');
   };
 
+  const handleBackClick = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
+
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden">
+        {/* Back Button */}
+        <button
+          onClick={handleBackClick}
+          className="absolute top-4 left-4 text-[#00FFFF] text-3xl z-50 hover:text-red-500 transition-colors"
+        >
+          <IoArrowBack />
+        </button>
+
         {/* Cyberpunk Grid Overlay */}
         <div className="absolute inset-0 bg-[url('https://i.imgur.com/1i6wD5t.jpg')] bg-cover bg-center opacity-50"></div>
         <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg"></div>
@@ -231,7 +244,6 @@ function Login() {
                 />
                 {errors.signIn.password && <p className="text-red-500 text-xs mt-1">{errors.signIn.password}</p>}
               </div>
-              {/* <a href="#" className="text-[13px] text-gray-400 no-underline mt-4 mb-2.5 hover:text-[#00f2ff] transition-colors duration-300">Forgot your password?</a> */}
               <button
                 type="submit"
                 className="neon-button"
@@ -240,8 +252,8 @@ function Login() {
               </button>
 
               {/* Mobile-only button to toggle to Sign Up */}
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={() => setIsActive(true)}
                 className="md:hidden neon-button-outline mt-4"
               >
@@ -303,8 +315,8 @@ function Login() {
               </button>
 
               {/* Mobile-only button to toggle back to Sign In */}
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={() => setIsActive(false)}
                 className="md:hidden neon-button-outline mt-4"
               >
@@ -386,7 +398,7 @@ body {
     opacity: 0;
     z-index: 1;
   }
-  
+
   .container.active .sign-up {
     transform: translateX(100%);
     opacity: 1;
@@ -400,24 +412,24 @@ body {
   .container {
     min-height: 550px; /* Slightly taller on mobile */
   }
-  
+
   .form-container {
     padding: 20px 0;
     width: 100%;
   }
-  
+
   .sign-in, .sign-up {
     transition: all 0.6s ease-in-out;
   }
-  
+
   .container.active .sign-in {
     transform: translateY(-100%);
   }
-  
+
   .sign-up {
     transform: translateY(100%);
   }
-  
+
   .container.active .sign-up {
     transform: translateY(0);
     opacity: 1;
@@ -559,7 +571,7 @@ body {
   .neon-input {
     padding: 10px;
   }
-  
+
   .neon-button, .neon-button-outline {
     padding: 10px 20px;
     font-size: 14px;

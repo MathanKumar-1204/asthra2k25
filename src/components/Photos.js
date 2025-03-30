@@ -8,12 +8,18 @@ const Photos = ({ logoImage, members = [] }) => {
     setIsSpinning(!isSpinning);
   };
 
+  const handleMemberClick = (link) => {
+    if (link) {
+      window.open(link, '_blank');
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center text-white py-6">
-      
+
       {/* 🔹 Logo at the Top */}
       <div
-        className="w-[140px] h-[140px] rounded-full bg-[#1A1A1D] shadow-[0px_0px_25px_#00FFFF] cursor-pointer flex justify-center items-center overflow-hidden 
+        className="w-[160px] h-[160px] rounded-full bg-[#1A1A1D] shadow-[0px_0px_25px_#00FFFF] cursor-pointer flex justify-center items-center overflow-hidden
         border-4 border-[#00FFFF] transition-all duration-300 hover:shadow-cyan-500 hover:scale-110"
         onClick={toggleSpin}
       >
@@ -24,45 +30,35 @@ const Photos = ({ logoImage, members = [] }) => {
         />
       </div>
 
-      {/* 🔹 Title Below Logo */}
-      <h2 className="mt-3 text-2xl font-bold text-[#00FFFF] tracking-wider uppercase neon-text">
-        Event Coordinators
-      </h2>
+      {/* 🔹 Space Between Logo and Members */}
+      <div className="mt-8"></div>
 
-      {/* 🔹 Team Members in Circular Layout */}
-      <div className="relative w-full max-w-3xl h-[230px] flex justify-center items-center mt-4">
-        {members.map((member, index) => {
-          const angle = (index / members.length) * 2 * Math.PI;
-          const x = Math.cos(angle) * 140; // Reduced radius for tighter positioning
-          const y = Math.sin(angle) * 70 + 50; // Pulled members closer to the title
-
-          return (
+      {/* 🔹 Team Members in Straight Line Layout */}
+      <div className="flex space-x-4 mt-4">
+        {members.map((member, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center transition-all"
+          >
+            {/* Member Image */}
             <div
-              key={index}
-              className={`absolute flex flex-col items-center transition-all ${isSpinning ? "animate-spin-slow" : ""}`}
-              style={{
-                transform: `translate(${x}px, ${y}px)`,
-              }}
+              className="w-[130px] h-[130px] rounded-full bg-[#111] shadow-[0px_0px_15px_#00FFFF] border-2 border-[#00FFFF]
+                flex justify-center items-center overflow-hidden cursor-pointer transition-all hover:scale-110 hover:shadow-cyan-500"
+              onMouseEnter={() => setCurrentImage(member.image)}
+              onMouseLeave={() => setCurrentImage(null)}
+              onClick={() => handleMemberClick(member.link)}
             >
-              {/* Member Image */}
-              <div
-                className="w-[110px] h-[110px] rounded-full bg-[#111] shadow-[0px_0px_15px_#00FFFF] border-2 border-[#00FFFF] 
-                  flex justify-center items-center overflow-hidden cursor-pointer transition-all hover:scale-110 hover:shadow-cyan-500"
-                onMouseEnter={() => setCurrentImage(member.image)}
-                onMouseLeave={() => setCurrentImage(null)}
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover rounded-full opacity-80 transition-opacity hover:opacity-100"
-                />
-              </div>
-
-              {/* Member Name Below */}
-              <p className="mt-1 text-[#00FFFF] font-semibold text-sm text-center">{member.name}</p>
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-full object-cover rounded-full opacity-80 transition-opacity hover:opacity-100"
+              />
             </div>
-          );
-        })}
+
+            {/* Member Name Below */}
+            <h2 className="mt-1 text-[#00FFFF] font-semibold text-center">{member.name}</h2>
+          </div>
+        ))}
       </div>
     </div>
   );

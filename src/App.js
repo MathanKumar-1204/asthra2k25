@@ -6,7 +6,7 @@ import Login from "./components/Login";
 import RegisteredEvents from "./components/RegisteredEvents";
 import EventsPage from "./components/EventsPage";
 import Reg from "./components/Reg";
-import Avatar from "./components/Avatars";
+import Avatars  from "./components/Avatars";
 function App() {
   return (
     <Router>
@@ -17,7 +17,7 @@ function App() {
         <Route path="/events-page" element={<EventsPage />} />
         <Route path="/registered" element={<RegisteredEvents />} />
         <Route path="/reg" element={<Reg />} />
-        <Route path="/credits" element={<Avatar/>} />
+        <Route path="/credits" element={<Avatars/>} />
       </Routes>
     </Router>
   );

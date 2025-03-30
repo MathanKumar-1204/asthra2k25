@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { IoCloseCircle } from "react-icons/io5";
+import { IoCloseCircle, IoArrowBack } from "react-icons/io5";
 import eventsData from "./events.json";
 import Photos from "./Photos";
 import Reg from "./Reg";
@@ -91,8 +91,20 @@ const EventsPage = () => {
     setShowRegPopup(false);
   };
 
+  const handleBackClick = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
+
   return (
     <div className="flex flex-col w-full items-center justify-center min-h-screen bg-gradient-to-br from-[#1A1A1D] to-[#3B1C32] p-6 text-[#E1BEE7] h-auto">
+      {/* Back Button */}
+      <button
+        onClick={handleBackClick}
+        className="absolute top-4 left-4 text-[#00FFFF] text-3xl z-50 hover:text-red-500 transition-colors"
+      >
+        <IoArrowBack />
+      </button>
+
       {/* Event Title */}
       <div className="bg-[#00FFFF] px-8 py-4 rounded-full text-lg sm:text-3xl font-extrabold mb-8 shadow-lg text-[#1A1A1D] uppercase tracking-wider text-center w-full max-w-xs sm:max-w-md">
         {eventDetails.name}
