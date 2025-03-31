@@ -5,27 +5,50 @@
       "type": "Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
       "rules": [
-        "Teams must consist of 2-4 members.",
-        "Participants must bring their own laptops.",
-        "Use of internet is allowed only for reference.",
-        "Plagiarism will lead to disqualification.",
-        "Judges' decisions are final.",
-        "Submissions must be completed before the deadline.",
-        "Respect other teams and maintain decorum.",
-        "Follow all event guidelines strictly."
+        "Participants must bring a mobile to participate in the quiz.",
+        "Only one teammate answers the quiz using a mobile",
+        "Other participants must predict their final score.",
+        "No communication is allowed between teammates once the quiz begins.",
+        "All the participants will be allowed to look at the questions."
+        
       ],
-      "slot": ["March 20, 2025", "10:00 AM to 5:00 PM"],
-      "logo": "./assets/logo.jpeg",
-      "teamMembers": "Each team can have 2-4 members.",
+      "slot": ["9:30 AM to 10:30 AM", "11:00 AM to 12:00 PM"],
+      "logo": "./assets/Events/QuizBuzz.jpeg",
+      "teamMembers": "Each team can have 2-3 members.",
       "members": {
         "Alice": "./assets/logo.jpeg",
         "Bob": "./assets/logo.jpeg",
         "Charlie": "./assets/logo.jpeg",
         "David": "./assets/logo.jpeg"
       },
-      "phone": "123-456-7890",
-      "coordinators": ["John Doe", "Jane Smith"],
-      "prizePool": "$5000"
+      "phone": "6369770514",
+      "coordinators": ["Mathan Kumar G", "Pavithra G"],
+      "prizePool": "Rs. 2200"
+    },
+    "Thinkovation": {
+      "name": "Thinkovation",
+      "type": "Tech",
+      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "rules": [
+        "Content: Include Problem, Solution, and Prototype in one of 10 given domains",
+        "Slides: Max 10 slides, any format.",
+        "Time : Upto 10-minute limit. ",
+        "Submission: Email ppt a day before to thinkovation2k25@gmail.com.",
+        "Q&A: Each team faces a Q&A session."
+      ],
+      "slot": ["10.00 PM - 12.00 PM", "1.30 PM - 2.30 PM"],
+      "logo": "./assets/Events/Thinkovation.jpeg",
+      "teamMembers": "Solo or team (Max 2 members).",
+      "members": {
+        "Quinn": "./assets/logo.jpeg",
+        "Rachel": "./assets/logo.jpeg",
+        "Sam": "./assets/logo.jpeg",
+        "Tina": "./assets/logo.jpeg",
+        "Uma": "./assets/logo.jpeg"
+      },
+      "phone": " 63830 68515, 82482 95220",
+      "coordinators": ["Prathana S", "Hemasri R", "Ramalakshmi M"],
+      "prizePool": "Rs.2200"
     },
     "Cipher Hunt": {
       "name": "Cipher Hunt",
@@ -54,7 +77,7 @@
       },
       "phone": "9566194110",
       "coordinators": ["S.Bhavin", "D.Rithika"],
-      "prizePool": "Rs.1500"
+      "prizePool": "Rs.2200"
     },
     "Code & Fix": {
       "name": "Code & Fix",
@@ -75,7 +98,7 @@
       },
       "phone": "7305143530 , 99406 97827 ",
       "coordinators": ["Vijayaraghavan", "Anirudh"],
-      "prizePool": "Rs.2000"
+      "prizePool": "Rs.2200"
     },
     "UX Rescue Showdown": {
       "name": "UX Rescue Showdown",
@@ -88,7 +111,7 @@
         "In case of a tie, the team with the most innovative design will win"
       ],
       "slot": ["March 22, 2025", "10:00 AM to 10:00 PM"],
-      "logo": "./assets/Events/SoundClash.jpg",
+      "logo": "./assets/Events/UXRescue.jpeg",
       "teamMembers": "Each team can have 2-3 members.",
       "members": {
         "Lana": "./assets/logo.jpeg",
@@ -99,33 +122,9 @@
       },
       "phone": "8248736918",
       "coordinators": ["Monika S, Vinisha M, Dharun kumar P"],
-      "prizePool": "Rs.2000"
+      "prizePool": "Rs.2200"
     },
-    "Thinkovation": {
-      "name": "Thinkovation",
-      "type": "Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
-      "rules": [
-        "Content: Include Problem, Solution, and Prototype in one of 10 given domains",
-        "Slides: Max 10 slides, any format.",
-        "Time : Upto 10-minute limit. ",
-        "Submission: Email ppt a day before to thinkovation2k25@gmail.com.",
-        "Q&A: Each team faces a Q&A session."
-      ],
-      "slot": ["10.00 PM - 12.00 PM", "1.30 PM - 2.30 PM"],
-      "logo": "./assets/Events/StackItUp.jpg",
-      "teamMembers": "Solo or team (Max 2 members).",
-      "members": {
-        "Quinn": "./assets/logo.jpeg",
-        "Rachel": "./assets/logo.jpeg",
-        "Sam": "./assets/logo.jpeg",
-        "Tina": "./assets/logo.jpeg",
-        "Uma": "./assets/logo.jpeg"
-      },
-      "phone": " 63830 68515, 82482 95220",
-      "coordinators": ["Prathana S", "Hemasri R", "Ramalakshmi M"],
-      "prizePool": "Rs.1000"
-    },
+  
     "Ctrl Alt Defeat": {
       "name": "Ctrl Alt Defeat",
       "type": "Tech",
@@ -137,7 +136,7 @@
         "The code must run successfully without errors"
       ],
       "slot": ["10.00 PM - 12.00 PM", "1.30 PM - 2.30 PM"],
-      "logo": "./assets/Events/StackItUp.jpg",
+      "logo": "./assets/Events/CtrlAltDefeat.jpeg",
       "teamMembers": "Solo or team (Max 2 members).",
       "members": {
         "Quinn": "./assets/logo.jpeg",
@@ -148,7 +147,7 @@
       },
       "phone": "9342191054",
       "coordinators": ["S.Sivapriya", "V.Nithya", "Srihari"],
-      "prizePool": "Rs.1000"
+      "prizePool": "Rs.2200"
     }
   },
   "NonTechEvents": {
@@ -210,40 +209,44 @@
       "type": "Non-Tech",
       "poster": "https://marketplace.canva.com/EAFvdeUeF4M/1/0/1131w/canva-mystery-treasure-hunt-poster-3J_WsmYaej4.jpg",
       "rules": [
-        "Partipicants must select the correct answer within a specific time limit."
+        "Participants must find the answer within the specified time limit.",
+        "The story will contain a hidden object or concept that participants must discover.",
+        "Only 5 related clues will be given about the story.",
+        "Participants must understand the context of the dialogue to translate it effectively.",
+        "Dialogues will be selected from popular movies, television shows, or other media."
       ],
       "slot": ["March 22, 2025", "10:00 AM to 12:00 PM"],
-      "logo": "./assets/logo.jpeg",
-      "teamMembers": "Teams of 4 members.",
+      "logo": "./assets/Events/SilverScreen.jpeg",
+      "teamMembers": "Teams of 2 - 4 members.",
       "members": {
         "Zane": "./assets/logo.jpeg",
         "Aria": "./assets/logo.jpeg",
         "Ben": "./assets/logo.jpeg",
         "Cara": "./assets/logo.jpeg"
       },
-      "phone": "123-456-7890",
-      "coordinators": ["Mike", "Nina"]
+      "phone": "97911 76452",
+      "coordinators": ["Nivetha.T" , "Anuradha Anand", "Yuvanikaa.C", "Aravind"]
     },
-    "Debate025": {
-      "name": "Debate Battle 2025",
+    "Fun Frenzy": {
+      "name": "Fun Frenzy",
       "type": "Non-Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
       "rules": [
-        "Teams of 2 members each.",
-        "Topics will be given 30 minutes before the debate.",
-        "Time limit per round: 5 minutes.",
-        "Use of offensive language will lead to disqualification.",
-        "Judges' decision is final."
+        "Only the provided object (balloon,cup,straw,ball) can be used to lift, move, or stack the cups hands are not allowed except round 1 and 3",
+        "If the object falls, participants must restart from the last successfully completed step.",
+        "Participants must complete each task within the specified time limit.",
+        "Points will be awarded based on successful completion of each round, with bonus points for the fastest completion."
+        
       ],
       "slot": ["March 21, 2025", "11:00 AM to 3:00 PM"],
-      "logo": "./assets/logo.jpeg",
-      "teamMembers": "Teams of 2 members.",
+      "logo": "./assets/Events/FunFrenzy.jpeg",
+      "teamMembers": "Solo participation.",
       "members": {
         "Dana": "./assets/logo.jpeg",
         "Eli": "./assets/1279247.png"
       },
-      "phone": "123-456-7890",
-      "coordinators": ["Oliver", "Peter"]
+      "phone": "89393 23900",
+      "coordinators": ["V.Harini Karpagam" , "S.Sanjay"]
     },
     "Pixels": {
       "name": "Pixels",

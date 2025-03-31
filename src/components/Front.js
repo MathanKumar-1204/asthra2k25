@@ -144,11 +144,11 @@ const Front = () => {
         </button>
       </div>
 
-      <GlitchText speed={1} enableShadows={true} enableOnHover={true} className="custom-class mt-20 text-green-300 md:mt-10">
+      <GlitchText speed={1} enableShadows={true} enableOnHover={true} className="custom-class mt-36 text-green-300 md:mt-10">
         ASTHRA2K25
       </GlitchText>
 
-      <div className="mt-16 text-yellow-400 text-2xl font-extrabold tracking-widest drop-shadow-lg animate-pulse md:mt-12 md:text-xl">
+      <div className="mt-24 text-yellow-400 text-2xl font-extrabold tracking-widest drop-shadow-lg animate-pulse md:mt-12 md:text-xl">
         19TH NATIONAL LEVEL TECHNICAL SYMPOSIUM
       </div>
 

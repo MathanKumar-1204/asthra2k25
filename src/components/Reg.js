@@ -17,6 +17,7 @@ const Reg = ({ eventName, onClose }) => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     const fetchUserRegistration = async () => {
@@ -42,7 +43,7 @@ const Reg = ({ eventName, onClose }) => {
             teamMembers: userRegistration.teamMembers || "",
             contact: userRegistration.contact || "",
             college: userRegistration.college || "",
-            teamMembersEmail: userRegistration.teamMembersEmail || "", // Update the new field
+            teamMembersEmail: userRegistration.teamMembersEmail || localStorage.getItem("teamMembersEmail") || "",
           });
         }
       } catch (error) {
@@ -55,12 +56,30 @@ const Reg = ({ eventName, onClose }) => {
     fetchUserRegistration();
   }, []);
 
+  useEffect(() => {
+    // Save teamMembersEmail to localStorage whenever it changes
+    localStorage.setItem("teamMembersEmail", formData.teamMembersEmail);
+  }, [formData.teamMembersEmail]);
+
+  const validateForm = () => {
+    let newErrors = {};
+    if (!/^[a-zA-Z ]+$/.test(formData.teamName)) newErrors.teamName = "Only alphabets are allowed";
+    if (!/^[a-zA-Z ]+$/.test(formData.teamLead)) newErrors.teamLead = "Only alphabets are allowed";
+    if (!/^[a-zA-Z ,]+$/.test(formData.teamMembers)) newErrors.teamMembers = "Only alphabets and commas are allowed";
+    if (!/^\d{10}$/.test(formData.contact)) newErrors.contact = "Contact must be 10 digits";
+    if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(formData.teamMembersEmail)) newErrors.teamMembersEmail = "Must be a @gmail.com address";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     if (!userInfo || !userInfo.email) {
       console.error("User not logged in");
@@ -75,7 +94,7 @@ const Reg = ({ eventName, onClose }) => {
       contact: formData.contact,
       college: formData.college,
       eventName: eventName,
-      teamMembersEmail: formData.teamMembersEmail, // Include the new field
+      teamMembersEmail: formData.teamMembersEmail,
     };
 
     console.log("Sending data:", newEntry);
@@ -138,7 +157,7 @@ const Reg = ({ eventName, onClose }) => {
               {Object.keys(formData).map((field) => (
                 <input
                   key={field}
-                  type= "mail"
+                  type={field === "teamMembersEmail" ? "email" : "text"}
                   name={field}
                   placeholder={field.replace(/([A-Z])/g, ' $1').trim()}
                   value={formData[field]}
@@ -147,10 +166,8 @@ const Reg = ({ eventName, onClose }) => {
                   className="w-full px-4 py-2 bg-black/60 text-cyan-300 border border-cyan-500 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition-all duration-300"
                 />
               ))}
-              <button
-                type="submit"
-                className="w-full bg-cyan-500 text-black font-semibold py-2 rounded-lg mt-4 hover:bg-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500 animate-pulse"
-              >
+              {Object.values(errors).map((error, idx) => <p key={idx} className="text-red-500">{error}</p>)}
+              <button type="submit" className="w-full bg-cyan-500 text-black font-semibold py-2 rounded-lg mt-4 hover:bg-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500 animate-pulse">
                 <ShinyText>Register Now</ShinyText>
               </button>
             </form>

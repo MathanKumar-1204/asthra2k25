@@ -12,15 +12,15 @@ const Sympo = () => {
       duration={400}
     >
       <div className="w-full h-screen bg-black text-white flex flex-col items-center py-10 font-mono px-4 overflow-hidden md:overflow-auto">
-        <div className="text-xl md:text-2xl font-bold text-[#C8A2C8] neon-text mb-8">
+        <div className="text-xl md:text-2xl font-bold text-[#00FFFF] neon-text-blue mb-8">
           <h2>ABOUT US</h2>
         </div>
 
-        <div className="w-full md:w-[70%] md:ml-auto flex flex-col space-y-12 md:max-h-none max-h-[70vh] overflow-y-auto scrollbar-hidden">
+        <div className="w-full md:w-[70%] md:ml-auto flex flex-col space-y-12 md:max-h-none max-h-[70vh] scrollable-content">
           {/* Asthra Section - Removed background container */}
           <div className="flex flex-col md:flex-row items-center md:items-start p-6 rounded-lg">
             <div className="md:w-2/3 text-left order-1 md:order-none">
-              <h2 className="text-sm md:text-2xl font-bold text-[#C8A2C8] neon-text mb-4 font-orbitron">Asthra2K25</h2>
+              <h2 className="text-sm md:text-2xl font-bold text-[#00FFFF] neon-text-blue mb-4 font-orbitron">Asthra2K25</h2>
               <SplitText
                 text="Asthra is a national level technical symposium held annually in our college. It is wholly organised and co-ordinated by our students and supported by the management and staff of Information Technology. Asthra is a stepping stone for students to showcase their technical expertise and talent on a grand stage."
                 className="text-sm md:text-lg text-gray-300 font-orbitron"
@@ -53,7 +53,7 @@ const Sympo = () => {
             </div>
 
             <div className="md:w-2/3 text-left ml-10">
-              <h3 className="text-sm md:text-xl font-semibold text-[#C8A2C8] neon-text mb-4 font-orbitron">Meenakshi Sundararajan Engineering College</h3>
+              <h3 className="text-sm md:text-xl font-semibold text-[#00FFFF] neon-text-blue mb-4 font-orbitron">Meenakshi Sundararajan Engineering College</h3>
               <SplitText
                 text="Meenakshi Sundararajan Engineering College (MSEC), founded by the IIET Society in 2001, is part of the KRS Group of Institutions. Known for quality education and discipline, the KRS Campus also includes IIET (est. 1947), Meenakshi College for Women, and Meenakshi Sundararajan School of Management."
                 className="text-sm md:text-lg text-gray-300 font-orbitron"
@@ -98,13 +98,15 @@ const Sympo = () => {
         }
 
         .neon-text {
-          text-shadow:
-            4px 5px 8px rgba(173, 150, 187, 0.9),
-            0px 0px 8px rgba(199, 180, 206, 0.8),
-            0px 0px 15px rgba(211, 188, 224, 0.7);
           font-size: 27px;
           line-height: 30px;
           color: rgba(243, 234, 248, 0.91); /* Soft lavender text color for better neon effect */
+        }
+
+        .neon-text-blue {
+          font-size: 27px;
+          line-height: 30px;
+          color: rgba(0, 255, 255, 0.91); /* Neon blue text color */
         }
 
         .shadow-neon {
@@ -113,8 +115,13 @@ const Sympo = () => {
             0px 0px 9px rgba(255, 255, 255, 0.8);
         }
 
+        .scrollable-content {
+          overflow-y: hidden;
+        }
+
         @media (max-width: 768px) {
-          .overflow-y-auto {
+          .scrollable-content {
+            overflow-y: auto;
             max-height: 70vh;
           }
         }

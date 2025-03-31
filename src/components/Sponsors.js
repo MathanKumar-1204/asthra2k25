@@ -25,7 +25,7 @@ const fadeIn = {
 const Sponsors = () => {
   return (
     <div className="sponsors-container bg-black">
-      <h2 className="sponsors-title">Our Sponsors</h2>
+      <h2 className="sponsors-title text-[#00FFFF]" >Our Sponsors</h2>
       <motion.div
         id="logo-section"
         className="sponsors-logo-section"

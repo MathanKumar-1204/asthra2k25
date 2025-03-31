@@ -3,19 +3,24 @@ from flask_cors import CORS
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
+from dotenv import load_dotenv  # Load environment variables securely
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
-CORS(app)  # Allow requests from frontend
+CORS(app)
 
-# Email Configuration (Replace these with actual values)
-EMAIL_ADDRESS = "pavithraganapathy08@gmail.com"  # Use your Gmail
-EMAIL_PASSWORD = "mfhlrjjrvhbdbfxc"  # Use the App Password, NOT your real password
+# Email Configuration (Using Environment Variables)
+EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
 @app.route("/send-confirmation", methods=["POST"])
 def send_confirmation():
     try:
         data = request.json
-        print("Received Data:", data)  # Debugging
+        print("Received Data:", data)
 
         recipient_email = data.get("email")
         if not recipient_email:
@@ -26,7 +31,7 @@ def send_confirmation():
         body = f"""
         Hello {data.get("teamLead")},  
 
-        Thank you for registering your team "{data.get("teamName")}" with us!  
+        Thank you for registering your team "{data.get("teamName")}" for the event {data.get("eventName")} with us!  
         Here are your details:
         - Team Lead: {data.get("teamLead")}
         - Team Members: {data.get("teamMembers")}
