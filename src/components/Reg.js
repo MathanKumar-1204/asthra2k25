@@ -150,7 +150,7 @@ const Reg = ({ eventName, onClose }) => {
           ) : isSubmitted ? (
             <div className="text-center">
               <h2 className="text-2xl font-bold text-cyan-300 mb-4 animate-textGlow">🎉 Registration Successful! 🎉</h2>
-              <p className="text-cyan-300">Thank you for registering. We will contact you soon!</p>
+              <p className="text-cyan-300">Thank you for registering. Check your mail!</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">

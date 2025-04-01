@@ -5,6 +5,7 @@ import GlitchText from "./Glitch";
 import "./front.css";
 import GLOBE from "vanta/dist/vanta.globe.min";
 import * as THREE from "three";
+import { LucideMenu } from 'lucide-react'; // Import the hamburger icon
 
 const Front = () => {
   const navigate = useNavigate();
@@ -75,15 +76,16 @@ const Front = () => {
     <div className="w-full h-screen flex flex-col items-center relative p-6 text-gray-100 font-sans overflow-hidden">
       <div ref={vantaRef} className="absolute top-0 left-0 w-full h-full z-[-1]" />
 
-      <div className="absolute top-6 left-6 bg-gray-600 shadow-xl rounded-full w-24 h-24 flex items-center justify-center text-lg font-extrabold text-black border-4 border-gray-500 transform hover:scale-110 transition duration-300 md:w-20 md:h-20 md:text-sm">
-        {userInfo && `${userInfo.name}`}
-      </div>
+      {/* Username Circle */}
+      {userInfo && (
+        <div className="absolute top-6 left-6 bg-gray-600 shadow-xl rounded-full w-24 h-24 flex items-center justify-center text-lg font-extrabold text-black border-4 border-gray-500 transform hover:scale-110 transition duration-300 md:w-20 md:h-20 md:text-sm">
+          {userInfo.name}
+        </div>
+      )}
 
       <div className="absolute top-6 right-6 md:hidden z-40">
         <button onClick={toggleMenu} className="text-gray-100 bg-green-950 focus:outline-none">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
+          <LucideMenu className="w-10 h-10" /> {/* Use the hamburger icon */}
         </button>
       </div>
 
@@ -153,14 +155,13 @@ const Front = () => {
       </div>
 
       {userInfo && (
-       <button
-       onClick={handleRegisteredClick}
-       className="neon-button bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto md:block hidden"
-       style={{ position: "absolute", bottom: "20px", right: "20px", fontFamily: "'Orbitron', sans-serif" }}
-     >
-       REGISTERED
-     </button>
-     
+      <button
+      onClick={handleRegisteredClick}
+      className="neon-button bg-gray-600 shadow-lg px-6 py-3 text-md font-bold rounded-xl text-black hover:opacity-90 transition duration-300 transform hover:scale-105 w-full sm:w-auto md:block hidden"
+      style={{ position: "absolute", bottom: "20px", right: "20px", fontFamily: "'Orbitron', sans-serif" }}
+    >
+      REGISTERED
+    </button>
       )}
 
       {showLogin && (
