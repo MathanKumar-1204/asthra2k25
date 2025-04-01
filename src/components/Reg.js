@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IoCloseCircle } from "react-icons/io5";
 
 const API_URL = "https://api.sheetbest.com/sheets/b0b06cc5-a1ef-41ee-b7c0-a123d92d771e";
-const EMAIL_API_URL = "https://webserver-gvl1.onrender.com"; // Update with your Flask backend URL
+const EMAIL_API_URL = "https://webserver-gvl1.onrender.com/send-confirmation"; // Update with your Flask backend URL
 
 const Reg = ({ eventName, onClose }) => {
   const [formData, setFormData] = useState({
