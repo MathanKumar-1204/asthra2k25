@@ -27,7 +27,9 @@ const posterteam = [
   { src: "./assets/avatars/posterteam/Sanjana.jpg", name: "Sanjana", link: "https://www.linkedin.com/in/sanjana-a-9178162a1" },
   { src: "./assets/avatars/posterteam/Siva.jpg", name: "Sivabalaji", link: "https://www.linkedin.com/in/sivabalaji-g-069989257" },
   { src: "./assets/avatars/social/Tharani.jpg", name: "Tharani", link: "https://www.linkedin.com/in/tharani-ganesh-6b8b2b2a1" },
+  { src: "./assets/avatars/posterteam/Bindusri.png", name: "Bindusri", link: "https://www.linkedin.com/in/bindusri-v-k-8bb2732a2" },
   { src: "./assets/avatars/posterteam/Nisha.jpg", name: "Nisha", link: "https://www.linkedin.com/in/nisha-d-j-924b082a1" },
+  { src: "./assets/avatars/posterteam/HariniKarpagam.jpeg", name: "Harini Karpagam", link: "https://www.linkedin.com/in/lingeswar-m" },
   { src: "./assets/avatars/posterteam/Lingesh.jpg", name: "Lingeshwaran", link: "https://www.linkedin.com/in/lingeswar-m" },
 ];
 
