@@ -23,7 +23,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="w-full bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 border-t-2 border-[#00FFFF]">
+    <div className="w-full bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 ">
 
       {/* 🔹 CREDITS Section */}
       <div className="max-w-3xl w-full mt-10">
@@ -34,7 +34,7 @@ const Footer = () => {
           className="bg-[#00FFFF] text-black font-semibold py-3 px-6 rounded-full hover:bg-[#0B0B13] hover:text-[#00FFFF] transition-all duration-300"
           onClick={handleCreditsClick}
         >
-          View Team Pictures
+          View Our Team
         </button>
       </div>
 

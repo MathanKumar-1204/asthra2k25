@@ -10,8 +10,7 @@ from dotenv import load_dotenv  # Load environment variables securely
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
-
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 # Email Configuration (Using Environment Variables)
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
@@ -64,4 +63,4 @@ def send_confirmation():
         return jsonify({"message": "Failed to send email", "error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0',port=5000,debug=True)

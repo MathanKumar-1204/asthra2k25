@@ -6,7 +6,7 @@ const Members = () => {
   const items = [
     {
       image: './assets/avatars/organisers/Nandha.jpeg',
-      link: 'https://google.com/',
+      link: 'https://www.linkedin.com/in/nandha-kumar-770356259/',
       title: 'Nandha Kumar',
       description: 'President (SWIPE ->)'
     },

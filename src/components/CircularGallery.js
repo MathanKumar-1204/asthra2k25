@@ -149,7 +149,7 @@ class Media {
     this.bend = bend;
     this.textColor = textColor;
     this.borderRadius = borderRadius;
-    this.font = font || "bold 30px sans-serif";
+    this.font = font || "bold 30px ";
     this.border = border;
     this.linkedIn = linkedIn;
     this.speed = 0;

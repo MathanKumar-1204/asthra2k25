@@ -84,13 +84,11 @@ export default Sponsors;
 const styles = `
 .sponsors-container {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: black;
   color: white;
   padding: 2.5rem;
-  overflow: hidden;
 }
 
 .sponsors-title {
@@ -99,10 +97,8 @@ const styles = `
   text-align: center;
   background-color: black;
   padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
   text-shadow: 2px 2px 5px black;
+  margin-bottom: 2rem; /* Add margin to separate from the content below */
 }
 
 .sponsors-logo-section {
@@ -111,8 +107,6 @@ const styles = `
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  overflow-y: auto;
-  max-height: 80vh;
   padding: 1.5rem;
 }
 
@@ -121,12 +115,14 @@ const styles = `
   font-weight: 600;
   text-align: center;
   text-shadow: 1px 1px 3px black;
+  margin-bottom: 1rem; /* Add margin to separate categories */
 }
 
 .sponsor-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem; /* Add margin to separate from other sections */
 }
 
 .sponsor-grid {
@@ -169,15 +165,6 @@ const styles = `
   height: 100%;
 }
 
-/* Hide Scrollbar */
-.sponsors-logo-section::-webkit-scrollbar {
-  display: none;
-}
-
-.sponsors-logo-section {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
 `;
 
 const styleSheet = document.createElement("style");

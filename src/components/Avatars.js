@@ -1,10 +1,8 @@
-// src/components/ImageSlider.js
-import React, { useRef , useState} from 'react';
+import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import './ImageSlider.css'; // Import the CSS file for styling
+import './ImageSlider.css';
 import CircularGallery from './CircularGallery';
-import Photos from './Photos';
-// import Lanyard from './lanyard'
+
 const images = [
   { src: "./assets/avatars/web/Mathan.png", link: "https://www.linkedin.com/in/mathankumarg04/", name: "Mathan Kumar" },
   { src: "./assets/avatars/web/Prathana.png", link: "https://www.linkedin.com/in/prathana2004", name: "Prathana" },
@@ -15,133 +13,163 @@ const images = [
   { src: "./assets/avatars/web/mohanakumar.jpg", link: "https://www.linkedin.com/in/mohanakumar-k-7a0b712a1/", name: "Mohana Kumar" },
   { src: "./assets/avatars/web/Zainab.jpg", link: "https://www.linkedin.com/in/zainab-nisa-32b87b275", name: "Zainab Nisa" },
 ];
+
 const studcoord = [
-  { image: "./assets/avatars/studcoord/Zainab.jpg", text: "Poojasri", linkedIn: "https://www.linkedin.com/in/jameseditor/" },
-  { image: "./assets/avatars/studcoord/Reena.jpg", text: "Reena", linkedIn: "https://www.linkedin.com/in/sophievideo/" },
-  { image: "./assets/avatars/studcoord/Zainab.jpg", text: "Zainab Nisa", linkedIn: "https://www.linkedin.com/in/zainab-nisa-32b87b275" },
-  { image: "./assets/avatars/studcoord/Zainab.jpg", text: "Lingeshwaran", linkedIn: "https://www.linkedin.com/in/oliviamotion/" },
-  { image: "./assets/avatars/studcoord/Zainab.jpg", text: "Hemanth", linkedIn: "https://www.linkedin.com/in/danielaudio/" },
-  { image: "./assets/avatars/studcoord/Zainab.jpg", text: "Siva Balaji", linkedIn: "https://www.linkedin.com/in/emmaeffects/" },
+  { src: "/assets/avatars/videoteam/pooja.png", name: "Poojasri", link: "https://www.linkedin.com/in/pooja-sri-b9421b2a2/" },
+  { src: "./assets/avatars/studcoord/Reena.jpg", name: "Reena", link: "www.linkedin.com/in/reena-venkatesh-6a036a1ab" },
+  { src: "./assets/avatars/studcoord/Zainab.jpg", name: "Zainab Nisa", link: "https://www.linkedin.com/in/zainab-nisa-32b87b275" },
+  { src: "./assets/avatars/studcoord/Lingesh.jpg", name: "Lingeshwaran", link: "https://www.linkedin.com/in/lingeswar-m" },
+  { src: "./assets/avatars/studcoord/Hemanth.jpeg", name: "Hemanth", link: "https://www.linkedin.com/in/hemanth-ayyappan-6b0b062a1/" },
+  { src: "./assets/avatars/studcoord/Siva.jpg", name: "Sivabalaji", linke: "https://www.linkedin.com/in/sivabalaji-g-069989257" },
 ];
+
 const posterteam = [
-  { image: "./assets/avatars/posterteam/Sanjana.jpg", text: "Sanjana", linkedIn: "https://www.linkedin.com/in/jameseditor/" },
-  { image: "./assets/avatars/posterteam/Zainab.jpg", text: "Sivabalaji", linkedIn: "https://www.linkedin.com/in/danielaudio/" },
-  { image: "./assets/avatars/posterteam/Zainab.jpg", text: "Tharani", linkedIn: "https://www.linkedin.com/in/sophievideo/" },
-  { image: "./assets/avatars/posterteam/Nisha.jpg", text: "Nisha", linkedIn: "https://www.linkedin.com/in/alexgraphics/" },
-  { image: "./assets/avatars/posterteam/Zainab.jpg", text: "Lingeshwaran", linkedIn: "https://www.linkedin.com/in/oliviamotion/" },
+  { src: "./assets/avatars/posterteam/Sanjana.jpg", name: "Sanjana", link: "https://www.linkedin.com/in/sanjana-a-9178162a1" },
+  { src: "./assets/avatars/posterteam/Siva.jpg", name: "Sivabalaji", link: "https://www.linkedin.com/in/sivabalaji-g-069989257" },
+  { src: "./assets/avatars/social/Tharani.jpg", name: "Tharani", link: "https://www.linkedin.com/in/tharani-ganesh-6b8b2b2a1" },
+  { src: "./assets/avatars/posterteam/Nisha.jpg", name: "Nisha", link: "https://www.linkedin.com/in/nisha-d-j-924b082a1" },
+  { src: "./assets/avatars/posterteam/Lingesh.jpg", name: "Lingeshwaran", link: "https://www.linkedin.com/in/lingeswar-m" },
 ];
-const videoteam = [
-  { image: "./assets/avatars/videoteam/Sanjana.jpg", name: "Dharun Kumar", link: "https://www.linkedin.com/in/jameseditor/" },
-  { image: "./assets/avatars/videoteam/Zainab.jpg", name: "Poojasri", link: "https://www.linkedin.com/in/danielaudio/" },
-  { image: "./assets/avatars/videoteam/Zainab.jpg", name: "Manoj", link: "https://www.linkedin.com/in/sophievideo/" },
-];
-const social= [
-  { image: "./assets/avatars/social/Sanjana.jpg", name: "Dharun Kumar", link: "https://www.linkedin.com/in/jameseditor/" },
-  { image: "./assets/avatars/social/Zainab.jpg", name: "Jasna Shaji", link: "https://www.linkedin.com/in/danielaudio/" },
 
+const mediaTeam = [
+  { src: "./assets/avatars/videoteam/dharun.jpg", link: "https://www.linkedin.com/in/dharun-kumar-80a9102a1/", name: "Dharun Kumar" },
+  { src: "./assets/avatars/videoteam/pooja.png", link: "https://www.linkedin.com/in/pooja-sri-b9421b2a2/", name: "Poojasri" },
+  { src: "./assets/avatars/videoteam/Manoj.png", link: "https://www.linkedin.com/in/manoj0512", name: "Manoj" },
+  { src: "./assets/avatars/social/jasnaa.jpg", link: "https://www.linkedin.com/in/jasna-shaji-1a3b932a1", name: "Jasna Shaji" }
 ];
+
 const handleOpenLinkedIn = (url) => {
- 
   window.open(url, "_blank");
-  
-  // Hide notification after 3 seconds
- 
 };
+
 const Avatars = () => {
-  const sliderRef = useRef(null);
+  const webSliderRef = useRef(null);
+  const topRef = useRef(null);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const handleMouseEnter = (index) => {
-    const items = sliderRef.current.querySelectorAll('.item');
-    gsap.to(items[index], { rotationY: 0, duration: 0.5 });
+  const createSliderHandlers = (sliderRef) => {
+    const handleMouseEnter = (index) => {
+      const items = sliderRef.current.querySelectorAll('.item');
+      gsap.to(items[index], { rotationY: 0, duration: 0.5 });
+    };
+
+    const handleMouseLeave = (index) => {
+      const items = sliderRef.current.querySelectorAll('.item');
+      gsap.to(items[index], { rotationY: 36, duration: 0.5 });
+    };
+
+    return { handleMouseEnter, handleMouseLeave };
   };
 
-  const handleMouseLeave = (index) => {
-    const items = sliderRef.current.querySelectorAll('.item');
-    gsap.to(items[index], { rotationY: 36, duration: 0.5 });
-  };
+  const webHandlers = createSliderHandlers(webSliderRef);
 
   const handleClick = (link) => {
     window.open(link, '_blank');
   };
 
-  return (
-    <div>
-      <div className="slider-title">Web Development Team</div>
-      <div className="slider-container" ref={sliderRef}>
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="item-wrapper text-center"
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
-            onClick={() => handleClick(image.link)}
-          >
-            <div
-              className="item relative w-full h-64 bg-cover bg-center rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105"
-              style={{ backgroundImage: `url(${image.src})` }}
-            ></div>
-            <div className="item-name mt-2 text-white text-lg">{image.name}</div>
-          </div>
-        ))}
-      </div>
-      <div className="relative z-10 text-center mb-10">
-              <h3 className="inline-block text-2xl md:text-3xl font-bold text-white px-8 py-3 rounded-full 
-                             bg-gradient-to-r from-purple-900 to-indigo-900 shadow-lg border border-purple-700 animate-float">
-               Student coordinators
-              </h3>
-            </div>
-            <div className="h-[500px] md:h-[600px] relative border-2 border-purple-900 rounded-lg">
-              <CircularGallery 
-                items={studcoord} 
-                bend={3} 
-                textColor="#ffffff" 
-                borderRadius={0.05}
-                font="bold 24px sans-serif"
-                border="2px solid #4a2c91"
-                onImageClick={(item) => handleOpenLinkedIn( item.linkedIn)}
-              />
-          </div>
-          <div className="relative z-10 text-center mb-10">
-              <h3 className="inline-block text-2xl md:text-3xl font-bold text-white px-8 py-3 rounded-full 
-                             bg-gradient-to-r from-purple-900 to-indigo-900 shadow-lg border border-purple-700 animate-float">
-                Poster Team
-              </h3>
-            </div>
-            <div className="h-[500px] md:h-[600px] relative border-2 border-purple-900 rounded-lg">
-              <CircularGallery 
-                items={posterteam} 
-                bend={-3} 
-                textColor="#ffffff" 
-                borderRadius={0.05}
-                font="bold 24px sans-serif"
-                border="2px solid #4a2c91"
-                onImageClick={(item) => handleOpenLinkedIn(item.text, item.linkedIn)}
-              />
-          </div>
-          <div className="relative z-10 text-center mb-10">
-              <h3 className="inline-block text-2xl md:text-3xl font-bold text-white px-8 py-3 rounded-full 
-                             bg-gradient-to-r from-purple-900 to-indigo-900 shadow-lg border border-purple-700 animate-float">
-                Editing Team
-              </h3>
-            </div>
-            <div className="h-[500px] md:h-[600px] relative border-2 border-purple-900 rounded-lg">
-              <Photos logoImage = "./assets/Camera.jfif"  members={videoteam}  />
-          </div>
-          <div className="relative z-10 text-center mb-10">
-              <h3 className="inline-block text-2xl md:text-3xl font-bold text-white px-8 py-3 rounded-full 
-                             bg-gradient-to-r from-purple-900 to-indigo-900 shadow-lg border border-purple-700 animate-float">
-                Social Media Team
-              </h3>
-            </div>
-            <div className="h-[500px] md:h-[600px] relative border-2 border-purple-900 rounded-lg">
-              <Photos logoImage = "./assets/Camera.jfif"  members={social}  />
-          </div>
-         
+  const containerStyle = "relative bg-gray-900/50 rounded-lg p-6 mb-12 shadow-xl border border-purple-700";
+  const webContainerStyle = "relative mb-12 md:-mt-20";
+  const titleStyle = "text-3xl font-bold text-white mb-8 text-center";
+  const webTitleStyle = "text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8 mt-6 md:mt-10 text-center";
+  const nameStyle = "text-xl font-bold text-white mt-2 text-center tracking-wide";
 
-{/* <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} /> */}
-      </div> 
-    
+  const renderSlider = (items, sliderRef, handlers) => (
+    <div
+      className="slider-container grid grid-cols-2 gap-4 md:block"
+      ref={sliderRef}
+    >
+      {items.map((item, index) => (
+        <div
+          key={index}
+          className="item-wrapper text-center"
+          onMouseEnter={() => handlers.handleMouseEnter(index)}
+          onMouseLeave={() => handlers.handleMouseLeave(index)}
+          onClick={() => handleClick(item.link)}
+        >
+          <div
+            className="item relative w-full h-64 bg-cover bg-center rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105"
+            style={{ backgroundImage: `url(${item.src})` }}
+          ></div>
+          <div className={nameStyle}>{item.name}</div>
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className="pb-12 px-4" ref={topRef}>
+      <button
+        className="back-button bg-purple-700 text-white px-4 py-2 rounded mt-4"
+        onClick={() => window.history.back()}
+      >
+        Back
+      </button>
+
+      <h3 className={webTitleStyle}>Web Development Team</h3>
+      <div className={webContainerStyle}>
+        {renderSlider(images, webSliderRef, webHandlers)}
+      </div>
+
+      <h3 className={titleStyle}>Student Coordinators</h3>
+      <div className={containerStyle}>
+        <div className="h-[500px] md:h-[600px]">
+          <CircularGallery
+            items={studcoord.map(item => ({
+              image: item.src,
+              text: item.name,
+              linkedIn: item.link,
+              textClassName: nameStyle
+            }))}
+            bend={3}
+            textColor="#ffffff"
+            borderRadius={0.05}
+            border="2px solid #4a2c91"
+            onImageClick={(item) => handleOpenLinkedIn(item.linkedIn)}
+          />
+        </div>
+      </div>
+
+      <h3 className={titleStyle}>Poster Team</h3>
+      <div className={containerStyle}>
+        <div className="h-[500px] md:h-[600px]">
+          <CircularGallery
+            items={posterteam.map(item => ({
+              image: item.src,
+              text: item.name,
+              linkedIn: item.link,
+              textClassName: nameStyle
+            }))}
+            bend={-3}
+            textColor="#ffffff"
+            borderRadius={0.05}
+            border="2px solid #4a2c91"
+            onImageClick={(item) => handleOpenLinkedIn(item.linkedIn)}
+          />
+        </div>
+      </div>
+
+      <h3 className={titleStyle}>Editing & Social Media Team</h3>
+      <div className={containerStyle}>
+        <div className="h-[500px] md:h-[600px]">
+          <CircularGallery
+            items={mediaTeam.map(item => ({
+              image: item.src,
+              text: item.name,
+              linkedIn: item.link,
+              textClassName: nameStyle
+            }))}
+            bend={3}
+            textColor="#ffffff"
+            borderRadius={0.05}
+            border="2px solid #4a2c91"
+            onImageClick={(item) => handleOpenLinkedIn(item.linkedIn)}
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 

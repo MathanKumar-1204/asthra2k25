@@ -71,6 +71,7 @@ const CountdownClock = () => {
         >
           Countdown to Symposium
         </motion.h2>
+        <div className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-cyan-400 to-yellow-400 text-transparent bg-clip-text">17th APRIL 2025</div>
 
         {/* Timer Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

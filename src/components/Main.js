@@ -120,10 +120,10 @@ const Main = () => {
       <div id="events" className="top-0 bg-black z-10 p-3">
         <Events />
       </div>
-      <div className="top-0 w-full sticky bg-black z-10 p-3">
+      <div className="top-0 w-full bg-black z-10 p-3">
         <Sponsors />
       </div>
-      <div className="top-0  w-full sticky z-10 bg-black p-3">
+      <div className="top-0  w-full sticky  z-10 bg-black p-3">
         <Members />
       </div>
       <div className="top-0 w-full sticky bg-black z-10 p-3">

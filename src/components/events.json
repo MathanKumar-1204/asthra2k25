@@ -67,7 +67,7 @@
         "Riddles will be progressively harder, various twists and tricks will be included, leading to the final treasure map. The next clue unlocks only when the correct answer is provided.",
         "The first team to unlock the treasure map, locate the final puzzle, and solve it wins."
       ],
-      "slot": ["9:00 AM to 11:00 AM"],
+      "slot": ["9:00 AM to 12:00 AM"," 1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/CipherHunt.png",
       "teamMembers": "Solo or team (Max 2 members).",
       "members": {
@@ -87,7 +87,7 @@
         "Participants should not talk with other teams.",
         "Participants should upload their prompt and their work."
       ],
-      "slot": ["10:00 AM to 10:45 AM"],
+      "slot": ["9:15 AM to 10:00 AM","11:00 AM to 11:45 AM"],
       "logo": "./assets/Events/Codenfix.jpeg",
       "teamMembers": "Solo or team (Max 2 members).",
       "members": {
@@ -110,7 +110,7 @@
         "Time limits should be strictly followed for each round.",
         "In case of a tie, the team with the most innovative design will win"
       ],
-      "slot": ["March 22, 2025", "10:00 AM to 10:00 PM"],
+      "slot": ["9:30 AM to 10:30 AM", "11:00 AM to 12:00 PM","1.30 PM - 2.30 PM"],
       "logo": "./assets/Events/UXRescue.jpeg",
       "teamMembers": "Each team can have 2-3 members.",
       "members": {
@@ -135,7 +135,7 @@
         "Both members work together to fix a buggy code snippet  ",
         "The code must run successfully without errors"
       ],
-      "slot": ["10.00 PM - 12.00 PM", "1.30 PM - 2.30 PM"],
+      "slot": ["9:00 AM to 12:00 PM", "1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/CtrlAltDefeat.jpeg",
       "teamMembers": "Solo or team (Max 2 members).",
       "members": {
@@ -166,7 +166,7 @@
 
 
       ],
-      "slot": ["10:00 AM to 12:00 PM", " 2:00 PM to 4:00 PM"],
+      "slot": ["9:30 AM to 11:00 AM", " 1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/SoundClash.jpg",
       "teamMembers": "Each team can have 2-4 members.",
       "members": {
@@ -190,7 +190,7 @@
         "Fair play is expected, and cheating will lead to disqualification.",
         "Judges' decisions are final and cannot be challenged."
       ],
-      "slot": ["", "10:00 AM to 10:00 PM"],
+      "slot": ["10:00 AM to 12:00 PM", "1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/StackItUp.jpg",
       "teamMembers": "Each team can have 3-4 members.",
       "members": {
@@ -215,7 +215,7 @@
         "Participants must understand the context of the dialogue to translate it effectively.",
         "Dialogues will be selected from popular movies, television shows, or other media."
       ],
-      "slot": ["March 22, 2025", "10:00 AM to 12:00 PM"],
+      "slot": ["9:30 AM to 11:00 AM", "1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/SilverScreen.jpeg",
       "teamMembers": "Teams of 2 - 4 members.",
       "members": {
@@ -238,7 +238,7 @@
         "Points will be awarded based on successful completion of each round, with bonus points for the fastest completion."
         
       ],
-      "slot": ["March 21, 2025", "11:00 AM to 3:00 PM"],
+      "slot": ["10:00 AM to 12:00 PM", "1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/FunFrenzy.jpeg",
       "teamMembers": "Solo participation.",
       "members": {
@@ -249,25 +249,25 @@
       "coordinators": ["V.Harini Karpagam" , "S.Sanjay"]
     },
     "Pixels": {
-      "name": "Pixels",
+      "name": "Asthra Pixelz",
       "type": "Non-Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
       "rules": [
-        "Teams of 2 members each.",
-        "Topics will be given 30 minutes before the debate.",
-        "Time limit per round: 5 minutes.",
-        "Use of offensive language will lead to disqualification.",
-        "Judges' decision is final."
+        "Theme-Based: Capture photos related to the given theme.",
+        "Original Work: No copied or AI-generated images.",
+        "No Watermarks: Submit photos without logos or text.",
+        "Basic Edits Only: Minor brightness and contrast adjustments allowed",
+        "On-Time Submission: Entries after the deadline won't be accepted."
       ],
-      "slot": ["March 21, 2025", "11:00 AM to 3:00 PM"],
-      "logo": "./assets/logo.jpeg",
-      "teamMembers": "Teams of 2 members.",
+      "slot": ["ONLINE"],
+      "logo": "./assets/Events/AsthraPixelz.jpeg",
+      "teamMembers": "Solo participation.",
       "members": {
         "Dana": "./assets/logo.jpeg",
         "Eli": "./assets/1279247.png"
       },
-      "phone": "123-456-7890",
-      "coordinators": ["P.Dharun Kumar", "Peter"]
+      "phone": "8248736918",
+      "coordinators": ["P.Dharun Kumar", "Jasna Shaji"]
     }
   }
 }
