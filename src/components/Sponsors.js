@@ -6,14 +6,14 @@ const titleSponsor = [
 ];
 
 const associateSponsors = [
-  { id: 2, name: "Associate Sponsor 1", image: "https://via.placeholder.com/300", url: "https://example.com" },
+  { id: 2, name: "Shri Meenakshi Associate", image: "./assets/Sponsors/ShriMeenakshiAssociate.png", url: "https://www.vigneshpropertees.com/" },
   { id: 3, name: "Associate Sponsor 2", image: "https://via.placeholder.com/300", url: "https://example.com" },
   { id: 7, name: "Associate Sponsor 3", image: "https://via.placeholder.com/300", url: "https://example.com" },
 ];
 
 const coAssociateSponsors = [
   { id: 4, name: "Vignesh Propertees", image: "./assets/Sponsors/CoAssociateSponsor1.jpeg", url: "https://www.vigneshpropertees.com/" },
-  { id: 5, name: "Shri Meenakshi Associate", image: "./assets/Sponsors/ShriMeenakshiAssociate.png", url: "https://shrimeenakshi.com/" },
+  { id: 5, name: "Co-Associate Sponsor 2", image: "https://via.placeholder.com/300", url: "https://example.com" },
   { id: 6, name: "Co-Associate Sponsor 3", image: "https://via.placeholder.com/300", url: "https://example.com" },
 ];
 
@@ -71,7 +71,7 @@ const SponsorCard = ({ sponsor }) => (
     <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className="sponsor-link">
       <img
         src={sponsor.image}
-        alt={sponsor.name}
+        alt={"YET TO REVEAL"}
         className="sponsor-image"
       />
     </a>

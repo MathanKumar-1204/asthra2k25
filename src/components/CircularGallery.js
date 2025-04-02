@@ -137,6 +137,14 @@ class Media {
     this.createMesh();
     this.createTitle();
     this.onResize();
+
+    // Create an img element for the media item
+    this.imgElement = document.createElement('img');
+    this.imgElement.src = this.image;
+    this.imgElement.style.display = 'none'; // Hide the image initially
+    this.imgElement.style.position = 'absolute';
+    this.imgElement.style.pointerEvents = 'none';
+    document.body.appendChild(this.imgElement);
   }
 
   createShader() {
@@ -248,6 +256,11 @@ class Media {
       this.extra += this.widthTotal;
       this.isBefore = this.isAfter = false;
     }
+
+    // Update the position of the img element
+    const rect = this.imgElement.getBoundingClientRect();
+    this.imgElement.style.left = `${this.plane.position.x + rect.width / 2}px`;
+    this.imgElement.style.top = `${this.plane.position.y + rect.height / 2}px`;
   }
 
   onResize({ screen, viewport } = {}) {
@@ -447,8 +460,8 @@ class App {
     if (closestMedia && Math.abs(x - centerX) < rect.width * 0.3) {
       const originalItem = this.items.find(item => item.text === closestMedia.text);
 
-      if (originalItem && originalItem.linkedIn && this.onItemClick) {
-        this.onItemClick(originalItem);
+      if (originalItem && originalItem.linkedIn) {
+        window.open(originalItem.linkedIn, '_blank');
       }
     }
   }
@@ -557,6 +570,7 @@ class App {
     }
   }
 }
+
 function createTextTexture(gl, text, font = "bold 30px monospace", color = "black") {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");

@@ -37,7 +37,7 @@
         "Q&A: Each team faces a Q&A session."
       ],
       "slot": ["10.00 PM - 12.00 PM", "1.30 PM - 2.30 PM"],
-      "logo": "./assets/Events/Thinkovation.jpeg",
+      "logo": "./assets/Events/thinkovation.png",
       "teamMembers": "Solo or team (Max 2 members).",
       "members": {
         "Quinn": "./assets/logo.jpeg",
@@ -54,19 +54,14 @@
       "name": "Cipher Hunt",
       "type": "Tech",
       "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
-      "rules": [
-        "Each team consists of one or a maximum of two players.",
-        "No communication between different teams.",
-        "No use of phones, smartwatches, or any gadgets.",
-        "No internet access, this is an offline event.",
-        "Violating the above rules will result in warnings.",
-        "Repeated violations will lead to disqualification.",
-        "No in-game hints will be provided.",
-        "Physical hints may be given by event organizers at their discretion.",
-        "Time limit is 2 hours.",
-        "Riddles will be progressively harder, various twists and tricks will be included, leading to the final treasure map. The next clue unlocks only when the correct answer is provided.",
-        "The first team to unlock the treasure map, locate the final puzzle, and solve it wins."
-      ],
+        "rules": [
+          "No communication between different teams.",
+          "Violating the above rules will result in warnings.",
+          "No in-game hints will be provided.",
+          "Time limit is 2 hours.",
+          "Riddles will be progressively harder, various twists and tricks will be included, leading to the final treasure map. The next clue unlocks only when the correct answer is provided.",
+          "The first team to unlock the treasure map, locate the final puzzle, and solve it wins."
+        ],
       "slot": ["9:00 AM to 12:00 AM"," 1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/CipherHunt.png",
       "teamMembers": "Solo or team (Max 2 members).",
@@ -82,7 +77,7 @@
     "Code & Fix": {
       "name": "Code & Fix",
       "type": "Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "./assets/poster/codefix.jpg",
       "rules": [
         "Participants should not talk with other teams.",
         "Participants should upload their prompt and their work."
@@ -239,7 +234,7 @@
         
       ],
       "slot": ["10:00 AM to 12:00 PM", "1:30 PM to 3:00 PM"],
-      "logo": "./assets/Events/FunFrenzy.jpeg",
+      "logo": "./assets/Events/FunFrenzy.png",
       "teamMembers": "Solo participation.",
       "members": {
         "Dana": "./assets/logo.jpeg",

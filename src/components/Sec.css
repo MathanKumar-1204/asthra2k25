@@ -77,7 +77,12 @@
     grid-template-rows: repeat(4, auto);
   }
 }
-/* src/components/ImageSlider.css */
+
+/* New class for dark blue background */
+.dark-blue-bg {
+  background-color: #1e3a8a; /* Dark blue background color */
+}
+
 .back-button {
   position: absolute;
   top: 1rem;

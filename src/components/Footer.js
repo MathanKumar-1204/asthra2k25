@@ -63,7 +63,7 @@ const Footer = () => {
 
       {/* 🔹 Flip Cards Section */}
       <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {["Event Date", "100 % free!", "Lunch on us"].map((title, index) => (
+        {["Event Date", "100 % free!", "Win Prizes"].map((title, index) => (
           <div key={index} className="flip-container">
             <div className="flip-card">
               {/* Front Side */}
@@ -77,7 +77,7 @@ const Footer = () => {
                     ? "The symposium is scheduled for April 17th, 2025."
                     : index === 1
                     ? "Free registration for all events."
-                    : "No need to bring your wallet—just your appetite!."}
+                    : "Every tech event has a prize pool for top 3 winners. "}
                 </p>
               </div>
             </div>
