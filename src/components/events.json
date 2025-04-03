@@ -92,7 +92,7 @@
         "Karl": "./assets/logo.jpeg"
       },
       "phone": "7305143530 , 99406 97827 ",
-      "coordinators": ["Vijayaraghavan", "Anirudh"],
+      "coordinators": ["Vijayaraghavan","Yuvashree", "Anirudh"],
       "prizePool": "Rs.2200"
     },
     "UX Rescue Showdown": {
@@ -234,7 +234,7 @@
         
       ],
       "slot": ["10:00 AM to 12:00 PM", "1:30 PM to 3:00 PM"],
-      "logo": "./assets/Events/FunFrenzy.png",
+      "logo": "./assets/Events/FunFrenzy.jpeg",
       "teamMembers": "Solo participation.",
       "members": {
         "Dana": "./assets/logo.jpeg",

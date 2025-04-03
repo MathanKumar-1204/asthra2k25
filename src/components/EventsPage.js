@@ -106,7 +106,7 @@ const EventsPage = () => {
       </button>
 
       {/* Event Title */}
-      <div className="bg-[#00FFFF] px-8 py-4 rounded-full text-lg sm:text-3xl font-extrabold mb-8 shadow-lg text-[#1A1A1D] uppercase tracking-wider text-center w-full max-w-xs sm:max-w-md">
+      <div className="bg-[#00FFFF] px-8 py-4 rounded-full text-lg sm:text-3xl mt-4 font-extrabold mb-8 shadow-lg text-[#1A1A1D] uppercase tracking-wider text-center w-full max-w-xs sm:max-w-md">
         {eventDetails.name}
       </div>
 

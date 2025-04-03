@@ -16,19 +16,21 @@ const Sympo = () => {
           <h2>ABOUT US</h2>
         </div>
 
-        <div className="w-full md:w-[70%] md:ml-auto flex flex-col space-y-12 md:max-h-none max-h-[70vh] scrollable-content">
-          {/* Asthra Section - Removed background container */}
+        <div className="w-full md:w-[70%] md:ml-auto flex flex-col space-y-2 md:max-h-none max-h-[70vh] scrollable-content">
+          {/* Asthra Section */}
           <div className="flex flex-col md:flex-row items-center md:items-start p-6 rounded-lg">
-            <div className="md:w-1/3 flex justify-center md:justify-start mb-6 md:mb-0">
+            <div className="md:w-1/3 flex justify-center md:justify-start mb-3 md:mb-0">
               <img
-                src="./assets/msec.webp"
+                src="./assets/msec.jpg"
                 alt="College Logo"
                 className="w-32 h-24 md:w-80 md:h-60 object-cover rounded-lg shadow-neon"
               />
             </div>
 
-            <div className="md:w-2/3 text-left ml-10">
-              <h3 className="text-sm md:text-xl font-semibold text-[#00FFFF] neon-text-blue mb-4 font-orbitron">Meenakshi Sundararajan Engineering College</h3>
+            <div className="md:w-2/3 text-left ml-10 md:ml-0">
+              <h3 className="text-sm md:text-xl font-semibold text-[#00FFFF] neon-text-blue mb-4 font-orbitron">
+                Meenakshi Sundararajan Engineering College
+              </h3>
               <SplitText
                 text="Meenakshi Sundararajan Engineering College (MSEC), founded by the IIET Society in 2001, is part of the KRS Group of Institutions. Known for quality education and discipline, the KRS Campus also includes IIET (est. 1947), Meenakshi College for Women, and Meenakshi Sundararajan School of Management."
                 className="text-sm md:text-lg text-gray-300 font-orbitron"
@@ -41,9 +43,13 @@ const Sympo = () => {
               />
             </div>
           </div>
+
+          {/* Asthra Section */}
           <div className="flex flex-col md:flex-row items-center md:items-start p-6 rounded-lg">
             <div className="md:w-2/3 text-left order-1 md:order-none">
-              <h2 className="text-sm md:text-2xl font-bold text-[#00FFFF] neon-text-blue mb-4 font-orbitron">Asthra2K25</h2>
+              <h2 className="text-sm md:text-2xl font-bold text-[#00FFFF] neon-text-blue mb-4 font-orbitron">
+                Asthra2K25
+              </h2>
               <SplitText
                 text="Asthra is a national level technical symposium held annually in our college. It is wholly organised and co-ordinated by our students and supported by the management, principal and staff of Information Technology. Asthra is a stepping stone for students to showcase their technical expertise and talent on a grand stage."
                 className="text-sm md:text-lg text-gray-300 font-orbitron"
@@ -56,7 +62,7 @@ const Sympo = () => {
               />
             </div>
 
-            <div className="md:w-1/3 flex justify-center md:justify-end mt-6 md:mt-0">
+            <div className="md:w-1/3 flex justify-center md:justify-end mb-3 md:mt-0">
               <img
                 src="./assets/logo.jpeg"
                 alt="Symposium Logo"
@@ -64,11 +70,7 @@ const Sympo = () => {
               />
             </div>
           </div>
-
-          {/* College Section - Removed background container */}
-          
         </div>
-
       </div>
 
       <style>{`
@@ -101,13 +103,13 @@ const Sympo = () => {
         .neon-text {
           font-size: 27px;
           line-height: 30px;
-          color: rgba(243, 234, 248, 0.91); /* Soft lavender text color for better neon effect */
+          color: rgba(243, 234, 248, 0.91);
         }
 
         .neon-text-blue {
           font-size: 27px;
           line-height: 30px;
-          color: rgba(0, 255, 255, 0.91); /* Neon blue text color */
+          color: rgba(0, 255, 255, 0.91);
         }
 
         .shadow-neon {
@@ -124,6 +126,16 @@ const Sympo = () => {
           .scrollable-content {
             overflow-y: auto;
             max-height: 70vh;
+          }
+
+          /* Reduce space between Asthra logo and MSEC description */
+          .md\\:w-1\\/3.flex.justify-center.md\\:justify-start.mb-6.md\\:mb-0 {
+            margin-bottom: 1rem; /* Adjusted */
+          }
+
+          /* Increase space between Asthra logo and its description */
+          .md\\:w-1\\/3.flex.justify-center.md\\:justify-end.mt-6.md\\:mt-0 {
+            margin-top: 2rem; /* Adjusted */
           }
         }
       `}</style>

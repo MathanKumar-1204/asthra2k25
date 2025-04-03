@@ -1,18 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import './ImageSlider.css';
-import CircularGallery from './CircularGallery';
 import WebDevelopmentTeam from './WebDevelopmentTeam';
 import StudentCoordinators from './StudentCoordinators'; // Import the new component
 import Sec from './sec';
-const posterteam = [
-  { src: "./assets/avatars/posterteam/Sanjana.jpg", name: "Sanjana", link: "https://www.linkedin.com/in/sanjana-a-9178162a1" },
-  { src: "./assets/avatars/posterteam/Siva.jpg", name: "Sivabalaji", link: "https://www.linkedin.com/in/sivabalaji-g-069989257" },
-  { src: "./assets/avatars/social/Tharani.jpg", name: "Tharani", link: "https://www.linkedin.com/in/tharani-ganesh-6b8b2b2a1" },
-  { src: "./assets/avatars/posterteam/Bindusri.png", name: "Bindusri", link: "https://www.linkedin.com/in/bindusri-v-k-8bb2732a2" },
-  { src: "./assets/avatars/posterteam/Nisha.jpg", name: "Nisha", link: "https://www.linkedin.com/in/nisha-d-j-924b082a1" },
-  { src: "./assets/avatars/posterteam/HariniKarpagam.jpeg", name: "Harini Karpagam", link: "https://www.linkedin.com/in/lingeswar-m" },
-  { src: "./assets/avatars/posterteam/Lingesh.jpg", name: "Lingeshwaran", link: "https://www.linkedin.com/in/lingeswar-m" },
-];
+import Poster from './Posterteam';
+import Edit from './Edit';
 
 const mediaTeam = [
   { src: "./assets/avatars/videoteam/dharun.jpg", link: "https://www.linkedin.com/in/dharun-kumar-80a9102a1/", name: "Dharun Kumar" },
@@ -45,51 +37,16 @@ const Avatars = () => {
       >
         Back
       </button>
+      <h1 className={webTitleStyle} style={{ color: '#00FFFF' }}>CREDITS</h1>
 
       <h3 className={webTitleStyle}>Web Development Team</h3>
       <WebDevelopmentTeam />
 
-      <h3 className={titleStyle}>Student Coordinators</h3>
       <StudentCoordinators />
 
-      <h3 className={titleStyle}>Poster Team</h3>
-      <div className={containerStyle}>
-        <div className="h-[500px] md:h-[600px]">
-          <CircularGallery
-            items={posterteam.map(item => ({
-              image: item.src,
-              text: item.name,
-              linkedIn: item.link,
-              textClassName: nameStyle
-            }))}
-            bend={-3}
-            textColor="#ffffff"
-            borderRadius={0.05}
-            border="2px solid #4a2c91"
-            onImageClick={(item) => handleOpenLinkedIn(item.linkedIn)}
-          />
-        </div>
-      </div>
+      <Poster/>
 
-      <h3 className={titleStyle}>Editing & Social Media Team</h3>
-      <div className={containerStyle}>
-        <div className="h-[500px] md:h-[600px]">
-          <CircularGallery
-            items={mediaTeam.map(item => ({
-              image: item.src,
-              text: item.name,
-              linkedIn: item.link,
-              textClassName: nameStyle
-            }))}
-            bend={3}
-            textColor="#ffffff"
-            borderRadius={0.05}
-            border="2px solid #4a2c91"
-            onImageClick={(item) => handleOpenLinkedIn(item.linkedIn)}
-          />
-        </div>
-
-      </div>
+     <Edit/>
       <Sec className="bg-blue "/>
     </div>
   );

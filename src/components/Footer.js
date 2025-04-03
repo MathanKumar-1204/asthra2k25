@@ -44,21 +44,35 @@ const Footer = () => {
           FAQs
         </h2>
         <div className="space-y-6">
-          {faqs.map((faq, index) => (
-            <div key={index} className="border-2 border-[#00FFFF] rounded-2xl bg-[#10101A] hover:bg-[#00FFFF] transition-all duration-300">
-              <button
-                className="w-full p-6 text-left font-semibold bg-[#0B0B13] hover:bg-[#00FFFF] text-white flex justify-between items-center transition-all duration-300"
-                onClick={() => toggleFAQ(index)}
-              >
-                <span className="text-xl">{faq.question}</span>
-                <ChevronDown className={`transition-transform duration-300 text-xl ${openIndex === index ? "rotate-180 text-black" : "rotate-0 text-[#00FFFF]"}`} />
-              </button>
-              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? "max-h-60 p-6 bg-[#0B0B13] text-[#00FFFF] border-t border-[#00FFFF]" : "max-h-0"}`}>
-                {faq.answer}
-              </div>
-            </div>
-          ))}
-        </div>
+  {faqs.map((faq, index) => (
+    <div
+      key={index}
+      className="border-2 border-[#009999] rounded-2xl bg-[#10101A] hover:bg-[#009999] transition-colors duration-200"
+    >
+      <button
+        className="w-full p-6 text-left font-semibold bg-[#0B0B13] hover:bg-[#009999] text-white flex justify-between items-center transition-colors duration-200"
+        onClick={() => toggleFAQ(index)}
+      >
+        <span className="text-xl">{faq.question}</span>
+        <ChevronDown
+          className={`transition-transform duration-300 text-xl ${
+            openIndex === index ? "rotate-180 text-black" : "rotate-0 text-[#009999]"
+          }`}
+        />
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          openIndex === index
+            ? "max-h-60 p-6 bg-[#0B0B13] text-[#009999] border-t border-[#009999]"
+            : "max-h-0"
+        }`}
+      >
+        {faq.answer}
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
 
       {/* 🔹 Flip Cards Section */}
@@ -143,9 +157,9 @@ const Footer = () => {
 
         {/* 🔹 Instagram Link */}
         <div className="flex items-center mt-6 space-x-3">
-          <FaInstagram className="text-[#FF00FF] text-4xl hover:scale-110 transition-transform duration-300 hover:text-[#00FFFF]" />
-          <a href="https://instagram.com/_incognito_2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300">
-            @_asthra_2k25
+          <FaInstagram className="text-[#FF00FF] text-4xl hover:scale-105 transition-transform duration-300 hover:text-[#00FFFF]" />
+          <a href="https://instagram.com/asthra.2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300">
+            @asthra.2k25
           </a>
         </div>
       </div>

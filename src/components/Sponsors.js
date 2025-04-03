@@ -6,7 +6,7 @@ const titleSponsor = [
 ];
 
 const associateSponsors = [
-  { id: 2, name: "Shri Meenakshi Associate", image: "./assets/Sponsors/ShriMeenakshiAssociate.png", url: "https://www.vigneshpropertees.com/" },
+  { id: 2, name: "Shri Meenakshi Associate", image: "./assets/Sponsors/ShriMeenakshiAssociate.png", url: "https://shrimeenakshi.com/" },
   { id: 3, name: "Associate Sponsor 2", image: "https://via.placeholder.com/300", url: "https://example.com" },
   { id: 7, name: "Associate Sponsor 3", image: "https://via.placeholder.com/300", url: "https://example.com" },
 ];

@@ -70,16 +70,17 @@ const TeamSection = ({ title, teamMembers }) => {
   );
 };
 
-const StudentCoordinators= () => {
+const Poster= () => {
+ 
   const teamMembers = [
-    { imageSrc: "/assets/avatars/videoteam/pooja.png", name: "Poojasri", link: "https://www.linkedin.com/in/pooja-sri-b9421b2a2/" },
-    { imageSrc: "./assets/avatars/studcoord/Reena.jpg", name: "Reena", link: "https://www.linkedin.com/in/reena-venkatesh-6a036a1ab" },
-    { imageSrc: "./assets/avatars/studcoord/Zainab.jpg", name: "Zainab Nisa", link: "https://www.linkedin.com/in/zainab-nisa-32b87b275" },
-    { imageSrc: "./assets/avatars/studcoord/Lingesh.jpg", name: "Lingeshwaran", link: "https://www.linkedin.com/in/lingeswar-m" },
-    { imageSrc: "./assets/avatars/studcoord/Hemanth.jpeg", name: "Hemanth", link: "https://www.linkedin.com/in/hemanth-ayyappan-6b0b062a1/" },
-    { imageSrc: "./assets/avatars/studcoord/Siva.jpg", name: "Sivabalaji", link: "https://www.linkedin.com/in/sivabalaji-g-069989257" },
+    { imageSrc: "./assets/avatars/posterteam/Sanjana.jpg", name: "Sanjana", link: "https://www.linkedin.com/in/sanjana-a-9178162a1" },
+    { imageSrc: "./assets/avatars/posterteam/Siva.jpg", name: "Sivabalaji", link: "https://www.linkedin.com/in/sivabalaji-g-069989257" },
+    { imageSrc: "./assets/avatars/social/Tharani.jpg", name: "Tharani", link: "https://www.linkedin.com/in/tharani-ganesh-6b8b2b2a1" },
+    { imageSrc: "./assets/avatars/posterteam/Bindusri.png", name: "Bindusri", link: "https://www.linkedin.com/in/bindusri-v-k-8bb2732a2" },
+    { imageSrc: "./assets/avatars/posterteam/Nisha.jpg", name: "Nisha", link: "https://www.linkedin.com/in/nisha-d-j-924b082a1" },
+    { imageSrc: "./assets/avatars/posterteam/HariniKarpagam.jpeg", name: "Harini Karpagam", link: "https://www.linkedin.com/in/lingeswar-m" },
+    { imageSrc: "./assets/avatars/posterteam/Lingesh.jpg", name: "Lingeshwaran", link: "https://www.linkedin.com/in/lingeswar-m" },
   ];
-
   // const teamMembers = [
   //   { name: 'Ananthavalli', link: '#', imageSrc: './assets/avatars/2ndyr/Ananthavalli.jpg' },
   //   { name: 'Deshma', link: '#', imageSrc: './assets/avatars/2ndyr/Deshma.jpeg' },
@@ -92,7 +93,7 @@ const StudentCoordinators= () => {
   //   { name: 'Thithiksha', link: '#', imageSrc: './assets/avatars/2ndyr/Thithiksha.jpeg' },
   // ];
 
-  return <TeamSection title="Student Coordinators" teamMembers={teamMembers} />;
+  return <TeamSection title="Poster Team" teamMembers={teamMembers} />;
 };
 
-export default  StudentCoordinators;
+export default  Poster;
