@@ -73,7 +73,7 @@ const Front = () => {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className="w-full h-screen flex flex-col items-center relative p-6 text-gray-100 font-sans overflow-hidden">
+    <div className="w-screen h-screen flex flex-col items-center relative p-6 text-gray-100 font-sans overflow-hidden">
       <div ref={vantaRef} className="absolute top-0 left-0 w-full h-full z-[-1]" />
 
       {/* Username Circle */}

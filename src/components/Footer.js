@@ -23,7 +23,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="w-full bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6">
+    <div className="w-screen bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6">
 
       {/* 🔹 CREDITS Section */}
       <div className="max-w-3xl w-full mt-10">

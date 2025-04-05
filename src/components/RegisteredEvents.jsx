@@ -51,7 +51,7 @@ const RegisteredEvents = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 h-screen bg-[#121212] text-[#00FFFF] flex flex-col overflow-hidden">
+    <div className="fixed w-screen inset-0 h-screen bg-[#121212] text-[#00FFFF] flex flex-col overflow-hidden">
       <div className="py-3 md:py-6">
         <h2 className="text-xl md:text-3xl font-bold text-center neon-text">
           REGISTERED EVENTS

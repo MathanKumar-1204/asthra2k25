@@ -96,7 +96,7 @@ const EventsPage = () => {
   };
 
   return (
-    <div className="flex flex-col w-full items-center justify-center min-h-screen bg-gradient-to-br from-[#1A1A1D] to-[#3B1C32] p-6 text-[#E1BEE7] h-auto">
+    <div className="flex flex-col w-screen items-center justify-center min-h-screen bg-gradient-to-br from-[#1A1A1D] to-[#3B1C32] p-6 text-[#E1BEE7] h-auto">
       {/* Back Button */}
       <button
         onClick={handleBackClick}
