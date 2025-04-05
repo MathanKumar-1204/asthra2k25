@@ -150,14 +150,13 @@ const Footer = () => {
         <Location />
 
         {/* 🔹 Footer Text */}
-       
 
         {/* 🔹 Footer Layout */}
         <div className="w-full flex flex-col md:flex-row justify-between mt-10 px-6">
           {/* Left Side: Links */}
           <div className="flex flex-col items-start">
             <h3 className="text-2xl font-semibold text-[#00FFFF] mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
+            <div className="flex flex-col space-y-4">
               <a href="https://instagram.com/asthra.2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300 flex items-center">
                 <FaInstagram className="text-[#FF00FF] text-2xl mr-2 hover:scale-105 transition-transform duration-300 hover:text-[#00FFFF]" />
                 Instagram
