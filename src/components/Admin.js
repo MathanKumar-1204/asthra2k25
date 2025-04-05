@@ -7,7 +7,7 @@ function Admin() {
 
   useEffect(() => {
     // Simulating auth check (replace with your actual authentication logic)
-    const user = JSON.parse(localStorage.getItem("user")); // e.g., { email: "admin@example.com", role: "admin" }
+    const user = JSON.parse(localStorage.getItem("userInfo")); // e.g., { email: "admin@example.com", role: "admin" }
     if (user && user.role === "admin") {
       setIsAdmin(true);
     }

@@ -26,7 +26,7 @@ const RegisteredEvents = () => {
         }
 
         // Fetch all events
-        const response = await fetch(`https://api.sheetbest.com/sheets/b0b06cc5-a1ef-41ee-b7c0-a123d92d771e`);
+        const response = await fetch(`https://api.sheetbest.com/sheets/a43bcf5a-9283-44dd-a5c8-59dab50a175d`);
         if (response.ok) {
           const data = await response.json();
 

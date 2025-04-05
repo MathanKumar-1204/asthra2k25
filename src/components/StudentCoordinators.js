@@ -75,7 +75,7 @@ const StudentCoordinators= () => {
     { imageSrc: "/assets/avatars/videoteam/pooja.png", name: "Poojasri", link: "https://www.linkedin.com/in/pooja-sri-b9421b2a2/" },
     { imageSrc: "./assets/avatars/studcoord/Reena.jpg", name: "Reena", link: "https://www.linkedin.com/in/reena-venkatesh-6a036a1ab" },
     { imageSrc: "./assets/avatars/studcoord/Zainab.jpg", name: "Zainab Nisa", link: "https://www.linkedin.com/in/zainab-nisa-32b87b275" },
-    { imageSrc: "./assets/avatars/studcoord/Lingesh.jpg", name: "Lingeshwaran", link: "https://www.linkedin.com/in/lingeswar-m" },
+    { imageSrc: "./assets/avatars/studcoord/Lingesh.jpg", name: "Lingeswar", link: "https://www.linkedin.com/in/lingeswar-m" },
     { imageSrc: "./assets/avatars/studcoord/Hemanth.jpeg", name: "Hemanth", link: "https://www.linkedin.com/in/hemanth-ayyappan-6b0b062a1/" },
     { imageSrc: "./assets/avatars/studcoord/Siva.jpg", name: "Sivabalaji", link: "https://www.linkedin.com/in/sivabalaji-g-069989257" },
   ];

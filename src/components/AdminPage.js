@@ -2,15 +2,26 @@ import React, { useState, useEffect } from "react";
 import jsPDF from "jspdf";
 
 const AdminPage = () => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [eventData, setEventData] = useState({});
   const [filteredData, setFilteredData] = useState({});
 
   useEffect(() => {
+    // Check if the user is an admin
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+    if (user && user.role === "admin") {
+      setIsAdmin(true);
+    }
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://api.sheetbest.com/sheets/b0b06cc5-a1ef-41ee-b7c0-a123d92d771e"
+          "https://api.sheetbest.com/sheets/a43bcf5a-9283-44dd-a5c8-59dab50a175d"
         );
         if (response.ok) {
           const data = await response.json();
@@ -86,13 +97,21 @@ const AdminPage = () => {
     doc.save(`${eventName}.pdf`);
   };
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="text-white text-xl">Checking access...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex justify-center items-center min-h-screen w-screen bg-black relative overflow-hidden">
       {/* Cyberpunk background effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900 to-blue-900 opacity-90"></div>
       <div className="absolute inset-0 bg-noise opacity-10"></div>
 
-      <div className="bg-black bg-opacity-40 backdrop-blur-lg shadow-2xl p-4 md:p-8 rounded-3xl text-white w-full max-w-7xl flex flex-col items-center border border-neon-pink">
+      <div className={`bg-black bg-opacity-40 backdrop-blur-lg shadow-2xl p-4 md:p-8 rounded-3xl text-white w-full max-w-7xl flex flex-col items-center border border-neon-pink transition-all duration-300 ${isAdmin ? "blur-0" : "blur-md"}`}>
         <h1 className="text-2xl md:text-4xl font-extrabold text-neon-blue tracking-wide mb-4 md:mb-6 glitch text-center">
           ADMIN DASHBOARD
         </h1>
@@ -105,7 +124,7 @@ const AdminPage = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
 
-        {Object.keys(filteredData).map((eventName, idx) => (
+        {isAdmin && Object.keys(filteredData).map((eventName, idx) => (
           <div key={idx} className="bg-opacity-30 p-4 md:p-5 rounded-lg mt-4 md:mt-6 neon-card border border-neon-pink w-full">
             <h2 className="text-xl md:text-2xl font-bold text-neon-green mb-2 md:mb-4 tracking-wider text-center">{eventName}</h2>
 
@@ -143,6 +162,12 @@ const AdminPage = () => {
           </div>
         ))}
       </div>
+
+      {!isAdmin && (
+        <div className="absolute flex flex-col items-center justify-center text-white bg-black bg-opacity-70 p-4 rounded-lg">
+          <p className="text-2xl font-bold">🚫 Only available for admins!</p>
+        </div>
+      )}
 
       {/* Cyberpunk Styles */}
       <style>

@@ -46,7 +46,7 @@ const EventsPage = () => {
       } else {
         try {
           const response = await fetch(
-            `https://api.sheetbest.com/sheets/b0b06cc5-a1ef-41ee-b7c0-a123d92d771e?email=${userInfo.email}`
+            `https://api.sheetbest.com/sheets/a43bcf5a-9283-44dd-a5c8-59dab50a175d?email=${userInfo.email}`
           );
           if (!response.ok) throw new Error("Failed to fetch user data");
 

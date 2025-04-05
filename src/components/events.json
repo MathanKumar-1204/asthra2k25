@@ -3,7 +3,7 @@
     "Quizz Buzz": {
       "name": "Quizz Buzz",
       "type": "Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "./assets/poster/QuizBuzz.jpeg",
       "rules": [
         "Participants must bring a mobile to participate in the quiz.",
         "Only one teammate answers the quiz using a mobile",
@@ -28,7 +28,7 @@
     "Thinkovation": {
       "name": "Thinkovation",
       "type": "Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "./assets/poster/thinkovation.png",
       "rules": [
         "Content: Include Problem, Solution, and Prototype in one of 10 given domains",
         "Slides: Max 10 slides, any format.",
@@ -53,7 +53,7 @@
     "Cipher Hunt": {
       "name": "Cipher Hunt",
       "type": "Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "./assets/poster/CipherHunt.jpg",
         "rules": [
           "No communication between different teams.",
           "Violating the above rules will result in warnings.",
@@ -77,7 +77,7 @@
     "Code & Fix": {
       "name": "Code & Fix",
       "type": "Tech",
-      "poster": "./assets/poster/codefix.jpg",
+      "poster": "./assets/poster/CodeFix.png",
       "rules": [
         "Participants should not talk with other teams.",
         "Participants should upload their prompt and their work."
@@ -98,7 +98,7 @@
     "UX Rescue Showdown": {
       "name": "UX Rescue Showdown",
       "type": "Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "./assets/poster/UXRescue.jpg",
       "rules": [
         " Each team should spin the wheel only once.",
         "Each team should only use the template that we assign.",
@@ -123,7 +123,7 @@
     "Ctrl Alt Defeat": {
       "name": "Ctrl Alt Defeat",
       "type": "Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "./assets/poster/Crltaltdefeat.png",
       "rules": [
         "One member solves a puzzle while other types a given code simultaneously",
         "Both tasks must be accurate and completed together ",
@@ -149,7 +149,7 @@
     "Sound Clash": {
       "name": "Sound Clash",
       "type": "Non-Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "./assets/poster/SoundClash.jpeg",
       "rules": [
         "Team can have maximum of  participants. ",
 
@@ -177,7 +177,7 @@
     "Stack It Up": {
       "name": "Stack It Up",
       "type": "Non-Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "StackItUp.png",
       "rules": [
         "Teams must follow all instructions given for each round.",
         "Players must rotate as per the rules of each round.",
@@ -202,7 +202,7 @@
     "Silver Screen ": {
       "name": "Silver Screen ",
       "type": "Non-Tech",
-      "poster": "https://marketplace.canva.com/EAFvdeUeF4M/1/0/1131w/canva-mystery-treasure-hunt-poster-3J_WsmYaej4.jpg",
+      "poster": "./assets/poster/silverscreen.png",
       "rules": [
         "Participants must find the answer within the specified time limit.",
         "The story will contain a hidden object or concept that participants must discover.",
@@ -225,7 +225,7 @@
     "Fun Frenzy": {
       "name": "Fun Frenzy",
       "type": "Non-Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "FunFrenzy.png",
       "rules": [
         "Only the provided object (balloon,cup,straw,ball) can be used to lift, move, or stack the cups hands are not allowed except round 1 and 3",
         "If the object falls, participants must restart from the last successfully completed step.",
@@ -246,7 +246,7 @@
     "Pixels": {
       "name": "Asthra Pixelz",
       "type": "Non-Tech",
-      "poster": "https://marketplace.canva.com/EAFJMl8KcjI/1/0/1131w/canva-purple-black-tropical-party-club-poster-orVwDS2lrfY.jpg",
+      "poster": "./assets/poster/tnikovation.png",
       "rules": [
         "Theme-Based: Capture photos related to the given theme.",
         "Original Work: No copied or AI-generated images.",

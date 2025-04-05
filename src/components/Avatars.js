@@ -6,13 +6,6 @@ import Sec from './sec';
 import Poster from './Posterteam';
 import Edit from './Edit';
 
-const mediaTeam = [
-  { src: "./assets/avatars/videoteam/dharun.jpg", link: "https://www.linkedin.com/in/dharun-kumar-80a9102a1/", name: "Dharun Kumar" },
-  { src: "./assets/avatars/videoteam/pooja.png", link: "https://www.linkedin.com/in/pooja-sri-b9421b2a2/", name: "Poojasri" },
-  { src: "./assets/avatars/videoteam/Manoj.png", link: "https://www.linkedin.com/in/manoj0512", name: "Manoj" },
-  { src: "./assets/avatars/social/jasnaa.jpg", link: "https://www.linkedin.com/in/jasna-shaji-1a3b932a1", name: "Jasna Shaji" }
-];
-
 const handleOpenLinkedIn = (url) => {
   window.open(url, "_blank");
 };

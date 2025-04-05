@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Location from "./Location";
@@ -23,7 +23,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="w-full bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6 ">
+    <div className="w-full bg-[#05050A] text-gray-300 py-16 text-center relative z-10 flex flex-col items-center px-6">
 
       {/* 🔹 CREDITS Section */}
       <div className="max-w-3xl w-full mt-10">
@@ -44,35 +44,34 @@ const Footer = () => {
           FAQs
         </h2>
         <div className="space-y-6">
-  {faqs.map((faq, index) => (
-    <div
-      key={index}
-      className="border-2 border-[#009999] rounded-2xl bg-[#10101A] hover:bg-[#009999] transition-colors duration-200"
-    >
-      <button
-        className="w-full p-6 text-left font-semibold bg-[#0B0B13] hover:bg-[#009999] text-white flex justify-between items-center transition-colors duration-200"
-        onClick={() => toggleFAQ(index)}
-      >
-        <span className="text-xl">{faq.question}</span>
-        <ChevronDown
-          className={`transition-transform duration-300 text-xl ${
-            openIndex === index ? "rotate-180 text-black" : "rotate-0 text-[#009999]"
-          }`}
-        />
-      </button>
-      <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          openIndex === index
-            ? "max-h-60 p-6 bg-[#0B0B13] text-[#009999] border-t border-[#009999]"
-            : "max-h-0"
-        }`}
-      >
-        {faq.answer}
-      </div>
-    </div>
-  ))}
-</div>
-
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="border-2 border-[#009999] rounded-2xl bg-[#10101A] hover:bg-[#009999] transition-colors duration-200"
+            >
+              <button
+                className="w-full p-6 text-left font-semibold bg-[#0B0B13] hover:bg-[#009999] text-white flex justify-between items-center transition-colors duration-200"
+                onClick={() => toggleFAQ(index)}
+              >
+                <span className="text-xl">{faq.question}</span>
+                <ChevronDown
+                  className={`transition-transform duration-300 text-xl ${
+                    openIndex === index ? "rotate-180 text-black" : "rotate-0 text-[#009999]"
+                  }`}
+                />
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  openIndex === index
+                    ? "max-h-60 p-6 bg-[#0B0B13] text-[#009999] border-t border-[#009999]"
+                    : "max-h-0"
+                }`}
+              >
+                {faq.answer}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* 🔹 Flip Cards Section */}
@@ -146,23 +145,47 @@ const Footer = () => {
         `}
       </style>
 
-      {/* 🔹 Inner Div for Location and Instagram */}
+      {/* 🔹 Inner Div for Location and Social Links */}
       <div className="w-full flex flex-col items-center mt-16">
         <Location />
 
         {/* 🔹 Footer Text */}
-        <p className="text-xl font-semibold tracking-wide text-[#00FFFF] mt-8">
-          &copy; 2025 ASTHRA. All rights reserved.
-        </p>
+       
 
-        {/* 🔹 Instagram Link */}
-        <div className="flex items-center mt-6 space-x-3">
-          <FaInstagram className="text-[#FF00FF] text-4xl hover:scale-105 transition-transform duration-300 hover:text-[#00FFFF]" />
-          <a href="https://instagram.com/asthra.2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300">
-            @asthra.2k25
-          </a>
+        {/* 🔹 Footer Layout */}
+        <div className="w-full flex flex-col md:flex-row justify-between mt-10 px-6">
+          {/* Left Side: Links */}
+          <div className="flex flex-col items-start">
+            <h3 className="text-2xl font-semibold text-[#00FFFF] mb-4">Follow Us</h3>
+            <div className="flex space-x-4">
+              <a href="https://instagram.com/asthra.2k25" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300 flex items-center">
+                <FaInstagram className="text-[#FF00FF] text-2xl mr-2 hover:scale-105 transition-transform duration-300 hover:text-[#00FFFF]" />
+                Instagram
+              </a>
+              <a href="https://www.linkedin.com/in/asthra-it-367b6b359" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300 flex items-center">
+                <FaLinkedin className="text-[#FF00FF] text-2xl mr-2 hover:scale-105 transition-transform duration-300 hover:text-[#00FFFF]" />
+                LinkedIn
+              </a>
+              <a href="mailto:msecasthra2k25@gmail.com" className="text-gray-300 hover:text-[#00FFFF] text-lg transition-colors duration-300 flex items-center">
+                <FaEnvelope className="text-[#FF00FF] text-2xl mr-2 hover:scale-105 transition-transform duration-300 hover:text-[#00FFFF]" />
+                Email
+              </a>
+            </div>
+          </div>
+
+          {/* Right Side: Contact Us */}
+          <div className="flex flex-col items-start mt-8 md:mt-0">
+            <h3 className="text-2xl font-semibold text-[#00FFFF] mb-4">Contact Us</h3>
+            <p className="text-lg text-gray-300">Nandha Kumar: +91 7708 159 052</p>
+            <p className="text-lg text-gray-300">Venkatesh: +91 7708 624 152</p>
+            <p className="text-lg text-gray-300 mt-4"> Meenakshi Sundararajan Engineering College, Autonomous Institute,</p>
+            <p className="text-lg text-gray-300 "> #363, Arcot Road, Kodambakkam, Chennai-600 024.</p>
+          </div>
         </div>
       </div>
+      <p className="text-xl font-semibold tracking-wide text-[#00FFFF] mt-8">
+          &copy; 2025 ASTHRA. All rights reserved.
+        </p>
     </div>
   );
 };

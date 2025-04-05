@@ -3,7 +3,7 @@ import ShinyText from "./ShinyText";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoCloseCircle } from "react-icons/io5";
 
-const API_URL = "https://api.sheetbest.com/sheets/b0b06cc5-a1ef-41ee-b7c0-a123d92d771e";
+const API_URL = "https://api.sheetbest.com/sheets/a43bcf5a-9283-44dd-a5c8-59dab50a175d";
 const EMAIL_API_URL = "https://webserver-gvl1.onrender.com/send-confirmation"; // Update with your Flask backend URL
 
 const Reg = ({ eventName, onClose }) => {
@@ -154,18 +154,26 @@ const Reg = ({ eventName, onClose }) => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              {Object.keys(formData).map((field) => (
-                <input
-                  key={field}
-                  type={field === "teamMembersEmail" ? "email" : "text"}
-                  name={field}
-                  placeholder={field.replace(/([A-Z])/g, ' $1').trim()}
-                  value={formData[field]}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 bg-black/60 text-cyan-300 border border-cyan-500 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition-all duration-300"
-                />
-              ))}
+              {Object.keys(formData).map((field) => {
+                let placeholder = field.replace(/([A-Z])/g, ' $1').trim();
+                if (field === "teamMembers") {
+                  placeholder = "Team Member 1, Member 2, ...";
+                } else if (field === "teamMembersEmail") {
+                  placeholder = "Team Member Mail 1, Mail 2, ...";
+                }
+                return (
+                  <input
+                    key={field}
+                    type={field === "teamMembersEmail" ? "email" : "text"}
+                    name={field}
+                    placeholder={placeholder}
+                    value={formData[field]}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 bg-black/60 text-cyan-300 border border-cyan-500 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition-all duration-300"
+                  />
+                );
+              })}
               {Object.values(errors).map((error, idx) => <p key={idx} className="text-red-500">{error}</p>)}
               <button type="submit" className="w-full bg-cyan-500 text-black font-semibold py-2 rounded-lg mt-4 hover:bg-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500 animate-pulse">
                 <ShinyText>Register Now</ShinyText>

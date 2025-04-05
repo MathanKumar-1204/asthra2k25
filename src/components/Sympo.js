@@ -21,7 +21,7 @@ const Sympo = () => {
           <div className="flex flex-col md:flex-row items-center md:items-start p-6 rounded-lg">
             <div className="md:w-1/3 flex justify-center md:justify-start mb-3 md:mb-0">
               <img
-                src="./assets/msec.jpg"
+                src="./assets/msec.webp"
                 alt="College Logo"
                 className="w-32 h-24 md:w-80 md:h-60 object-cover rounded-lg shadow-neon"
               />

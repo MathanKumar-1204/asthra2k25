@@ -79,7 +79,7 @@ const Poster= () => {
     { imageSrc: "./assets/avatars/posterteam/Bindusri.png", name: "Bindusri", link: "https://www.linkedin.com/in/bindusri-v-k-8bb2732a2" },
     { imageSrc: "./assets/avatars/posterteam/Nisha.jpg", name: "Nisha", link: "https://www.linkedin.com/in/nisha-d-j-924b082a1" },
     { imageSrc: "./assets/avatars/posterteam/HariniKarpagam.jpeg", name: "Harini Karpagam", link: "https://www.linkedin.com/in/lingeswar-m" },
-    { imageSrc: "./assets/avatars/posterteam/Lingesh.jpg", name: "Lingeshwaran", link: "https://www.linkedin.com/in/lingeswar-m" },
+    { imageSrc: "./assets/avatars/posterteam/Lingesh.jpg", name: "Lingeswar", link: "https://www.linkedin.com/in/lingeswar-m" },
   ];
   // const teamMembers = [
   //   { name: 'Ananthavalli', link: '#', imageSrc: './assets/avatars/2ndyr/Ananthavalli.jpg' },
