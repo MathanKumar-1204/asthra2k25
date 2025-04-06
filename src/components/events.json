@@ -246,7 +246,7 @@
     "Pixels": {
       "name": "Asthra Pixelz",
       "type": "Non-Tech",
-      "poster": "./assets/poster/tnikovation.png",
+      "poster": "./assets/poster/AsthraPixels.jpeg",
       "rules": [
         "Theme-Based: Capture photos related to the given theme.",
         "Original Work: No copied or AI-generated images.",
@@ -255,7 +255,7 @@
         "On-Time Submission: Entries after the deadline won't be accepted."
       ],
       "slot": ["ONLINE"],
-      "logo": "./assets/Events/AsthraPixelz.jpeg",
+      "logo": "./assets/Events/Pixelz.jpeg",
       "teamMembers": "Solo participation.",
       "members": {
         "Dana": "./assets/logo.jpeg",
