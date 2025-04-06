@@ -92,7 +92,7 @@ const EventsPage = () => {
   };
 
   const handleBackClick = () => {
-    navigate(-1); // Navigate back to the previous page
+    navigate("/"); // Navigate back to the previous page
   };
 
   return (
