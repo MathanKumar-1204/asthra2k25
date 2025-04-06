@@ -55,7 +55,6 @@
       "type": "Tech",
       "poster": "./assets/poster/CipherHunt.jpg",
         "rules": [
-          "No communication between different teams.",
           "Violating the above rules will result in warnings.",
           "No in-game hints will be provided.",
           "Time limit is 2 hours.",
