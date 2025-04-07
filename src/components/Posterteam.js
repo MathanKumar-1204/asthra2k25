@@ -78,7 +78,6 @@ const Poster= () => {
     { imageSrc: "./assets/avatars/social/Tharani.jpg", name: "Tharani", link: "https://www.linkedin.com/in/tharani-ganesh-6b8b2b2a1" },
     { imageSrc: "./assets/avatars/posterteam/Bindusri.png", name: "Bindusri", link: "https://www.linkedin.com/in/bindusri-v-k-8bb2732a2" },
     { imageSrc: "./assets/avatars/posterteam/Nisha.jpg", name: "Nisha", link: "https://www.linkedin.com/in/nisha-d-j-924b082a1" },
-    { imageSrc: "./assets/avatars/posterteam/HariniKarpagam.jpeg", name: "Harini Karpagam", link: "https://www.linkedin.com/in/lingeswar-m" },
     { imageSrc: "./assets/avatars/posterteam/Lingesh.jpg", name: "Lingeswar", link: "https://www.linkedin.com/in/lingeswar-m" },
   ];
   // const teamMembers = [

@@ -36,7 +36,7 @@
         "Submission: Email ppt a day before to thinkovation2k25@gmail.com.",
         "Q&A: Each team faces a Q&A session."
       ],
-      "slot": ["10.00 PM - 12.00 PM", "1.30 PM - 2.30 PM"],
+      "slot": ["10.00 AM - 12.00 PM", "1.30 PM - 2.30 PM"],
       "logo": "./assets/Events/thinkovation.png",
       "teamMembers": "Solo or team (Max 2 members).",
       "members": {
@@ -55,11 +55,10 @@
       "type": "Tech",
       "poster": "./assets/poster/CipherHunt.jpg",
         "rules": [
+          "No communication between different teams, use of phones or any gadgets is strictly prohibited.",
           "Violating the above rules will result in warnings.",
-          "No in-game hints will be provided.",
-          "Time limit is 2 hours.",
-          "Riddles will be progressively harder, various twists and tricks will be included, leading to the final treasure map. The next clue unlocks only when the correct answer is provided.",
-          "The first team to unlock the treasure map, locate the final puzzle, and solve it wins."
+          "Riddles will be progressively harder, leading to the final treasure map. The next clue unlocks only when the correct answer is provided.",
+          "The first team to unlock the treasure map, locate the final puzzle, and solve it wins.(Top 3 teams with least amount of time wins.)"
         ],
       "slot": ["9:00 AM to 12:00 AM"," 1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/CipherHunt.png",
@@ -224,7 +223,7 @@
     "Fun Frenzy": {
       "name": "Fun Frenzy",
       "type": "Non-Tech",
-      "poster": "FunFrenzy.png",
+      "poster": "./assets/poster/FunFrenzy.png",
       "rules": [
         "Only the provided object (balloon,cup,straw,ball) can be used to lift, move, or stack the cups hands are not allowed except round 1 and 3",
         "If the object falls, participants must restart from the last successfully completed step.",
