@@ -114,7 +114,7 @@
         "Peter": "./assets/logo.jpeg"
       },
       "phone": "8248736918",
-      "coordinators": ["Monika S, Vinisha M, Dharun kumar P"],
+      "coordinators": ["Bindusri VK,Monika S, Vinisha M, Dharun kumar P"],
       "prizePool": "Rs.2200"
     },
   
@@ -130,7 +130,7 @@
       ],
       "slot": ["9:00 AM to 12:00 PM", "1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/CtrlAltDefeat.jpeg",
-      "teamMembers": "Solo or team (Max 2 members).",
+      "teamMembers": "Team of 2 members.",
       "members": {
         "Quinn": "./assets/logo.jpeg",
         "Rachel": "./assets/logo.jpeg",
