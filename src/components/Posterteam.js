@@ -76,7 +76,7 @@ const Poster= () => {
     { imageSrc: "./assets/avatars/posterteam/Sanjana.jpg", name: "Sanjana", link: "https://www.linkedin.com/in/sanjana-a-9178162a1" },
     { imageSrc: "./assets/avatars/posterteam/Siva.jpg", name: "Sivabalaji", link: "https://www.linkedin.com/in/sivabalaji-g-069989257" },
     { imageSrc: "./assets/avatars/social/Tharani.jpg", name: "Tharani", link: "https://www.linkedin.com/in/tharani-ganesh-6b8b2b2a1" },
-    { imageSrc: "./assets/avatars/posterteam/Bindusri.png", name: "Bindusri", link: "https://www.linkedin.com/in/bindusri-v-k-8bb2732a2" },
+    { imageSrc: "./assets/avatars/posterteam/Bindusri.jpeg", name: "Bindusri", link: "https://www.linkedin.com/in/bindusri-v-k-8bb2732a2" },
     { imageSrc: "./assets/avatars/posterteam/Nisha.jpg", name: "Nisha", link: "https://www.linkedin.com/in/nisha-d-j-924b082a1" },
     { imageSrc: "./assets/avatars/posterteam/Lingesh.jpg", name: "Lingeswar", link: "https://www.linkedin.com/in/lingeswar-m" },
   ];

@@ -83,7 +83,7 @@ const Edit= () => {
 //   ];
   const teamMembers = [
     { imageSrc: "./assets/avatars/videoteam/pooja.png", link: "https://www.linkedin.com/in/pooja-sri-b9421b2a2/", name: "Poojasri" },
-    { imageSrc: "./assets/avatars/videoteam/Manoj.png", link: "https://www.linkedin.com/in/manoj0512", name: "Manoj" },
+    { imageSrc: "./assets/avatars/videoteam/manoj.png", link: "https://www.linkedin.com/in/manoj0512", name: "Manoj" },
     { imageSrc: "./assets/avatars/posterteam/HariniKarpagam.jpeg", name: "Harini Karpagam", link: "https://www.linkedin.com/in/lingeswar-m" },
     { imageSrc: "./assets/avatars/social/jasnaa.jpg", link: "https://www.linkedin.com/in/jasna-shaji-1a3b932a1", name: "Jasna Shaji" }
   ];

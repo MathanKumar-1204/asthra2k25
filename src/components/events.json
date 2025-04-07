@@ -3,7 +3,7 @@
     "Quizz Buzz": {
       "name": "Quizz Buzz",
       "type": "Tech",
-      "poster": "./assets/poster/QuizBuzz.jpeg",
+      "poster": "./assets/poster/QuizzBuzz.jpeg",
       "rules": [
         "Participants must bring a mobile to participate in the quiz.",
         "Only one teammate answers the quiz using a mobile",
@@ -105,7 +105,7 @@
         "In case of a tie, the team with the most innovative design will win"
       ],
       "slot": ["9:30 AM to 10:30 AM", "11:00 AM to 12:00 PM","1.30 PM - 2.30 PM"],
-      "logo": "./assets/Events/UXRescue.jpeg",
+      "logo": "./assets/Events/UXRescueshow.jpeg",
       "teamMembers": "Each team can have 2-3 members.",
       "members": {
         "Lana": "./assets/logo.jpeg",
@@ -122,7 +122,7 @@
     "Ctrl Alt Defeat": {
       "name": "Ctrl Alt Defeat",
       "type": "Tech",
-      "poster": "./assets/poster/Crltaltdefeat.png",
+      "poster": "./assets/poster/Ctrlaltdefeat.png",
       "rules": [
         "One member solves a puzzle while other types a given code simultaneously",
         "Both tasks must be accurate and completed together ",
@@ -176,7 +176,7 @@
     "Stack It Up": {
       "name": "Stack It Up",
       "type": "Non-Tech",
-      "poster": "StackItUp.png",
+      "poster": "./assets/poster/StackItUp.png",
       "rules": [
         "Teams must follow all instructions given for each round.",
         "Players must rotate as per the rules of each round.",
