@@ -3,7 +3,7 @@ import { Clock, Calendar, Hourglass } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CountdownClock = () => {
-  const deadline = new Date("2025-04-15T23:59:59").getTime();
+  const deadline = new Date("2025-04-17T23:59:59").getTime();
 
   const calculateTimeLeft = () => {
     const now = new Date().getTime();
