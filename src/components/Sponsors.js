@@ -7,14 +7,14 @@ const titleSponsor = [
 
 const associateSponsors = [
   { id: 2, name: "Shri Meenakshi Associate", image: "./assets/Sponsors/ShriMeenakshiAssociate.png", url: "https://shrimeenakshi.com/" },
-  { id: 3, name: "Associate Sponsor 2", image: "https://via.placeholder.com/300", url: "https://example.com" },
+  { id: 3, name: "MedWay Hospitals", image: "./assets/Sponsors/medway.png", url: "https://medwayhospitals.com/" },
   { id: 7, name: "Associate Sponsor 3", image: "https://via.placeholder.com/300", url: "https://example.com" },
 ];
 
 const coAssociateSponsors = [
   { id: 4, name: "Vignesh Propertees", image: "./assets/Sponsors/CoAssociateSponsor1.jpeg", url: "https://www.vigneshpropertees.com/" },
-  { id: 5, name: "Co-Associate Sponsor 2", image: "https://via.placeholder.com/300", url: "https://example.com" },
-  { id: 6, name: "Co-Associate Sponsor 3", image: "https://via.placeholder.com/300", url: "https://example.com" },
+  { id: 5, name: "Rudra Jewellers", image: "./assets/Sponsors/rudra.jpeg", url: "https://www.instagram.com/rudrajewellers.rj/" },
+  { id: 6, name: "Poorvika", image: "./assets/Sponsors/poorvika.png", url: "https://www.poorvika.com/" },
 ];
 
 const fadeIn = {
