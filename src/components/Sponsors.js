@@ -2,12 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const titleSponsor = [
-  { id: 1, name: "Title Sponsor", image: "https://via.placeholder.com/300", url: "https://example.com" },
+  { id: 2, name: "Shri Meenakshi Associate", image: "./assets/Sponsors/ShriMeenakshiAssociate.png", url: "https://shrimeenakshi.com/" },
+  { id: 3, name: "MedWay Hospitals", image: "./assets/Sponsors/medway.png", url: "https://medwayhospitals.com/" },
 ];
 
 const associateSponsors = [
-  { id: 2, name: "Shri Meenakshi Associate", image: "./assets/Sponsors/ShriMeenakshiAssociate.png", url: "https://shrimeenakshi.com/" },
-  { id: 3, name: "MedWay Hospitals", image: "./assets/Sponsors/medway.png", url: "https://medwayhospitals.com/" },
   { id: 7, name: "Sekar Constructions", image: "./assets/Sponsors/shekar.png", url: "https://www.sekarconstructions.com/" },
 ];
 
@@ -25,7 +24,7 @@ const fadeIn = {
 const Sponsors = () => {
   return (
     <div className="sponsors-container bg-black">
-      <h2 className="sponsors-title text-[#00FFFF]" >Our Sponsors</h2>
+      <h2 className="sponsors-title text-[#00FFFF]">Our Sponsors</h2>
       <motion.div
         id="logo-section"
         className="sponsors-logo-section"
@@ -71,7 +70,7 @@ const SponsorCard = ({ sponsor }) => (
     <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className="sponsor-link">
       <img
         src={sponsor.image}
-        alt={"YET TO REVEAL"}
+        alt={sponsor.name}
         className="sponsor-image"
       />
     </a>
@@ -121,7 +120,9 @@ const styles = `
 .sponsor-wrapper {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1.5rem;
   margin-bottom: 2rem; /* Add margin to separate from other sections */
 }
 
@@ -165,6 +166,29 @@ const styles = `
   height: 100%;
 }
 
+@media (max-width: 768px) {
+  .sponsors-title {
+    font-size: 1.5rem;
+  }
+
+  .sponsor-category {
+    font-size: 1.25rem;
+  }
+
+  .sponsor-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sponsor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-card {
+    height: auto;
+    padding: 0.5rem;
+  }
+}
 `;
 
 const styleSheet = document.createElement("style");
