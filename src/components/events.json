@@ -245,13 +245,14 @@
     "Pixels": {
       "name": "Asthra Pixelz",
       "type": "Non-Tech",
-      "poster": "./assets/poster/AsthraPixels.jpeg",
+      "poster": "./assets/poster/AsthraPixel.jpeg",
       "rules": [
         "Theme-Based: Capture photos related to the given theme.",
         "Original Work: No copied or AI-generated images.",
         "No Watermarks: Submit photos without logos or text.",
         "Basic Edits Only: Minor brightness and contrast adjustments allowed",
-        "On-Time Submission: Entries after the deadline won't be accepted."
+        "On-Time Submission: Entries after the deadline won't be accepted.",
+        "It is compulsory to mail your photos to asthrapixel2k25@gmail.com with your name , college and caption. "
       ],
       "slot": ["ONLINE"],
       "logo": "./assets/Events/Pixelz.jpeg",
