@@ -79,6 +79,7 @@
       "poster": "./assets/poster/CodeFix.png",
       "rules": [
         "Participants should not talk with other teams.",
+        "Participants must bring their own laptop.",
         "Participants should upload their prompt and their work."
       ],
       "slot": ["9:15 AM to 10:00 AM","11:00 AM to 11:45 AM"],
