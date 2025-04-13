@@ -13,7 +13,6 @@ const Reg = ({ eventName, onClose }) => {
     teamMembers: "",
     contact: "",
     college: "",
-    teamMembersEmail: "", // New field for team members' email IDs
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +42,6 @@ const Reg = ({ eventName, onClose }) => {
             teamMembers: userRegistration.teamMembers || "",
             contact: userRegistration.contact || "",
             college: userRegistration.college || "",
-            teamMembersEmail: userRegistration.teamMembersEmail || localStorage.getItem("teamMembersEmail") || "",
           });
         }
       } catch (error) {
@@ -56,18 +54,12 @@ const Reg = ({ eventName, onClose }) => {
     fetchUserRegistration();
   }, []);
 
-  useEffect(() => {
-    // Save teamMembersEmail to localStorage whenever it changes
-    localStorage.setItem("teamMembersEmail", formData.teamMembersEmail);
-  }, [formData.teamMembersEmail]);
-
   const validateForm = () => {
     let newErrors = {};
     if (!/^[a-zA-Z ]+$/.test(formData.teamName)) newErrors.teamName = "Only alphabets are allowed";
     if (!/^[a-zA-Z ]+$/.test(formData.teamLead)) newErrors.teamLead = "Only alphabets are allowed";
     if (!/^[a-zA-Z ,]+$/.test(formData.teamMembers)) newErrors.teamMembers = "Only alphabets and commas are allowed";
     if (!/^\d{10}$/.test(formData.contact)) newErrors.contact = "Contact must be 10 digits";
-    if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(formData.teamMembersEmail)) newErrors.teamMembersEmail = "Must be a @gmail.com address";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -94,7 +86,6 @@ const Reg = ({ eventName, onClose }) => {
       contact: formData.contact,
       college: formData.college,
       eventName: eventName,
-      teamMembersEmail: formData.teamMembersEmail,
     };
 
     console.log("Sending data:", newEntry);
@@ -158,13 +149,11 @@ const Reg = ({ eventName, onClose }) => {
                 let placeholder = field.replace(/([A-Z])/g, ' $1').trim();
                 if (field === "teamMembers") {
                   placeholder = "Team Member 1, Member 2, ...";
-                } else if (field === "teamMembersEmail") {
-                  placeholder = "Team Member Mail 1, Mail 2, ...";
                 }
                 return (
                   <input
                     key={field}
-                    type={field === "teamMembersEmail" ? "email" : "text"}
+                    type="text"
                     name={field}
                     placeholder={placeholder}
                     value={formData[field]}
