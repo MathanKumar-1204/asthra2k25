@@ -95,6 +95,32 @@ const EventsPage = () => {
     navigate("/"); // Navigate back to the previous page
   };
 
+  const renderRegistrationMessage = () => {
+    if (eventDetails.online === "stop" && eventDetails.offline === "stop") {
+      return (
+        <div className="mt-4 px-5 py-2 bg-red-500 text-white text-lg font-bold shadow-lg w-auto self-center border-2 border-[#00FFFF]">
+          Tough luck both online and on spot registrations are closed for this event
+        </div>
+      );
+    } else if (eventDetails.online === "stop" && eventDetails.offline === "resume") {
+      return (
+        <div className="mt-4 px-5 py-2 bg-yellow-500 text-white text-lg font-bold shadow-lg w-auto self-center border-2 border-[#00FFFF]">
+          Tough luck online registration is closed for this event but still you can register on spot
+        </div>
+      );
+    } else {
+      return (
+        <button
+          onClick={handleRegisterClick}
+          className="mt-4 px-5 py-2 bg-[#FF5733] text-white text-lg font-bold shadow-lg hover:bg-[#C70039] transition-all duration-300 transform hover:scale-110 hover:animate-pulse w-auto self-center border-2 border-[#00FFFF]"
+          disabled={isRegistered}
+        >
+          {isRegistered ? "✔ REGISTERED" : "🚀 REGISTER NOW"}
+        </button>
+      );
+    }
+  };
+
   return (
     <div className="flex flex-col w-screen items-center justify-center min-h-screen bg-gradient-to-br from-[#1A1A1D] to-[#3B1C32] p-6 text-[#E1BEE7] h-auto">
       {/* Back Button */}
@@ -169,14 +195,8 @@ const EventsPage = () => {
         )}
       </div>
 
-      {/* Register Button */}
-      <button
-        onClick={handleRegisterClick}
-        className="mt-4 px-5 py-2 bg-[#FF5733] text-white text-lg font-bold shadow-lg hover:bg-[#C70039] transition-all duration-300 transform hover:scale-110 hover:animate-pulse w-auto self-center border-2 border-[#00FFFF]"
-        disabled={isRegistered}
-      >
-        {isRegistered ? "✔ REGISTERED" : "🚀 REGISTER NOW"}
-      </button>
+      {/* Register Button or Message */}
+      {renderRegistrationMessage()}
 
       {/* Enlarged Poster View */}
       {isEnlarged && (

@@ -10,7 +10,6 @@
         "Other participants must predict their final score.",
         "No communication is allowed between teammates once the quiz begins.",
         "All the participants will be allowed to look at the questions."
-        
       ],
       "slot": ["9:30 AM to 10:30 AM", "11:00 AM to 12:00 PM"],
       "logo": "./assets/Events/QuizBuzz.jpeg",
@@ -23,7 +22,9 @@
       },
       "phone": "6369770514",
       "coordinators": ["Mathan Kumar G", "Pavithra G"],
-      "prizePool": "Rs. 2200"
+      "prizePool": "Rs. 2200",
+      "online": "stop",
+      "offline": "stop"
     },
     "Thinkovation": {
       "name": "Thinkovation",
@@ -49,18 +50,20 @@
       },
       "phone": " 63830 68515, 82482 95220",
       "coordinators": ["Prathana S", "Hemasri R", "Ramalakshmi M"],
-      "prizePool": "Rs.2200"
+      "prizePool": "Rs.2200",
+      "online": "stop",
+      "offline": "stop"
     },
     "Cipher Hunt": {
       "name": "Cipher Hunt",
       "type": "Tech",
       "poster": "./assets/poster/CipherHunt.jpg",
-        "rules": [
-          "No communication between different teams, use of phones or any gadgets is strictly prohibited.",
-          "Violating the above rules will result in warnings.",
-          "Riddles will be progressively harder, leading to the final treasure map. The next clue unlocks only when the correct answer is provided.",
-          "The first team to unlock the treasure map, locate the final puzzle, and solve it wins.(Top 3 teams with least amount of time wins.)"
-        ],
+      "rules": [
+        "No communication between different teams, use of phones or any gadgets is strictly prohibited.",
+        "Violating the above rules will result in warnings.",
+        "Riddles will be progressively harder, leading to the final treasure map. The next clue unlocks only when the correct answer is provided.",
+        "The first team to unlock the treasure map, locate the final puzzle, and solve it wins.(Top 3 teams with least amount of time wins.)"
+      ],
       "slot": ["9:00 AM to 12:00 AM"," 1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/CipherHunt.png",
       "teamMembers": "Solo or team (Max 2 members).",
@@ -71,7 +74,9 @@
       },
       "phone": "9566194110",
       "coordinators": ["S.Bhavin", "D.Rithika"],
-      "prizePool": "Rs.2200"
+      "prizePool": "Rs.2200",
+      "online": "stop",
+      "offline": "resume"
     },
     "Code & Fix": {
       "name": "Code & Fix",
@@ -93,7 +98,9 @@
       },
       "phone": "7305143530 , 99406 97827 ",
       "coordinators": ["Vijayaraghavan","Yuvashree", "Anirudh"],
-      "prizePool": "Rs.2200"
+      "prizePool": "Rs.2200",
+      "online": "stop",
+      "offline": "resume"
     },
     "UX Rescue Showdown": {
       "name": "UX Rescue Showdown",
@@ -117,9 +124,10 @@
       },
       "phone": "8248736918",
       "coordinators": ["Bindusri VK,Monika S, Vinisha M, Dharun kumar P"],
-      "prizePool": "Rs.2200"
+      "prizePool": "Rs.2200",
+      "online": "stop",
+      "offline": "resume"
     },
-  
     "Ctrl Alt Defeat": {
       "name": "Ctrl Alt Defeat",
       "type": "Tech",
@@ -142,7 +150,9 @@
       },
       "phone": "9342191054",
       "coordinators": ["S.Sivapriya", "V.Nithya", "Srihari"],
-      "prizePool": "Rs.2200"
+      "prizePool": "Rs.2200",
+      "online": "stop",
+      "offline": "stop"
     }
   },
   "NonTechEvents": {
@@ -152,14 +162,9 @@
       "poster": "./assets/poster/SoundClash.jpeg",
       "rules": [
         "Team can have maximum of  participants. ",
-
-"No participants can be part of more than one team. ",
- 
-" It is not necessary that the participants forming a team should be from same college. ",
- 
-"There is no restriction on the number of teams from the same college."
-
-
+        "No participants can be part of more than one team. ",
+        " It is not necessary that the participants forming a team should be from same college. ",
+        "There is no restriction on the number of teams from the same college."
       ],
       "slot": ["9:30 AM to 11:00 AM", " 1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/SoundClash.jpg",
@@ -172,7 +177,9 @@
         "Peter": "./assets/logo.jpeg"
       },
       "phone": "63744 57383",
-      "coordinators": ["U.PriyaDharshini", "S.Darshinii", "D.Vishwa"]
+      "coordinators": ["U.PriyaDharshini", "S.Darshinii", "D.Vishwa"],
+      "online": "stop",
+      "offline": "resume"
     },
     "Stack It Up": {
       "name": "Stack It Up",
@@ -197,7 +204,9 @@
       },
       "phone": "7550258967",
       "coordinators": ["Kavitha S", "Santhiya L", "Sanjai Babu "],
-      "prizePool": "Rs.1000"
+      "prizePool": "Rs.1000",
+      "online": "stop",
+      "offline": "resume"
     },
     "Silver Screen ": {
       "name": "Silver Screen ",
@@ -220,7 +229,9 @@
         "Cara": "./assets/logo.jpeg"
       },
       "phone": "97911 76452",
-      "coordinators": ["Nivetha.T" , "Anuradha Anand", "Yuvanikaa.C", "Aravind"]
+      "coordinators": ["Nivetha.T" , "Anuradha Anand", "Yuvanikaa.C", "Aravind"],
+      "online": "stop",
+      "offline": "stop"
     },
     "Fun Frenzy": {
       "name": "Fun Frenzy",
@@ -231,7 +242,6 @@
         "If the object falls, participants must restart from the last successfully completed step.",
         "Participants must complete each task within the specified time limit.",
         "Points will be awarded based on successful completion of each round, with bonus points for the fastest completion."
-        
       ],
       "slot": ["10:00 AM to 12:00 PM", "1:30 PM to 3:00 PM"],
       "logo": "./assets/Events/FunFrenzy.jpeg",
@@ -241,7 +251,9 @@
         "Eli": "./assets/1279247.png"
       },
       "phone": "89393 23900",
-      "coordinators": ["V.Harini Karpagam" , "S.Sanjay"]
+      "coordinators": ["V.Harini Karpagam" , "S.Sanjay"],
+      "online": "stop",
+      "offline": "resume"
     },
     "Pixels": {
       "name": "Asthra Pixelz",
@@ -263,7 +275,9 @@
         "Eli": "./assets/1279247.png"
       },
       "phone": "8248736918",
-      "coordinators": ["P.Dharun Kumar", "Jasna Shaji"]
+      "coordinators": ["P.Dharun Kumar", "Jasna Shaji"],
+      "online": "stop",
+      "offline": "stop"
     }
   }
 }
