@@ -152,7 +152,7 @@
       "coordinators": ["S.Sivapriya", "V.Nithya", "Srihari"],
       "prizePool": "Rs.2200",
       "online": "stop",
-      "offline": "stop"
+      "offline": "resume"
     }
   },
   "NonTechEvents": {
@@ -231,7 +231,7 @@
       "phone": "97911 76452",
       "coordinators": ["Nivetha.T" , "Anuradha Anand", "Yuvanikaa.C", "Aravind"],
       "online": "stop",
-      "offline": "stop"
+      "offline": "resume"
     },
     "Fun Frenzy": {
       "name": "Fun Frenzy",
